@@ -13,6 +13,21 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      colors: {
+        textColor: 'var(--textColor)',
+        primary: 'var(--primary)',
+        secondary: 'var(--secondary)',
+        tertiary: 'var(--tertiary)',
+        accent: 'var(--accent)',
+      },
+      fontFamily: {
+        tungstenNarrow: [
+          'TungstenNarrow',
+          'Impact',
+          'Haettenschweiler',
+          '"Arial Narrow Bold"',
+        ],
+      },
     },
   },
   plugins: [],

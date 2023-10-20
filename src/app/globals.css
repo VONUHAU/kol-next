@@ -6,6 +6,41 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+
+  --textColor: white;
+  --primary: #252f30;
+  --secondary: #c2bca6;
+  --tertiary: #efbeac;
+  --accent: #d53c00;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* body {
+  font-family: localTungsten, Impact, Haettenschweiler, 'Arial Narrow Bold',
+    sans-serif !important;
+  font-size: 40px;
+  font-weight: 400;
+}
+@font-face {
+  font-family: localTungsten;
+  src: url(/assets/fonts/TungstenNarrow-Black_Web.woff2);
+} */
+
+@layer base {
+  @font-face {
+    font-family: TungstenNarrow;
+    font-weight: 500;
+    src: url(/assets/fonts/TungstenNarrow-Black_Web.woff2) format('woff2');
+  }
+}
+@layer components {
+  .hero-text {
+    font-size: clamp(2.25rem, 10vw, 12rem);
+    line-height: 1;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,11 +52,6 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: var(--primary);
+  color: var(--textColor);
 }
