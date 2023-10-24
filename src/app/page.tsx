@@ -3,6 +3,7 @@ import Header from '@/components/header'
 import Gain from '../../public/assets/images/gain.jpg'
 import { Hero } from '@/components/hero'
 import { Video } from '@/components/video'
+import { Clients } from '@/components/clients'
 export default function Home() {
   return (
     <>
@@ -17,6 +18,7 @@ export default function Home() {
       <main className='relative top-16 mt-5 min-h-screen'>
         <Hero />
         <Video />
+        <Clients />
       </main>
     </>
   )

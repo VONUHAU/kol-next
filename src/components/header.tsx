@@ -30,11 +30,11 @@ export default async function Header() {
           alt='gain'
           className='absolute z-[-1] h-screen w-full object-cover object-center opacity-30'
         />
-        <div className='font-tungstenNarrow cursor-pointer text-3xl hover:text-accent'>
+        <div className='cursor-pointer font-tungstenNarrow text-3xl hover:text-accent'>
           {' '}
           HOME
         </div>
-        <div className='font-tungstenNarrow cursor-pointer text-3xl hover:text-accent'>
+        <div className='cursor-pointer font-tungstenNarrow text-3xl hover:text-accent'>
           {' '}
           ABOUT
         </div>
@@ -44,23 +44,23 @@ export default async function Header() {
         >
           PROJECT
         </div>
-        <div className='font-tungstenNarrow cursor-pointer text-3xl hover:text-accent'>
+        <div className='cursor-pointer font-tungstenNarrow text-3xl hover:text-accent'>
           CONTACT
         </div>
       </div>
       <div className='menu relative hidden w-[120%] items-center justify-center gap-6 sm:flex'>
-        <div className='font-tungstenNarrow cursor-pointer text-2xl hover:text-accent'>
+        <div className='cursor-pointer font-tungstenNarrow text-2xl hover:text-accent'>
           {' '}
           HOME
         </div>
-        <div className='font-tungstenNarrow cursor-pointer text-2xl hover:text-accent'>
+        <div className='cursor-pointer font-tungstenNarrow text-2xl hover:text-accent'>
           {' '}
           ABOUT
         </div>
-        <div className='font-tungstenNarrow cursor-pointer text-2xl hover:text-accent'>
+        <div className='cursor-pointer font-tungstenNarrow text-2xl hover:text-accent'>
           PROJECT
         </div>
-        <div className='font-tungstenNarrow cursor-pointer text-2xl hover:text-accent'>
+        <div className='cursor-pointer font-tungstenNarrow text-2xl hover:text-accent'>
           CONTACT
         </div>
       </div>
