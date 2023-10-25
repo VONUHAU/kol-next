@@ -13,10 +13,10 @@ export const Video = (props: Props) => {
           />
         </video>
       </div>
-      <div className='text-fill px -ml-4 font-tungstenNarrow sm:ml-0 sm:px-12'>
+      <div className='text-fill px -ml-4 font-tungstenNarrow sm:ml-0 sm:px-14 md:px-28'>
         <div className='flex w-full flex-col gap-1 md:flex-row md:gap-20'>
-          <span className='text-lg sm:text-xl md:text-[2vw]'>CHINASKI:</span>
-          <p className='text-[9vw] leading-none sm:text-[7vw]'>
+          <span className='text-lg sm:text-xl md:text-[1.4vw]'>CHINASKI:</span>
+          <p className='text-[9vw] leading-[0.8] sm:text-[7vw]'>
             <span className='block'>I’M GONNA ASK YOU THE SAME</span>
             <span className='block'>DAMN THING PEOPLE ARE ALWAYS.</span>
             <span className='block'>ASKING ME.</span>
@@ -24,13 +24,13 @@ export const Video = (props: Props) => {
         </div>
         <div className='flex w-full flex-col items-end justify-end gap-1 text-accent md:flex-row md:items-start md:gap-10'>
           <span className='text-lg sm:text-xl md:text-[2vw]'>:SMV</span>
-          <p className='text-[9vw] leading-none sm:text-[7vw]'>
+          <p className='text-[9vw] leading-[0.8] sm:text-[7vw]'>
             <span>LIKE?</span>
           </p>
         </div>
         <div className='flex w-full flex-col gap-1 md:flex-row md:gap-20'>
-          <span className='text-lg sm:text-xl md:text-[2vw]'>CHINASKI:</span>
-          <p className='text-[9vw] leading-none sm:text-[7vw]'>
+          <span className='text-lg sm:text-xl md:text-[1.4vw]'>CHINASKI:</span>
+          <p className='text-[9vw] leading-[0.8] sm:text-[7vw]'>
             <span>LIKE WHAT YOU DO?</span>
           </p>
         </div>

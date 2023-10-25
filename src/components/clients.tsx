@@ -4,7 +4,7 @@ type Props = {}
 
 export const Clients = (props: Props) => {
   return (
-    <div className='text-fill relative max-h-max w-screen py-5 font-tungstenNarrow sm:py-20'>
+    <div className='text-fill relative max-h-max w-full py-5 font-tungstenNarrow sm:py-20'>
       <p className='text-center text-[32vw] uppercase leading-none text-accent sm:text-[20vw]'>
         CLIENTS:
       </p>

@@ -4,6 +4,7 @@ import Gain from '../../public/assets/images/gain.jpg'
 import { Hero } from '@/components/hero'
 import { Video } from '@/components/video'
 import { Clients } from '@/components/clients'
+import { Draw } from '@/components/draw'
 export default function Home() {
   return (
     <>
@@ -19,6 +20,7 @@ export default function Home() {
         <Hero />
         <Video />
         <Clients />
+        <Draw />
       </main>
     </>
   )
