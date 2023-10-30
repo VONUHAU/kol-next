@@ -1,6 +1,6 @@
-import Gain from '../../public/assets/images/gain.jpg'
+import Link from 'next/link'
 import Image from 'next/image'
-const { SITE_NAME } = process.env
+import Gain from '../../public/assets/images/gain.jpg'
 export default async function Header() {
   return (
     <header className='fixed z-[100] flex h-16 w-screen items-center justify-between'>
@@ -12,7 +12,7 @@ export default async function Header() {
           className='header-hamburger-mobile'
           viewBox='0 0 32 24'
         >
-          <g fill='none' stroke='#fff' stroke-width='2'>
+          <g fill='none' stroke='#fff' strokeWidth='2'>
             <path d='M31 0v23.5' data-name='Linie 44' />
             <g data-name='Gruppe 45'>
               <path d='M3 0v24' data-name='Pfad 17' />
@@ -30,39 +30,56 @@ export default async function Header() {
           alt='gain'
           className='absolute z-[-1] h-screen w-full object-cover object-center opacity-30'
         />
-        <div className='cursor-pointer font-tungstenNarrow text-3xl hover:text-accent'>
-          {' '}
-          HOME
-        </div>
-        <div className='cursor-pointer font-tungstenNarrow text-3xl hover:text-accent'>
-          {' '}
-          ABOUT
-        </div>
-        <div
-          className='cursor-pointer text-3xl hover:text-accent'
-          font-tungstenNarrow
-        >
-          PROJECT
-        </div>
-        <div className='cursor-pointer font-tungstenNarrow text-3xl hover:text-accent'>
-          CONTACT
-        </div>
+        <Link href='/'>
+          <div className='cursor-pointer font-tungstenNarrow text-3xl hover:text-accent'>
+            {' '}
+            HOME
+          </div>
+        </Link>
+
+        <Link href='/about'>
+          <div className='cursor-pointer font-tungstenNarrow text-3xl hover:text-accent'>
+            {' '}
+            ABOUT
+          </div>
+        </Link>
+
+        <Link href='/projects'>
+          <div className='cursor-pointer text-3xl hover:text-accent'>
+            PROJECTS
+          </div>
+        </Link>
+        <Link href='/contact'>
+          <div className='cursor-pointer font-tungstenNarrow text-3xl hover:text-accent'>
+            CONTACT
+          </div>
+        </Link>
       </div>
       <div className='menu relative hidden w-[120%] items-center justify-center gap-6 sm:flex'>
-        <div className='cursor-pointer font-tungstenNarrow text-2xl hover:text-accent'>
-          {' '}
-          HOME
-        </div>
-        <div className='cursor-pointer font-tungstenNarrow text-2xl hover:text-accent'>
-          {' '}
-          ABOUT
-        </div>
-        <div className='cursor-pointer font-tungstenNarrow text-2xl hover:text-accent'>
-          PROJECT
-        </div>
-        <div className='cursor-pointer font-tungstenNarrow text-2xl hover:text-accent'>
-          CONTACT
-        </div>
+        <Link href='/'>
+          <div className='cursor-pointer font-tungstenNarrow text-2xl hover:text-accent'>
+            {' '}
+            HOME
+          </div>
+        </Link>
+
+        <Link href='/about'>
+          <div className='cursor-pointer font-tungstenNarrow text-2xl hover:text-accent'>
+            {' '}
+            ABOUT
+          </div>
+        </Link>
+
+        <Link href='/projects'>
+          <div className='cursor-pointer font-tungstenNarrow text-2xl hover:text-accent'>
+            PROJECTS
+          </div>
+        </Link>
+        <Link href='/contact'>
+          <div className='cursor-pointer font-tungstenNarrow text-2xl hover:text-accent'>
+            CONTACT
+          </div>
+        </Link>
       </div>
       <a href='' className='invisible'>
         <svg

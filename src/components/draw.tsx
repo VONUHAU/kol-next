@@ -45,9 +45,7 @@ export const Draw = (props: Props) => {
             alt='kol-next-card'
             sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 24vw'
             style={{
-              rotate: `${
-                (webCards.length - key - 1) * 5 * (key % 2 == 0 ? 1 : -1)
-              }deg`,
+              rotate: `${(webCards.length - key - 1) * -5}deg`,
               transformOrigin: 'left top',
             }}
             className={`absolute left-1/2 top-1/2 m-auto  w-[24vw] -translate-x-1/2 -translate-y-1/2`}
