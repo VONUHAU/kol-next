@@ -56,54 +56,58 @@ body {
   color: var(--textColor);
 }
 
-.popup{
+.popup {
   opacity: 0;
   animation: popup 5s linear infinite alternate;
 }
-.back-to-header-icon:hover{
+.back-to-header-icon:hover {
   animation: backToHeader 400ms cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 @keyframes backToHeader {
-  0%{
+  0% {
     translate: 0%;
   }
-  50%{
+  50% {
     translate: 0 -50%;
   }
-  100%{
+  100% {
     translate: 0%;
   }
 }
 .text-slider {
-		animation: scroll 40s linear infinite;
-		width: calc(80% * 4);
+  animation: scroll 90s linear infinite;
+  width: calc(80% * 4);
 }
 
 @keyframes scroll {
-	0% { transform: translateX(0); }
-	100% { transform: translateX(calc(-80% * 2))}
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-80% * 2));
+  }
 }
 
 @keyframes popup {
-  40%, 100% {
+  40%,
+  100% {
     scale: 0;
     opacity: 0;
   }
-  0%{
+  0% {
     scale: 0;
     opacity: 1;
   }
-  8%{
+  8% {
     scale: 1;
     opacity: 1;
   }
-  30%{
+  30% {
     scale: 1;
     opacity: 1;
   }
-  38%{
+  38% {
     scale: 0;
     opacity: 1;
   }
-
 }

@@ -37,8 +37,8 @@ const RImage = ({ src, rotate, w, h, top }: IAppProps) => {
         top: top,
         minWidth: '200px',
         minHeight: '200px',
-        height: '20vw',
-        width: '20vw',
+        height: '14vw',
+        width: '14vw',
       }}
     >
       <Image alt='kok-next-slider' src={src} fill={true} objectFit='contain' />
@@ -93,8 +93,8 @@ export const Slider = () => {
   }, [])
 
   return (
-    <section className='slider relative clear-both -mx-8 mb-24 mt-44 overflow-x-clip'>
-      <div className='relative -translate-y-[15vw]'>
+    <section className='slider relative clear-both -mx-8 mb-36 mt-8 overflow-x-clip'>
+      <div className='relative '>
         <div className='container-img flex'>
           {images.map((value, index) => (
             <RImage
@@ -106,7 +106,7 @@ export const Slider = () => {
                 Math.random() * 30 * (Math.round(Math.random()) * 2 - 1) + 5
               )}deg`}
               top={`${Math.floor(
-                Math.random() * 60 * (Math.round(Math.random()) * 2 - 1) + 8
+                Math.random() * 20 * (Math.round(Math.random()) * 2 - 1) + 8
               )}px`}
             />
           ))}

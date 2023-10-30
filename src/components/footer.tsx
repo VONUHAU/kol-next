@@ -2,23 +2,33 @@ import React from 'react'
 
 export const Footer = () => {
   return (
-    <div className='footer -mx-8 -my-4 bg-black font-medium '>
+    <div className='footer -mx-8 -mb-4 mt-10 bg-black font-medium '>
       <div className='text-slider flex font-tungstenNarrow text-[12vw]'>
-        <span className='text-text'>SIXMOREVODKA.FAMOUS.FOR.NOTHING.</span>
-        <span className='text-accent'>SSIXMOREVODKA.FAMOUS.FOR.NOTHING</span>
-        <span className='text-text'>SIXMOREVODKA.FAMOUS.FOR.NOTHING.</span>
-        <span className='text-accent'>SSIXMOREVODKA.FAMOUS.FOR.NOTHING</span>
-        <span className='text-text'>SIXMOREVODKA.FAMOUS.FOR.NOTHING.</span>
+        <span className='text-text leading-none'>
+          SIXMOREVODKA.FAMOUS.FOR.NOTHING.
+        </span>
+        <span className='leading-none text-accent'>
+          SSIXMOREVODKA.FAMOUS.FOR.NOTHING
+        </span>
+        <span className='text-text leading-none'>
+          SIXMOREVODKA.FAMOUS.FOR.NOTHING.
+        </span>
+        <span className='leading-none text-accent'>
+          SSIXMOREVODKA.FAMOUS.FOR.NOTHING
+        </span>
+        <span className='text-text leading-none'>
+          SIXMOREVODKA.FAMOUS.FOR.NOTHING.
+        </span>
       </div>
       <div className='border-text flex flex-col items-start justify-start border-b-4 border-t-8 px-2 pt-4 md:flex-row md:items-center md:justify-between md:p-0 md:py-4'>
-        <div className='pb-3'>
+        <div className='px-4 pb-3'>
           <span>SIXMOREVODKA STUDIO</span>
           <br />
           <span>GENERAL INQUIRIES:</span>
           <br />
           <span className='text-accent'>INFO@SIXMOREVODKA.COM</span>
         </div>
-        <div className='w-full border-t border-white py-3 md:w-auto md:border-0 md:py-0'>
+        <div className='w-full border-t border-white px-4 py-3 md:w-auto md:border-0 md:py-0'>
           <span className='text-accent'>SIXMOREVODKA STUDIO GMBH</span>
           <br />
           <span>BOXHAGENER STRASSE 16</span>
@@ -27,7 +37,7 @@ export const Footer = () => {
           <br />
           <span>PHONE: +49 (0) 30 / 7623103</span>
         </div>
-        <div className=' flex w-full flex-row items-end justify-between gap-6 border-t border-white py-3 md:w-auto md:border-0 md:py-0'>
+        <div className='flex w-full flex-row items-end justify-between gap-6 border-t border-white px-4 py-3 md:w-auto md:border-0 md:py-0'>
           <div>
             <div className='flex items-center gap-2'>
               <svg
@@ -67,10 +77,14 @@ export const Footer = () => {
             <br />
             <span>COPYRIGHT © 2022 — SMV</span>
           </div>
-          <div>
+          <div className='block md:hidden'>
             <span>Website by</span> <br />
             <span className='text-accent'>kgeck</span>
           </div>
+        </div>
+        <div className='hidden px-4 md:block'>
+          <span>Website by</span> <br />
+          <span className='text-accent'>kgeck</span>
         </div>
       </div>
       <div className='back-to-header group relative mb-4 overflow-hidden'>
