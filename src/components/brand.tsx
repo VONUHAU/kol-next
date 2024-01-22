@@ -42,7 +42,7 @@ export const Branding = () => {
   return (
     <div className='branding text-fill relative max-h-max w-full py-5 sm:py-20'>
       <div className='flex items-center justify-around gap-4'>
-        <div className='relative block h-[7.5rem] w-1/3 overflow-hidden rounded-lg'>
+        <div className='relative block h-[11vw] w-1/3 overflow-hidden rounded-lg'>
           <Image
             src='/assets/images/service_1.jpg'
             objectFit='cover'
@@ -52,7 +52,7 @@ export const Branding = () => {
           />
         </div>
 
-        <div className='relative text-[10.5rem] text-secondary'>
+        <div className='relative text-[16vw] text-secondary'>
           <p className='font-tungstenNarrow leading-[0.8]'>BRANDING</p>
           {popups.slice(0, 3).map((value, key) => (
             <Popup
@@ -65,7 +65,7 @@ export const Branding = () => {
             />
           ))}
         </div>
-        <div className='relative block h-[7.5rem] w-1/3 overflow-hidden rounded-lg'>
+        <div className='relative block h-[11vw] w-1/3 overflow-hidden rounded-lg'>
           <Image
             src='/assets/images/service_2.jpg'
             objectFit='cover'
@@ -75,8 +75,8 @@ export const Branding = () => {
           />
         </div>
       </div>
-      <div className='my-2.5 flex items-center justify-around border-y border-tertiary py-4'>
-        <div className='relative text-[10.5rem] text-secondary'>
+      <div className='my-2.5 flex items-center justify-around border-y border-secondary py-4'>
+        <div className='relative text-[16vw] text-secondary'>
           <p className='font-tungstenNarrow leading-[0.8]'>DIGITAL</p>
           {popups.slice(2, 4).map((value, key) => (
             <Popup
@@ -89,7 +89,7 @@ export const Branding = () => {
             />
           ))}
         </div>
-        <div className='relative block h-[7.5rem] w-[24%] overflow-hidden rounded-lg'>
+        <div className='relative block h-[11vw] w-[24%] overflow-hidden rounded-lg'>
           <Image
             src='/assets/images/Small-03.png'
             objectFit='cover'
@@ -98,7 +98,7 @@ export const Branding = () => {
             fill
           />
         </div>
-        <div className='relative text-[10.5rem]  text-secondary'>
+        <div className='relative text-[16vw]  text-secondary'>
           <p className='font-tungstenNarrow uppercase leading-[0.8]'>DESIGN</p>
           {popups.slice(2, 4).map((value, key) => (
             <Popup
@@ -113,7 +113,7 @@ export const Branding = () => {
         </div>
       </div>
       <div className='flex items-center justify-around'>
-        <div className='relative block h-[7.5rem] w-[20%] overflow-hidden rounded-lg'>
+        <div className='relative block h-[11vw] w-[20%] overflow-hidden rounded-lg'>
           <Image
             src='/assets/images/service_3.jpg'
             objectFit='cover'
@@ -122,7 +122,7 @@ export const Branding = () => {
             fill
           />
         </div>
-        <div className='relative text-[10.5rem] text-secondary'>
+        <div className='relative text-[16vw] text-secondary'>
           <p className='font-tungstenNarrow uppercase leading-[0.8]'>
             STORYTELLING
           </p>
@@ -137,7 +137,7 @@ export const Branding = () => {
             />
           ))}
         </div>
-        <div className='relative block h-[7.5rem] w-[20%] overflow-hidden rounded-lg'>
+        <div className='relative block h-[11vw] w-[20%] overflow-hidden rounded-lg'>
           <Image
             src='/assets/images/service_5.jpg'
             objectFit='cover'

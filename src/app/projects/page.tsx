@@ -49,14 +49,13 @@ export default function Projects() {
       <div className='head mb-8 text-center font-tungstenNarrow'>
         <div className='mb-3 flex items-end justify-center gap-2 md:gap-4'>
           <p className='hero-text leading-[0.7] text-accent'>DEGENESIS</p>
-          <div className='relative flex h-[clamp(16px,3vw,60px)] w-[clamp(16px,3vw,60px)] items-center justify-center rounded-full border-2 border-accent'>
-            <svg xmlns='http://www.w3.org/2000/svg'>
-              <path
-                stroke='#F5F5F5'
-                strokeWidth='2'
-                className='h-full w-full'
-                d='m8.5 11.125 5.25 5.25 5.25-5.25'
-              />
+          <div className='relative flex h-[clamp(16px,2vw,60px)] w-[clamp(16px,2vw,60px)] cursor-pointer items-center justify-center rounded-full border-2 border-accent'>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              viewBox='0 0 36 36'
+              className='h-[50%] w-[50%] fill-white'
+            >
+              <polygon points='18 28.29 .14 10.43 2.86 7.71 18 22.85 33.14 7.71 35.86 10.43 18 28.29' />
             </svg>
           </div>
         </div>
