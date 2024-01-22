@@ -31,26 +31,26 @@ export default async function Header() {
           className='absolute z-[-1] h-screen w-full object-cover object-center opacity-30'
         />
         <Link href='/'>
-          <div className='cursor-pointer font-tungstenNarrow text-3xl hover:text-accent'>
+          <div className='cursor-pointer font-tungstenNarrow text-6xl hover:text-accent'>
             {' '}
             HOME
           </div>
         </Link>
 
         <Link href='/about'>
-          <div className='cursor-pointer font-tungstenNarrow text-3xl hover:text-accent'>
+          <div className='cursor-pointer font-tungstenNarrow text-6xl hover:text-accent'>
             {' '}
             ABOUT
           </div>
         </Link>
 
         <Link href='/projects'>
-          <div className='cursor-pointer text-3xl hover:text-accent'>
+          <div className='cursor-pointer text-6xl hover:text-accent'>
             PROJECTS
           </div>
         </Link>
         <Link href='/contact'>
-          <div className='cursor-pointer font-tungstenNarrow text-3xl hover:text-accent'>
+          <div className='cursor-pointer font-tungstenNarrow text-6xl hover:text-accent'>
             CONTACT
           </div>
         </Link>
