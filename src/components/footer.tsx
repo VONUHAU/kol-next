@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Footer = () => {
   return (
-    <div className='footer -mx-8 -my-4 bg-black font-medium '>
+    <div className='footer -mx-8 bg-black font-medium '>
       <div className='text-slider flex font-tungstenNarrow text-[12vw]'>
         <span className='text-text'>SIXMOREVODKA.FAMOUS.FOR.NOTHING.</span>
         <span className='text-accent'>SSIXMOREVODKA.FAMOUS.FOR.NOTHING</span>

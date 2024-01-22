@@ -23,6 +23,8 @@ const config: Config = {
       fontFamily: {
         tungstenNarrow: [
           'TungstenNarrow',
+          'TungstenMedium',
+          'TungstenSemiBold',
           'Impact',
           'Haettenschweiler',
           '"Arial Narrow Bold"',

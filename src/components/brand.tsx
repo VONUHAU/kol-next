@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import Image from 'next/image'
 
 type PopupProp = {
-  delay: string
-  sentence: string
+  animationDelay?: string
+  sentence: ReactNode | string
   top: string | number
   left: string | number
-  background: string
+  background?: string
+  style?: any
 }
 const popups = [
   'Crazy Ideal Make Real',
@@ -19,22 +20,18 @@ const popups = [
   'Look & Feel your Best',
 ]
 const bgs = ['#ffe7de', '#efbeac', '#fbf8f7', '#f3d1c4']
-const Popup: React.FC<PopupProp> = ({
+export const Popup: React.FC<PopupProp> = ({
   sentence,
-  top,
-  left,
-  delay,
-  background,
+  animationDelay,
+  style,
+  ...props
 }) => {
   return (
     <div
-      className='popup absolute block w-max rounded-full bg-tertiary px-2 py-1.5 text-sm font-medium text-black'
-      style={{
-        background,
-        left,
-        top,
-        animationDelay: delay,
-      }}
+      className={`${
+        animationDelay && 'popup'
+      } absolute block w-max rounded-full bg-tertiary px-2 py-1.5 text-sm font-medium text-black`}
+      style={{ ...props, ...style }}
     >
       {sentence}
     </div>
@@ -60,7 +57,7 @@ export const Branding = () => {
           {popups.slice(0, 3).map((value, key) => (
             <Popup
               sentence={value}
-              delay={`${key * 2}s`}
+              animationDelay={`${key * 2}s`}
               key={key}
               background={bgs[Math.floor(Math.random() * 4)]}
               left={`${Math.random() * 10 * 6}%`}

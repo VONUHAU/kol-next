@@ -18,7 +18,7 @@
   margin: 0;
   padding: 0;
 }
-/* body {
+body {
   font-family: localTungsten, Impact, Haettenschweiler, 'Arial Narrow Bold',
     sans-serif !important;
   font-size: 40px;
@@ -26,14 +26,22 @@
 }
 @font-face {
   font-family: localTungsten;
-  src: url(/assets/fonts/TungstenNarrow-Black_Web.woff2);
-} */
+  src: url(/assets/fonts/TungstenComp-Semibold.otf);
+}
 
 @layer base {
   @font-face {
     font-family: TungstenNarrow;
-    font-weight: 500;
     src: url(/assets/fonts/TungstenNarrow-Black_Web.woff2) format('woff2');
+  }
+
+  @font-face {
+    font-family: TungstenMedium;
+    src: url(/assets/fonts/TungstenCompressed-Medium.woff2) format('woff2');
+  }
+    @font-face {
+    font-family: TungstenSemiBold;
+    src: url(/assets/fonts/TungstenComp-Semibold.otf) format('otf');
   }
 }
 @layer components {
@@ -79,6 +87,21 @@ body {
 		width: calc(80% * 4);
 }
 
+.pattern::after{
+  content: "";
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  position: absolute;
+  display: block;
+  opacity: 0.5;
+  background-color: black;
+  background-image:  linear-gradient(45deg, #ffffff 10%, transparent 10%), linear-gradient(-45deg, #ffffff 10%, transparent 10%), linear-gradient(135deg, #ffffff 10%, transparent 10%), linear-gradient(-135deg, #ffffff 10%, transparent 10%);  
+  background-position:  10px 0, 10px 0, 0 0, 0 0;
+  background-size: 10px 10px;
+  background-repeat: repeat;
+}
+
 @keyframes scroll {
 	0% { transform: translateX(0); }
 	100% { transform: translateX(calc(-80% * 2))}
@@ -107,3 +130,4 @@ body {
   }
 
 }
+
