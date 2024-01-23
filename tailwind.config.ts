@@ -21,14 +21,8 @@ const config: Config = {
         accent: 'var(--accent)',
       },
       fontFamily: {
-        tungstenNarrow: [
-          'TungstenNarrow',
-          'TungstenMedium',
-          'TungstenSemiBold',
-          'Impact',
-          'Haettenschweiler',
-          '"Arial Narrow Bold"',
-        ],
+        tungstenNarrow: ['TungstenNarrow', 'Impact'],
+        tungsten: ['var(--tungsten)'],
       },
     },
   },

@@ -34,15 +34,6 @@
     font-family: TungstenNarrow;
     src: url(/assets/fonts/TungstenNarrow-Black_Web.woff2) format('woff2');
   }
-
-  @font-face {
-    font-family: TungstenMedium;
-    src: url(/assets/fonts/TungstenCompressed-Medium.woff2) format('woff2');
-  }
-  @font-face {
-    font-family: TungstenSemiBold;
-    src: url(/assets/fonts/TungstenComp-Semibold.otf) format('otf');
-  }
 }
 @layer components {
   .hero-text {
