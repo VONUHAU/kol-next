@@ -1,34 +1,89 @@
-import React from 'react'
-import webCard from '../../../public/assets/images/webcard01.jpg'
-import webCard2 from '../../../public/assets/images/webcard02.jpg'
-import webCard3 from '../../../public/assets/images/webcard03.jpg'
-import webCard4 from '../../../public/assets/images/webcard04.jpg'
-import webCard5 from '../../../public/assets/images/webcard05.jpg'
-import webCard6 from '../../../public/assets/images/webcard06.jpg'
-import webCard7 from '../../../public/assets/images/webcard07.jpg'
+import React, { ReactNode } from 'react'
+import Image from 'next/image'
 
-type Props = {}
-const webCards = [
-  webCard6,
-  webCard7,
-  webCard,
-  webCard2,
-  webCard3,
-  webCard4,
-  webCard5,
+type PopupProp = {
+  animationDelay?: string
+  sentence: ReactNode | string
+  top: string | number
+  left: string | number
+  background?: string
+  style?: any
+}
+const popups = [
+  'Crazy Ideal Make Real',
+  'Transformation Branding',
+  'Award Winning Experiment',
+  "Design That's Noticed",
+  'Wow Worthy Website',
+  'Find Your Audience',
+  'Impact Design',
+  'Look & Feel your Best',
 ]
-export const Major = (props: Props) => {
+const bgs = ['#ffe7de', '#efbeac', '#fbf8f7', '#f3d1c4']
+export const Popup: React.FC<PopupProp> = ({
+  sentence,
+  animationDelay,
+  style,
+  ...props
+}) => {
   return (
-    <div className='text-fill relative max-h-max w-full py-5 font-tungstenNarrow sm:py-20'>
-      <div className='flex items-center justify-between'>
-        <div className='text-[24vw] uppercase text-secondary'>BRANDING</div>
+    <div
+      className={`${
+        animationDelay && 'popup'
+      } absolute block w-max rounded-full bg-tertiary px-2 py-1.5 text-sm font-medium text-black`}
+      style={{ ...props, ...style }}
+    >
+      {sentence}
+    </div>
+  )
+}
+
+export const Major = () => {
+  return (
+    <div className='branding text-fill relative max-h-max w-full'>
+      <div className='flex items-center justify-around gap-4'>
+        <div className='relative text-[13vw] text-secondary'>
+          <p className='font-tungstenNarrow leading-[0.8]'>VISUAL</p>
+        </div>
+        <div className='relative block h-[9.5vw] w-[70%] overflow-hidden rounded-lg'>
+          <Image
+            src='/assets/images/service_2.jpg'
+            objectFit='cover'
+            sizes=''
+            alt='kol-next-service'
+            fill
+          />
+        </div>
       </div>
-      <div className='flex items-center justify-between border-y-2 border-tertiary'>
-        <div className='text-[24vw] uppercase text-secondary'>DIGITAL</div>
-        <div className='text-[24vw] uppercase text-secondary'>DIGITAL</div>
+      <div className='my-2.5 flex items-center justify-around border-y border-secondary py-4'>
+        <div className='relative block h-[9.5vw] w-[65%] overflow-hidden rounded-lg'>
+          <Image
+            src='/assets/images/Small-03.png'
+            objectFit='cover'
+            sizes=''
+            alt='kol-next-service'
+            fill
+          />
+        </div>
+        <div className='relative text-[13vw] text-secondary'>
+          <p className='font-tungstenNarrow leading-[0.8]'>MOTION</p>
+        </div>
       </div>
-      <div className='flex items-center justify-between'>
-        <div className='text-[24vw] uppercase text-secondary'>STORYTELLING</div>
+      <div className='flex items-center justify-around'>
+        <div className='relative text-[13vw] text-secondary'>
+          <p className='font-tungstenNarrow uppercase leading-[0.8]'>
+            HTML5 BANNER
+          </p>
+        </div>
+        <div className='relative block h-[9.5vw] w-[35%] overflow-hidden rounded-lg'>
+          <Image
+            src='/assets/images/service_5.jpg'
+            objectFit='cover'
+            sizes=''
+            alt='kol-next-service'
+            fill
+          />
+        </div>
       </div>
     </div>
   )
