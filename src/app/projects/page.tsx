@@ -9,34 +9,43 @@ type ImageCardProp = {
   src: any
   projectName: string
   brand: string
+  campaign: string
 }
 
-const projects = [
+const projects: ImageCardProp[] = [
   {
     src: Img,
     projectName: 'The Chicago',
     brand: 'XiaoMi',
+    campaign: 'The Luna New Year',
   },
   {
     src: Img2,
     projectName: 'The Chicago',
     brand: 'XiaoMi',
+    campaign: 'The Luna New Year',
   },
   {
     src: Img3,
     projectName: 'The Chicago',
     brand: 'XiaoMi',
+    campaign: 'The Luna New Year',
   },
-  ,
   {
     src: Img4,
     projectName: 'The Chicago',
     brand: 'XiaoMi',
+    campaign: 'The Luna New Year',
   },
 ]
-const ImageCard: React.FC<ImageCardProp> = ({ src, projectName, brand }) => {
+const ImageCard: React.FC<ImageCardProp> = ({
+  src,
+  projectName,
+  brand,
+  campaign,
+}) => {
   return (
-    <div className='card'>
+    <div className='card  flex-[1_1_200px] font-tungsten font-bold'>
       <div className='group relative mb-2.5'>
         <div className='absolute inset-0 h-full w-full opacity-0 group-hover:opacity-40'>
           <Image
@@ -48,30 +57,34 @@ const ImageCard: React.FC<ImageCardProp> = ({ src, projectName, brand }) => {
 
         <Image src={src} alt='kol-next-galley w-full h-full' />
       </div>
-      <div className='des'>
-        <div className='text-secondary'>
+
+      <div className='des leading-[1.2]'>
+        <div className='text-[clamp(32px,3vw,3vw)]  text-accent'>
           <p>{projectName}</p>
         </div>
-        <div className='text-secondary'>
-          <p>{brand}</p>
+        <div className='text-[clamp(24px,1.5vw,1.5vw)] font-medium text-secondary'>
+          <p>Brand: {brand}</p>
         </div>
-        <div className='item-center flex'>
+        <div className='text-[clamp(24px,1.5vw,1.5vw)] font-medium text-secondary'>
+          <p>Campaign: {campaign}</p>
+        </div>
+        <div className='mt-3 flex items-center gap-2'>
           <svg
-            width='70'
-            height='70'
+            width='20%'
+            height='20%'
             viewBox='0 0 70 70'
             xmlns='http://www.w3.org/2000/svg'
-            fill='green'
+            className='h-[12%] w-[12%] fill-secondary'
           >
             <path d='M64.5925 21.2911H59.2814V10.6801H53.9814V5.36896H59.2814V0.0690262H64.5925V5.36896H69.9036V10.6801H64.5925V21.2911ZM53.9827 58.4446V63.7557H59.2826V69.0668H64.5937V63.7557H69.9048V58.4446H64.5937V53.1446H59.2826V58.4446H53.9827ZM48.6715 26.602H59.2814V21.2909H48.6715V15.9903H43.3604V21.2909H38.0493V15.9903H43.3604V10.6792H27.439V15.9903H32.7501V21.2909H27.439V15.9903H22.1279V21.2909H11.5168V26.602H22.1279V42.5242H16.8272V47.8353H11.5161V53.1464H27.4383V58.4464H32.7494V63.7575H38.05V58.4464H43.3611V53.1464H59.2819V47.8353H53.9819V42.5242H48.6708V26.602H48.6715ZM6.20715 58.4446H0.906508V63.7557H6.20715V69.0668H11.5183V63.7557H16.8294V58.4446H11.5183V53.1446H6.20715V58.4446ZM11.5168 10.6799H16.828V5.36879H11.5168V0.0688477H6.20574V5.36879H0.90509V10.6799H6.20574V21.2909H11.5168V10.6799Z' />
           </svg>
           <div className='barcode'></div>
           <svg
-            width='70'
-            height='70'
+            width='20%'
+            height='20%'
             viewBox='0 0 70 70'
             xmlns='http://www.w3.org/2000/svg'
-            fill='green'
+            className='h-[12%] w-[12%] fill-secondary'
           >
             <path d='M64.5925 21.2911H59.2814V10.6801H53.9814V5.36896H59.2814V0.0690262H64.5925V5.36896H69.9036V10.6801H64.5925V21.2911ZM53.9827 58.4446V63.7557H59.2826V69.0668H64.5937V63.7557H69.9048V58.4446H64.5937V53.1446H59.2826V58.4446H53.9827ZM48.6715 26.602H59.2814V21.2909H48.6715V15.9903H43.3604V21.2909H38.0493V15.9903H43.3604V10.6792H27.439V15.9903H32.7501V21.2909H27.439V15.9903H22.1279V21.2909H11.5168V26.602H22.1279V42.5242H16.8272V47.8353H11.5161V53.1464H27.4383V58.4464H32.7494V63.7575H38.05V58.4464H43.3611V53.1464H59.2819V47.8353H53.9819V42.5242H48.6708V26.602H48.6715ZM6.20715 58.4446H0.906508V63.7557H6.20715V69.0668H11.5183V63.7557H16.8294V58.4446H11.5183V53.1446H6.20715V58.4446ZM11.5168 10.6799H16.828V5.36879H11.5168V0.0688477H6.20574V5.36879H0.90509V10.6799H6.20574V21.2909H11.5168V10.6799Z' />
           </svg>
@@ -102,7 +115,7 @@ export default function Projects() {
           OPENER? EVERYTHING FOR FREE ON
         </p>
       </div>
-      <div className='gallery'>
+      <div className='gallery flex flex-wrap justify-around gap-5'>
         {projects.map((project, key) => (
           <ImageCard {...project} key={key} />
         ))}

@@ -89,7 +89,7 @@ export default async function Header() {
           className='header-hamburger-mobile'
           viewBox='0 0 32 24'
         >
-          <g fill='none' stroke='#fff' stroke-width='2'>
+          <g fill='none' stroke='#fff' strokeWidth='2'>
             <path d='M31 0v23.5' data-name='Linie 44' />
             <g data-name='Gruppe 45'>
               <path d='M3 0v24' data-name='Pfad 17' />

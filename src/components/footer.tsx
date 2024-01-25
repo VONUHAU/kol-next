@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Footer = () => {
   return (
-    <div className='footer -mx-8 bg-black font-medium '>
+    <footer className='footer -mx-8 mt-16 bg-black font-medium'>
       <div className='text-slider flex font-tungstenNarrow text-[12vw]'>
         <span className='text-text leading-none'>
           SIXMOREVODKA.FAMOUS.FOR.NOTHING.
@@ -87,7 +87,7 @@ export const Footer = () => {
           <span className='text-accent'>kgeck</span>
         </div>
       </div>
-      <div className='back-to-header group relative mb-4 overflow-hidden'>
+      <div className='back-to-header group relative overflow-hidden'>
         <div className='absolute inset-0 translate-y-full bg-accent transition-all group-hover:translate-y-0'></div>
         <div className='relative z-50 m-auto w-[clamp(30px,4%,50px)] py-2.5'>
           <svg
@@ -99,6 +99,6 @@ export const Footer = () => {
           </svg>
         </div>
       </div>
-    </div>
+    </footer>
   )
 }

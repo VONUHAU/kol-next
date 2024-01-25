@@ -81,7 +81,7 @@ export const Branding = () => {
           {popups.slice(2, 4).map((value, key) => (
             <Popup
               sentence={value}
-              delay={`${key * 2 + 2}s`}
+              animationDelay={`${key * 2 + 2}s`}
               key={key}
               background={bgs[Math.floor(Math.random() * 4)]}
               left={`${Math.random() * 10 * 6}%`}
@@ -103,7 +103,7 @@ export const Branding = () => {
           {popups.slice(2, 4).map((value, key) => (
             <Popup
               sentence={value}
-              delay={`${key * 2 + 2}s`}
+              animationDelay={`${key * 2 + 2}s`}
               key={key}
               background={bgs[Math.floor(Math.random() * 4)]}
               left={`${Math.random() * 10 * 6}%`}
@@ -129,7 +129,7 @@ export const Branding = () => {
           {popups.slice(5, 8).map((value, key) => (
             <Popup
               sentence={value}
-              delay={`${key * 2 + 4}s`}
+              animationDelay={`${key * 2 + 4}s`}
               key={key}
               background={bgs[Math.floor(Math.random() * 4)]}
               left={`${Math.random() * 10 * 6}%`}
