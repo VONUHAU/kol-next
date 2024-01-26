@@ -1,43 +1,7 @@
 import Image from 'next/image'
 import Gain from '../../../public/assets/images/gain.jpg'
-import Img from '../../../public/assets/images/projects/2020-10-30_LA-Reduced.jpg'
-import Img2 from '../../../public/assets/images/projects/2021-08_Archives01.jpeg'
-import Img3 from '../../../public/assets/images/projects/2022-05-26_reduced.jpg'
-import Img4 from '../../../public/assets/images/projects/byebye-noaddy.jpg'
-
-type ImageCardProp = {
-  src: any
-  projectName: string
-  brand: string
-  campaign: string
-}
-
-const projects: ImageCardProp[] = [
-  {
-    src: Img,
-    projectName: 'The Chicago',
-    brand: 'XiaoMi',
-    campaign: 'The Luna New Year',
-  },
-  {
-    src: Img2,
-    projectName: 'The Chicago',
-    brand: 'XiaoMi',
-    campaign: 'The Luna New Year',
-  },
-  {
-    src: Img3,
-    projectName: 'The Chicago',
-    brand: 'XiaoMi',
-    campaign: 'The Luna New Year',
-  },
-  {
-    src: Img4,
-    projectName: 'The Chicago',
-    brand: 'XiaoMi',
-    campaign: 'The Luna New Year',
-  },
-]
+import Link from 'next/link'
+import { ImageCardProp, projects } from '@/components/constants/data'
 const ImageCard: React.FC<ImageCardProp> = ({
   src,
   projectName,
@@ -45,7 +9,7 @@ const ImageCard: React.FC<ImageCardProp> = ({
   campaign,
 }) => {
   return (
-    <div className='card  flex-[1_1_200px] font-tungsten font-bold'>
+    <div className='card font-tungsten font-bold'>
       <div className='group relative mb-2.5'>
         <div className='absolute inset-0 h-full w-full opacity-0 group-hover:opacity-40'>
           <Image
@@ -95,7 +59,7 @@ const ImageCard: React.FC<ImageCardProp> = ({
 }
 export default function Projects() {
   return (
-    <main className='relative top-16 mt-5 min-h-screen'>
+    <main className='relative top-16 mt-5 min-h-screen sm:px-4 md:px-12 lg:px-24'>
       <div className='head mb-8 text-center font-tungstenNarrow'>
         <div className='mb-3 flex items-end justify-center gap-2 md:gap-4'>
           <p className='hero-text leading-[0.7] text-accent'>FAMOUS WORKS</p>
@@ -115,9 +79,15 @@ export default function Projects() {
           OPENER? EVERYTHING FOR FREE ON
         </p>
       </div>
-      <div className='gallery flex flex-wrap justify-around gap-5'>
+      <div className='gallery mt-4 flex flex-wrap justify-around gap-5 md:mt-12 lg:mt-20'>
         {projects.map((project, key) => (
-          <ImageCard {...project} key={key} />
+          <Link
+            href={`/projects/${project.slug}`}
+            key={key}
+            className='flex-[1_1_200px]'
+          >
+            <ImageCard {...project} />
+          </Link>
         ))}
       </div>
     </main>

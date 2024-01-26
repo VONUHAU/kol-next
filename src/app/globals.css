@@ -113,7 +113,14 @@ body {
   background-repeat: repeat;
 }
 
-/* not found*/
+iframe img {
+  object-fit: cover;
+}
+.text-stroke {
+  color: rgba(255, 255, 255, 0);
+  -webkit-text-stroke-width: 0.3vw;
+  -webkit-text-stroke-color: var(--accent);
+}
 
 @keyframes scroll {
   0% {
