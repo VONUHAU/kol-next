@@ -37,8 +37,8 @@
 }
 @layer components {
   .hero-text {
-    font-size: clamp(2.25rem, 10vw, 12rem);
-    line-height: 1;
+    font-size: clamp(2.25rem, 10vw, 10vw);
+    line-height: 0.8;
   }
 }
 

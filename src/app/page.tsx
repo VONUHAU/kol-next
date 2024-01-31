@@ -8,7 +8,7 @@ import { Contact } from '@/components/contact'
 
 export default function Home() {
   return (
-    <main className='relative mt-28 min-h-screen'>
+    <main className='relative  min-h-screen'>
       <Hero />
       <Video />
       <Clients />

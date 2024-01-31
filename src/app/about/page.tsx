@@ -67,7 +67,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className='font-tungsten space-y-8 text-secondary sm:space-y-14 sm:px-4 md:px-12 lg:space-y-24 lg:px-24'>
+      <div className='space-y-8 font-tungsten text-secondary sm:space-y-14 sm:px-4 md:px-12 lg:space-y-24 lg:px-24'>
         <div className='relative my-4 sm:my-4 md:my-12 lg:my-24'>
           <div className='text-[clamp(20px,3vw,3vw)] font-medium'>
             <p>About me</p>
@@ -123,7 +123,7 @@ export default function Home() {
         after:inset-0 after:z-[-1] after:block after:h-full after:w-full after:bg-black after:opacity-80 sm:h-[40vw]'
       >
         <div className='item-center flex-col justify-center'>
-          <p className='font-tungsten text-center text-[clamp(24px,5vw,5vw)] font-medium'>
+          <p className='text-center font-tungsten text-[clamp(24px,5vw,5vw)] font-medium'>
             Got a project in mind?
           </p>
           <p className='font-tungstenNarrow text-[clamp(48px,10vw,10vw)] text-accent'>
@@ -131,20 +131,20 @@ export default function Home() {
           </p>
         </div>
         <div
-          className='font-tungsten absolute left-[8%] top-[14%] flex h-[clamp(42px,8vw,8vw)] w-[clamp(42px,8vw,8vw)] items-center
-        justify-center rounded-full border-2 border-white font-medium sm:left-[22%] sm:border-4'
+          className='absolute left-[8%] top-[14%] flex h-[clamp(42px,8vw,8vw)] w-[clamp(42px,8vw,8vw)] items-center justify-center
+        rounded-full border-2 border-white font-tungsten font-medium sm:left-[22%] sm:border-4'
         >
           <p className='text-[clamp(18px,3vw,3vw)]'>Linkin</p>
         </div>
         <div
-          className='font-tungsten absolute left-[26%] top-[60%] flex h-[clamp(48px,8vw,8vw)] w-[clamp(48px,8vw,8vw)]
-        items-center justify-center rounded-full border-2 border-white font-medium sm:border-4'
+          className='absolute left-[26%] top-[60%] flex h-[clamp(48px,8vw,8vw)] w-[clamp(48px,8vw,8vw)] items-center
+        justify-center rounded-full border-2 border-white font-tungsten font-medium sm:border-4'
         >
           <p className='text-[clamp(18px,3vw,3vw)]'>Whatapp</p>
         </div>
         <div
-          className='font-tungsten absolute left-[68%] top-[36%] flex h-[clamp(54px,9vw,9vw)] w-[clamp(54px,9vw,9vw)]
-        items-center justify-center rounded-full border-2 border-white font-medium sm:border-4'
+          className='absolute left-[68%] top-[36%] flex h-[clamp(54px,9vw,9vw)] w-[clamp(54px,9vw,9vw)] items-center
+        justify-center rounded-full border-2 border-white font-tungsten font-medium sm:border-4'
         >
           <p className='text-[clamp(18px,3vw,3vw)]'>Instagram</p>
         </div>
