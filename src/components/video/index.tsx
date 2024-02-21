@@ -1,40 +1,50 @@
-import React from 'react'
+'use client'
+import React, { useRef } from 'react'
+import dynamic from 'next/dynamic'
+import { gsap } from 'gsap'
+import { useGSAP } from '@gsap/react'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { Clients } from '@/components/clients'
+const SplitStringToSpans = dynamic(() => import('../splitWords'), {
+  ssr: false,
+})
+gsap.registerPlugin(ScrollTrigger)
+export const Video = () => {
+  const container = useRef<HTMLDivElement>(null)
+  const textRef = useRef<HTMLDivElement>(null)
+  useGSAP(
+    () => {
+      gsap.fromTo(
+        '.video',
+        { scale: 0.4 },
+        {
+          scale: 1,
+          scrollTrigger: {
+            trigger: container.current,
+            scrub: true,
+            pin: '.video',
+          },
+        }
+      )
+    },
+    { scope: container }
+  )
 
-type Props = {}
-
-export const Video = (props: Props) => {
   return (
-    <>
-      <div className='video-section -mx-8 my-8 sm:my-24'>
-        <video autoPlay loop muted>
+    <div>
+      <div
+        ref={container}
+        className='video-section -mx-8 my-8 w-screen max-w-[100vw] sm:my-24'
+      >
+        <video autoPlay loop muted className='video w-screen'>
           <source
             src='https://a.storyblok.com/f/150329/x/28eda8d691/smv_intro_cc35.mp4'
             type='video/mp4'
           />
         </video>
       </div>
-      <div className='text-fill px -ml-4 font-tungstenNarrow sm:ml-0 sm:px-14 md:px-28'>
-        <div className='flex w-full flex-col gap-1 md:flex-row md:gap-20'>
-          <span className='text-lg sm:text-xl md:text-[1.4vw]'>CHINASKI:</span>
-          <p className='text-[9vw] leading-[0.8] sm:text-[7vw]'>
-            <span className='block'>I’M GONNA ASK YOU THE SAME</span>
-            <span className='block'>DAMN THING PEOPLE ARE ALWAYS.</span>
-            <span className='block'>ASKING ME.</span>
-          </p>
-        </div>
-        <div className='flex w-full flex-col items-end justify-end gap-1 text-accent md:flex-row md:items-start md:gap-10'>
-          <span className='text-lg sm:text-xl md:text-[2vw]'>:SMV</span>
-          <p className='text-[9vw] leading-[0.8] sm:text-[7vw]'>
-            <span>LIKE?</span>
-          </p>
-        </div>
-        <div className='flex w-full flex-col gap-1 md:flex-row md:gap-20'>
-          <span className='text-lg sm:text-xl md:text-[1.4vw]'>CHINASKI:</span>
-          <p className='text-[9vw] leading-[0.8] sm:text-[7vw]'>
-            <span>LIKE WHAT YOU DO?</span>
-          </p>
-        </div>
-      </div>
-    </>
+      <SplitStringToSpans />
+      <Clients />
+    </div>
   )
 }
