@@ -5,13 +5,15 @@ import { Draw } from '@/components/draw'
 import { Branding } from '@/components/brand'
 import { Slider } from '@/components/slider'
 import { Contact } from '@/components/contact'
+import SplitStringToSpans from '../components/splitWords/index'
 
 export default function Home() {
   return (
     <main className='relative  min-h-screen'>
       <Hero />
       <Video />
-      
+      <SplitStringToSpans />
+      <Clients />
       <Draw />
       <Branding />
       <Slider />
