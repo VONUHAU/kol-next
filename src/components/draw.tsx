@@ -7,6 +7,7 @@ import webCard5 from '../../public/assets/images/webcard05.jpg'
 import webCard6 from '../../public/assets/images/webcard06.jpg'
 import webCard7 from '../../public/assets/images/webcard07.jpg'
 import Image from 'next/image'
+import { WeDraw } from './weDraw'
 type Props = {}
 const webCards = [
   webCard6,
@@ -20,6 +21,7 @@ const webCards = [
 export const Draw = (props: Props) => {
   return (
     <div className='we-draw text-fill relative max-h-max w-full py-5 font-tungstenNarrow sm:py-20'>
+      <WeDraw />
       <div className=' text-center text-[26vw] uppercase leading-none text-accent sm:text-[20vw]'>
         <span className='text-accent'>W</span>
         <span className='text-accent'>E</span>
