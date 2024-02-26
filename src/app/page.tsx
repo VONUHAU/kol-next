@@ -10,10 +10,10 @@ import SplitStringToSpans from '../components/splitWords/index'
 export default function Home() {
   return (
     <main className='relative  min-h-screen'>
-      <Hero />
+      {/* <Hero />
       <Video />
       <SplitStringToSpans />
-      <Clients />
+      <Clients /> */}
       <Draw />
       <Branding />
       <Slider />

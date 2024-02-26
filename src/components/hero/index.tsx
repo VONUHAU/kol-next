@@ -92,6 +92,7 @@ export const Hero = () => {
             scrub: true,
             start: 'center center',
             end: 'bottom top',
+            toggleActions: 'play complete complete complete',
           },
         })
         .to('.hero3', {
@@ -103,6 +104,7 @@ export const Hero = () => {
             scrub: true,
             start: 'center center',
             end: 'bottom top',
+            toggleActions: 'play complete complete complete',
           },
         })
         .to('.hero5', {
@@ -114,6 +116,7 @@ export const Hero = () => {
             scrub: true,
             start: 'center center',
             end: 'bottom top',
+            toggleActions: 'play complete complete complete',
           },
         })
 
@@ -126,6 +129,7 @@ export const Hero = () => {
             scrub: true,
             start: 'center center',
             end: 'bottom top',
+            toggleActions: 'play complete complete complete',
           },
         })
         .to('.hero7', {
@@ -137,6 +141,7 @@ export const Hero = () => {
             scrub: true,
             start: 'center center',
             end: 'bottom top',
+            toggleActions: 'play complete complete complete',
           },
         })
         .to('.hero8', {
@@ -148,6 +153,7 @@ export const Hero = () => {
             scrub: true,
             start: 'center center',
             end: 'bottom top',
+            toggleActions: 'play complete complete complete',
           },
         })
     },

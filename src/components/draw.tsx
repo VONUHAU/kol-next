@@ -1,4 +1,8 @@
-import React from 'react'
+'use client'
+import React, { useRef } from 'react'
+import { gsap } from 'gsap'
+import { useGSAP } from '@gsap/react'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import webCard from '../../public/assets/images/webcard01.jpg'
 import webCard2 from '../../public/assets/images/webcard02.jpg'
 import webCard3 from '../../public/assets/images/webcard03.jpg'
@@ -18,21 +22,42 @@ const webCards = [
   webCard4,
   webCard5,
 ]
+gsap.registerPlugin(ScrollTrigger)
 export const Draw = (props: Props) => {
+  const container = useRef<HTMLDivElement>(null)
+  const elemRef = useRef<HTMLDivElement>(null)
+  useGSAP(
+    () => {
+      gsap.to(container.current, {
+        scrollTrigger: {
+          trigger: container.current,
+          start: 'top top',
+          end: '+=2000',
+          scrub: true,
+          pin: true,
+        },
+      })
+    },
+    { scope: container }
+  )
   return (
-    <div className='we-draw text-fill relative max-h-max w-full py-5 font-tungstenNarrow sm:py-20'>
-      <WeDraw />
-      <div className=' text-center text-[26vw] uppercase leading-none text-accent sm:text-[20vw]'>
-        <span className='text-accent'>W</span>
-        <span className='text-accent'>E</span>
-        <span className='text-accent'>D</span>
-        <span className='text-accent'>R</span>
-        <span className='text-accent'>A</span>
-        <span className='text-accent'>W</span>
-        <span className='text-accent'>.</span>
-      </div>
-      <div className='absolute left-1/2 top-1/2 w-[40%] -translate-x-1/2 -translate-y-1/2'>
-        {/* <div className='relative m-auto h-[25vw] w-[20vw]'>
+    <div
+      ref={container}
+      className='we-draw text-fill relative h-screen max-h-max  py-5 font-tungstenNarrow sm:py-20'
+    >
+      <WeDraw elem={elemRef} />
+      <div ref={elemRef} className='opacity-0'>
+        <div className=' text-center text-[26vw] uppercase leading-none text-accent sm:text-[20vw]'>
+          <span className='text-accent'>W</span>
+          <span className='text-accent'>E</span>
+          <span className='text-accent'>D</span>
+          <span className='text-accent'>R</span>
+          <span className='text-accent'>A</span>
+          <span className='text-accent'>W</span>
+          <span className='text-accent'>.</span>
+        </div>
+        <div className='absolute left-1/2 top-1/2 w-[40%] -translate-x-1/2 -translate-y-1/2'>
+          {/* <div className='relative m-auto h-[25vw] w-[20vw]'>
           <Image
             src='/assets/images/webcard01.jpg'
             alt='kol-next-card'
@@ -40,19 +65,20 @@ export const Draw = (props: Props) => {
             fill
           />
         </div> */}
-        {webCards.map((card, key) => (
-          <Image
-            key={key}
-            src={card}
-            alt='kol-next-card'
-            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 24vw'
-            style={{
-              rotate: `${(webCards.length - key - 1) * -5}deg`,
-              transformOrigin: 'left top',
-            }}
-            className={`absolute left-1/2 top-1/2 m-auto  w-[24vw] -translate-x-1/2 -translate-y-1/2`}
-          />
-        ))}
+          {webCards.map((card, key) => (
+            <Image
+              key={key}
+              src={card}
+              alt='kol-next-card'
+              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 24vw'
+              style={{
+                rotate: `${(webCards.length - key - 1) * -5}deg`,
+                transformOrigin: 'left top',
+              }}
+              className={`absolute left-1/2 top-1/2 m-auto  w-[24vw] -translate-x-1/2 -translate-y-1/2`}
+            />
+          ))}
+        </div>
       </div>
     </div>
   )
