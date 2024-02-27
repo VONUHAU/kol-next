@@ -1,5 +1,5 @@
 'use client'
-import React, { useRef, forwardRef } from 'react'
+import React, { useRef, forwardRef, useEffect } from 'react'
 import { gsap } from 'gsap'
 import { ReactRef, useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -14,6 +14,27 @@ const sentences = [
 ]
 export default function SplitStringToSpans() {
   const container = useRef<HTMLDivElement>(null)
+  // useEffect(() => {
+  //   const ctx = gsap.context(() => {
+  //     gsap.fromTo(
+  //       '.char',
+  //       { opacity: 0.1, textShadow: 'rgb(0, 0, 0) 0px 0px 3px' },
+  //       {
+  //         opacity: 1,
+  //         textShadow: 'rgb(245, 245, 245) 0px 0px 1.7px',
+  //         stagger: 0.2,
+  //         scrollTrigger: {
+  //           trigger: container.current,
+  //           scrub: 1,
+  //           start: '80% 70%',
+  //           end: '+=1000',
+  //           pin: true,
+  //         },
+  //       }
+  //     )
+  //   }, container)
+  //   return () => ctx.revert()
+  // }, [])
   useGSAP(
     () => {
       gsap.fromTo(
@@ -26,9 +47,9 @@ export default function SplitStringToSpans() {
           scrollTrigger: {
             trigger: container.current,
             scrub: 1,
-            start: '80% center',
-            end: '+=1200',
-            pin: true,
+            end: '+=400',
+            pin: container.current,
+            pinSpacing: false,
           },
         }
       )
@@ -37,87 +58,89 @@ export default function SplitStringToSpans() {
   )
   // Split the input string into an array of characters
   return (
-    <div
-      ref={container}
-      className='text-fill px -ml-4 font-tungstenNarrow sm:ml-0 sm:px-14 md:px-28'
-    >
-      <div className='flex w-full flex-col gap-1 md:flex-row md:gap-20'>
-        <span className='text-lg sm:text-xl md:text-[2.4vw]'>CHINASKI:</span>
-        <div className='text-[9vw] leading-[0.8] sm:text-[7vw]'>
-          {sentences[0].split('').map((char, index) => (
-            <span
-              className={
-                char != ' '
-                  ? `char text-section inline-block uppercase text-transparent`
-                  : `char text-section uppercase text-transparent`
-              }
-              key={index}
-            >
-              {char}
-            </span>
-          ))}
-          <span className='block'></span>
-          {sentences[1].split('').map((char, index) => (
-            <span
-              className={
-                char != ' '
-                  ? `char text-section inline-block uppercase text-transparent`
-                  : `char text-section uppercase text-transparent`
-              }
-              key={index}
-            >
-              {char}
-            </span>
-          ))}
-          <span className='block'></span>
-          {sentences[2].split('').map((char, index) => (
-            <span
-              className={
-                char != ' '
-                  ? `char text-section inline-block uppercase text-transparent`
-                  : `char text-section uppercase text-transparent`
-              }
-              key={index}
-            >
-              {char}
-            </span>
-          ))}
+    <section className='relative h-[200vh]'>
+      <div
+        ref={container}
+        className='text-fill px -ml-4 flex h-screen flex-col justify-center font-tungstenNarrow sm:ml-0 sm:px-14 md:px-28'
+      >
+        <div className='flex  w-full  gap-1 md:flex-row md:gap-20'>
+          <span className='text-lg sm:text-xl md:text-[2.4vw]'>CHINASKI:</span>
+          <div className='text-[9vw] leading-[0.8] sm:text-[7vw]'>
+            {sentences[0].split('').map((char, index) => (
+              <span
+                className={
+                  char != ' '
+                    ? `char text-section inline-block uppercase text-transparent`
+                    : `char text-section uppercase text-transparent`
+                }
+                key={index}
+              >
+                {char}
+              </span>
+            ))}
+            <span className='block'></span>
+            {sentences[1].split('').map((char, index) => (
+              <span
+                className={
+                  char != ' '
+                    ? `char text-section inline-block uppercase text-transparent`
+                    : `char text-section uppercase text-transparent`
+                }
+                key={index}
+              >
+                {char}
+              </span>
+            ))}
+            <span className='block'></span>
+            {sentences[2].split('').map((char, index) => (
+              <span
+                className={
+                  char != ' '
+                    ? `char text-section inline-block uppercase text-transparent`
+                    : `char text-section uppercase text-transparent`
+                }
+                key={index}
+              >
+                {char}
+              </span>
+            ))}
+          </div>
+        </div>
+        <div className='flex w-full flex-col items-end justify-end gap-1 text-accent md:flex-row md:items-start md:gap-10'>
+          <span className='text-lg sm:text-xl md:text-[2.4vw]'>:SMV</span>
+          <p className='text-[9vw] leading-[0.8] sm:text-[7vw]'>
+            {sentences[3].split('').map((char, index) => (
+              <span
+                className={
+                  char != ' '
+                    ? `char text-section inline-block uppercase text-transparent`
+                    : `char text-section uppercase text-transparent`
+                }
+                key={index}
+              >
+                {char}
+              </span>
+            ))}
+          </p>
+        </div>
+        <div className='flex w-full flex-col gap-1 md:flex-row md:gap-20'>
+          <span className='text-lg sm:text-xl md:text-[2.4vw]'>CHINASKI:</span>
+          <p className='text-[9vw] leading-[0.8] sm:text-[7vw]'>
+            {sentences[4].split('').map((char, index) => (
+              <span
+                className={
+                  char != ' '
+                    ? `char text-section inline-block uppercase text-transparent`
+                    : `char text-section uppercase text-transparent`
+                }
+                key={index}
+              >
+                {char}
+              </span>
+            ))}
+          </p>
         </div>
       </div>
-      <div className='flex w-full flex-col items-end justify-end gap-1 text-accent md:flex-row md:items-start md:gap-10'>
-        <span className='text-lg sm:text-xl md:text-[2.4vw]'>:SMV</span>
-        <p className='text-[9vw] leading-[0.8] sm:text-[7vw]'>
-          {sentences[3].split('').map((char, index) => (
-            <span
-              className={
-                char != ' '
-                  ? `char text-section inline-block uppercase text-transparent`
-                  : `char text-section uppercase text-transparent`
-              }
-              key={index}
-            >
-              {char}
-            </span>
-          ))}
-        </p>
-      </div>
-      <div className='flex w-full flex-col gap-1 md:flex-row md:gap-20'>
-        <span className='text-lg sm:text-xl md:text-[2.4vw]'>CHINASKI:</span>
-        <p className='text-[9vw] leading-[0.8] sm:text-[7vw]'>
-          {sentences[4].split('').map((char, index) => (
-            <span
-              className={
-                char != ' '
-                  ? `char text-section inline-block uppercase text-transparent`
-                  : `char text-section uppercase text-transparent`
-              }
-              key={index}
-            >
-              {char}
-            </span>
-          ))}
-        </p>
-      </div>
-    </div>
+    </section>
   )
 }

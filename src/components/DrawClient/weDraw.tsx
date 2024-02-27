@@ -11,7 +11,6 @@ import webCard5 from '../../public/assets/images/webcard05.jpg'
 import webCard6 from '../../public/assets/images/webcard06.jpg'
 import webCard7 from '../../public/assets/images/webcard07.jpg'
 import Image from 'next/image'
-import { WeDraw } from './weDraw'
 type Props = {}
 const webCards = [
   webCard6,
@@ -23,29 +22,25 @@ const webCards = [
   webCard5,
 ]
 gsap.registerPlugin(ScrollTrigger)
-export const Draw = (props: Props) => {
+export const WeDraw = (props: Props) => {
   const container = useRef<HTMLDivElement>(null)
   const elemRef = useRef<HTMLDivElement>(null)
-  useGSAP(
-    () => {
-      gsap.to(container.current, {
-        scrollTrigger: {
-          trigger: container.current,
-          start: 'top top',
-          end: '+=2000',
-          scrub: true,
-          pin: true,
-        },
-      })
-    },
-    { scope: container }
-  )
+  // useGSAP(
+  //   () => {
+  //     gsap.to(container.current, {
+  //       scrollTrigger: {
+  //         trigger: container.current,
+  //         start: 'top top',
+  //         end: '+=2000',
+  //         scrub: true,
+  //         pin: true,
+  //       },
+  //     })
+  //   },
+  //   { scope: container }
+  // )
   return (
-    <div
-      ref={container}
-      className='we-draw text-fill relative h-screen max-h-max  py-5 font-tungstenNarrow sm:py-20'
-    >
-      <WeDraw elem={elemRef} />
+    <div ref={container} className='we-draw text-fill relative'>
       <div ref={elemRef} className='opacity-0'>
         <div className=' text-center text-[26vw] uppercase leading-none text-accent sm:text-[20vw]'>
           <span className='text-accent'>W</span>

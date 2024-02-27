@@ -10,14 +10,15 @@ export const Video = () => {
   useGSAP(
     () => {
       gsap.fromTo(
-        '.video',
+        '.video-container',
         { scale: 0.4 },
         {
           scale: 1,
           scrollTrigger: {
             trigger: container.current,
             scrub: true,
-            pin: '.video',
+            pin: true,
+            pinSpacing: false,
           },
         }
       )
@@ -26,16 +27,23 @@ export const Video = () => {
   )
 
   return (
-    <div
-      ref={container}
-      className='video-section -mx-8 my-8 w-screen max-w-[100vw] sm:my-24'
-    >
-      <video autoPlay loop muted className='video w-screen'>
-        <source
-          src='https://a.storyblok.com/f/150329/x/28eda8d691/smv_intro_cc35.mp4'
-          type='video/mp4'
-        />
-      </video>
-    </div>
+    <section className='relative h-[220vh]'>
+      <div ref={container} className='video-section -mx-8 w-screen'>
+        <div className='video-container h-screen w-screen'>
+          <video
+            autoPlay
+            loop
+            preload='preload'
+            muted
+            className='video h-full w-full object-cover'
+          >
+            <source
+              src='https://a.storyblok.com/f/150329/x/28eda8d691/smv_intro_cc35.mp4'
+              type='video/mp4'
+            />
+          </video>
+        </div>
+      </div>
+    </section>
   )
 }

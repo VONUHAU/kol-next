@@ -1,29 +1,52 @@
+/* eslint-disable react/display-name */
 'use client'
-import React, { useRef } from 'react'
+import React, { useRef, useEffect, forwardRef, ReactNode } from 'react'
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
-export const Clients = () => {
+
+export type Ref = HTMLDivElement
+export const Clients = forwardRef<Ref>((ref) => {
   const container = useRef<HTMLDivElement>(null)
-  useGSAP(() => {
-    gsap.to('.client', {
-      opacity: 1,
-      stagger: {
-        amount: 0.3,
-        from: 'center',
-        grid: 'auto',
-      },
-      scrollTrigger: {
-        trigger: container.current,
-        start: '-=200',
-        end: '+=1900',
-        scrub: true,
-        pin: true,
-      },
-    })
-  })
+  // useEffect(() => {
+  //   const ctx = gsap.context(() => {
+  //     gsap.to('.client', {
+  //       opacity: 1,
+  //       stagger: {
+  //         amount: 0.3,
+  //         from: 'center',
+  //         grid: 'auto',
+  //       },
+  //       scrollTrigger: {
+  //         trigger: container.current,
+  //         start: '-=60',
+  //         end: 'bottom center-=1500',
+  //         scrub: true,
+  //         pin: true,
+  //       },
+  //     })
+  //   }, container)
+  //   return () => ctx.revert()
+  // }, [])
+  // useGSAP(() => {
+  //   gsap.to('.client', {
+  //     opacity: 1,
+  //     stagger: {
+  //       amount: 0.3,
+  //       from: 'center',
+  //       grid: 'auto',
+  //     },
+  //     scrollTrigger: {
+  //       trigger: container.current,
+  //       start: '-=200',
+  //       end: 'bottom center-=1500',
+  //       scrub: true,
+  //       pin: true,
+  //     },
+  //   })
+  // })
   return (
     <div
       ref={container}
@@ -120,4 +143,4 @@ export const Clients = () => {
       </div>
     </div>
   )
-}
+})

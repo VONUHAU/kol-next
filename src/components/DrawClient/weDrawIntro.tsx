@@ -7,25 +7,25 @@ gsap.registerPlugin(ScrollTrigger)
 type Props = {
   elem: React.RefObject<HTMLDivElement>
 }
-export const WeDraw = ({ elem }: Props) => {
+export const WeDrawIntro = ({ elem }: Props) => {
   const container = useRef<HTMLDivElement>(null)
   const tl = useRef<GSAPTimeline>()
-  useGSAP(
-    () => {
-      tl.current = gsap.timeline({
-        scrollTrigger: {
-          trigger: container.current,
-        },
-      })
-      tl.current
-        .to('.part-01', {
-          xPercent: '-300',
-          duration: 2,
-        })
-        .to(elem.current, { opacity: 1 })
-    },
-    { scope: container }
-  )
+  // useGSAP(
+  //   () => {
+  //     tl.current = gsap.timeline({
+  //       scrollTrigger: {
+  //         trigger: container.current,
+  //       },
+  //     })
+  //     tl.current
+  //       .to('.part-01', {
+  //         xPercent: '-100',
+  //         duration: 2,
+  //       })
+  //       .to(elem.current, { opacity: 1 })
+  //   },
+  //   { scope: container }
+  // )
   return (
     <div
       ref={container}
