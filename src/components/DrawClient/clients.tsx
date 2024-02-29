@@ -30,23 +30,24 @@ export const Clients = forwardRef<Ref>((ref) => {
   //   }, container)
   //   return () => ctx.revert()
   // }, [])
-  // useGSAP(() => {
-  //   gsap.to('.client', {
-  //     opacity: 1,
-  //     stagger: {
-  //       amount: 0.3,
-  //       from: 'center',
-  //       grid: 'auto',
-  //     },
-  //     scrollTrigger: {
-  //       trigger: container.current,
-  //       start: '-=200',
-  //       end: 'bottom center-=1500',
-  //       scrub: true,
-  //       pin: true,
-  //     },
-  //   })
-  // })
+  useGSAP(() => {
+    gsap.to('.client', {
+      opacity: 1,
+      stagger: {
+        amount: 0.3,
+        from: 'center',
+        grid: 'auto',
+      },
+      scrollTrigger: {
+        trigger: container.current,
+        start: 'center center',
+        end: '+=2000',
+        pinSpacing: true,
+        scrub: true,
+        pin: true,
+      },
+    })
+  })
   return (
     <div
       ref={container}

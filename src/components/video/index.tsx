@@ -7,6 +7,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 export const Video = () => {
   const container = useRef<HTMLDivElement>(null)
+  const wrapper = useRef<HTMLDivElement>(null)
   useGSAP(
     () => {
       gsap.fromTo(
@@ -17,8 +18,10 @@ export const Video = () => {
           scrollTrigger: {
             trigger: container.current,
             scrub: true,
-            pin: true,
-            pinSpacing: false,
+            pin: wrapper.current,
+            end: '+=600 ',
+            start: 'center center',
+            markers: true,
           },
         }
       )
@@ -27,9 +30,9 @@ export const Video = () => {
   )
 
   return (
-    <section className='relative h-[220vh]'>
-      <div ref={container} className='video-section -mx-8 w-screen'>
-        <div className='video-container h-screen w-screen'>
+    <section className='relative mb-56 ' ref={wrapper}>
+      <div ref={container} className='video-section -mx-8  w-screen'>
+        <div className='video-container w-screen'>
           <video
             autoPlay
             loop

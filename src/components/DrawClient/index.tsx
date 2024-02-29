@@ -10,8 +10,9 @@ export const DrawClient = (props: Props) => {
   const weDrawIntroRef = useRef<HTMLDivElement>(null)
   const weDrawRef = useRef<HTMLDivElement>(null)
   return (
-    <div className='h-screen py-5 font-tungstenNarrow sm:py-20'>
+    <div className='py-5 font-tungstenNarrow sm:py-20'>
       <Clients ref={weDrawIntroRef} />
+      <WeDrawIntro />
     </div>
   )
 }

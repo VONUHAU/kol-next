@@ -10,7 +10,28 @@ gsap.registerPlugin(ScrollTrigger)
 
 export const Hero = () => {
   const container = useRef<HTMLDivElement>(null)
+
   const tl = useRef<GSAPTimeline>()
+  const imageScrolling = (
+    className: string,
+    trigger: string,
+    xPercent: number,
+    yPercent: number
+  ) => {
+    const animate = gsap.to(className, {
+      immediateRender: false,
+      xPercent,
+      yPercent,
+      scrollTrigger: {
+        trigger: trigger,
+        scrub: true,
+        start: 'center center',
+        end: 'bottom top',
+        toggleActions: 'play complete complete complete',
+      },
+    })
+    return animate
+  }
   useGSAP(
     () => {
       tl.current = gsap.timeline()
@@ -84,84 +105,91 @@ export const Hero = () => {
           { xPercent: 240, yPercent: 50, duration: 0.9, ease: 'expo' },
           '<0'
         )
-        .to('.hero2', {
-          immediateRender: false,
-          yPercent: -40,
-          scrollTrigger: {
-            trigger: '.hero-small-text',
-            scrub: true,
-            start: 'center center',
-            end: 'bottom top',
-            toggleActions: 'play complete complete complete',
-          },
-        })
-        .to('.hero3', {
-          immediateRender: false,
-          xPercent: 160,
-          yPercent: 90,
-          scrollTrigger: {
-            trigger: '.hero-small-text',
-            scrub: true,
-            start: 'center center',
-            end: 'bottom top',
-            toggleActions: 'play complete complete complete',
-          },
-        })
-        .to('.hero5', {
-          immediateRender: false,
-          xPercent: -250,
-          yPercent: 100,
-          scrollTrigger: {
-            trigger: '.hero-small-text',
-            scrub: true,
-            start: 'center center',
-            end: 'bottom top',
-            toggleActions: 'play complete complete complete',
-          },
-        })
+      // .add(imageScrolling('.hero2', '.hero-small-text', 0, -40))
+      // .add(imageScrolling('.hero3', '.hero-small-text', 160, 90))
+      // .add(imageScrolling('.hero5', '.hero-small-text', -250, 100))
+      // .add(imageScrolling('.hero6', '.hero-small-text', 260, -80))
+      // .add(imageScrolling('.hero7', '.hero-small-text', -320, -25))
+      // .add(imageScrolling('.hero8', '.hero-small-text', 235, 50))
 
-        .to('.hero6', {
-          immediateRender: false,
-          xPercent: 260,
-          yPercent: -80,
-          scrollTrigger: {
-            trigger: '.hero-small-text',
-            scrub: true,
-            start: 'center center',
-            end: 'bottom top',
-            toggleActions: 'play complete complete complete',
-          },
-        })
-        .to('.hero7', {
-          immediateRender: false,
-          xPercent: -320,
-          yPercent: -25,
-          scrollTrigger: {
-            trigger: '.hero-small-text',
-            scrub: true,
-            start: 'center center',
-            end: 'bottom top',
-            toggleActions: 'play complete complete complete',
-          },
-        })
-        .to('.hero8', {
-          immediateRender: false,
-          xPercent: 235,
-          yPercent: 50,
-          scrollTrigger: {
-            trigger: '.hero-small-text',
-            scrub: true,
-            start: 'center center',
-            end: 'bottom top',
-            toggleActions: 'play complete complete complete',
-          },
-        })
+      // .to('.hero2', {
+      //   immediateRender: false,
+      //   yPercent: -40,
+      //   scrollTrigger: {
+      //     trigger: '.hero-small-text',
+      //     scrub: true,
+      //     start: 'center center',
+      //     end: 'bottom top',
+      //     toggleActions: 'play complete complete complete',
+      //   },
+      // })
+      // .to('.hero3', {
+      //   immediateRender: false,
+      //   xPercent: 160,
+      //   yPercent: 90,
+      //   scrollTrigger: {
+      //     trigger: '.hero-small-text',
+      //     scrub: true,
+      //     start: 'center center',
+      //     end: 'bottom top',
+      //     toggleActions: 'play complete complete complete',
+      //   },
+      // })
+      // .to('.hero5', {
+      //   immediateRender: false,
+      //   xPercent: -250,
+      //   yPercent: 100,
+      //   scrollTrigger: {
+      //     trigger: '.hero-small-text',
+      //     scrub: true,
+      //     start: 'center center',
+      //     end: 'bottom top',
+      //     toggleActions: 'play complete complete complete',
+      //   },
+      // })
+
+      // .to('.hero6', {
+      //   immediateRender: false,
+      //   xPercent: 260,
+      //   yPercent: -80,
+      //   scrollTrigger: {
+      //     trigger: '.hero-small-text',
+      //     scrub: true,
+      //     start: 'center center',
+      //     end: 'bottom top',
+      //     toggleActions: 'play complete complete complete',
+      //   },
+      // })
+      // .to('.hero7', {
+      //   immediateRender: false,
+      //   xPercent: -320,
+      //   yPercent: -25,
+      //   scrollTrigger: {
+      //     trigger: '.hero-small-text',
+      //     scrub: true,
+      //     start: 'center center',
+      //     end: 'bottom top',
+      //     toggleActions: 'play complete complete complete',
+      //   },
+      // })
+      // .to('.hero8', {
+      //   immediateRender: false,
+      //   xPercent: 235,
+      //   yPercent: 50,
+      //   scrollTrigger: {
+      //     trigger: '.hero-small-text',
+      //     scrub: true,
+      //     start: 'center center',
+      //     end: 'bottom top',
+      //     toggleActions: 'play complete complete complete',
+      //   },
+      // })
     },
     { scope: container }
   )
 
   return (
-    <div ref={container} className='relative mt-20 w-full'>
+    <div ref={container} className='relative mt-20 h-[60vh] w-full'>
       <div className='texts flex flex-col items-center justify-center'>
         <div className='creating hero-text translate-y-1/2 font-serif'>
           <span className='opacity-20'>C</span>

@@ -14,6 +14,8 @@ const sentences = [
 ]
 export default function SplitStringToSpans() {
   const container = useRef<HTMLDivElement>(null)
+  const wrapper = useRef<HTMLDivElement>(null)
+
   // useEffect(() => {
   //   const ctx = gsap.context(() => {
   //     gsap.fromTo(
@@ -26,13 +28,14 @@ export default function SplitStringToSpans() {
   //         scrollTrigger: {
   //           trigger: container.current,
   //           scrub: 1,
-  //           start: '80% 70%',
-  //           end: '+=1000',
-  //           pin: true,
+  //           pin: wrapper.current,
+  //           // end: 'bottom+=500 top-=650',
+  //           // markers: true,
+  //           pinSpacing: false,
   //         },
   //       }
   //     )
-  //   }, container)
+  //   }, wrapper)
   //   return () => ctx.revert()
   // }, [])
   useGSAP(
@@ -47,9 +50,10 @@ export default function SplitStringToSpans() {
           scrollTrigger: {
             trigger: container.current,
             scrub: 1,
-            end: '+=400',
-            pin: container.current,
-            pinSpacing: false,
+            pin: true,
+            start: 'center center',
+            end: `+=${wrapper.current?.offsetHeight * 6}`,
+            markers: true,
           },
         }
       )
@@ -58,10 +62,10 @@ export default function SplitStringToSpans() {
   )
   // Split the input string into an array of characters
   return (
-    <section className='relative h-[200vh]'>
+    <section className='wrapper relative' ref={wrapper}>
       <div
         ref={container}
-        className='text-fill px -ml-4 flex h-screen flex-col justify-center font-tungstenNarrow sm:ml-0 sm:px-14 md:px-28'
+        className='text-fill px -ml-4 flex flex-col justify-center font-tungstenNarrow sm:ml-0 sm:px-14 md:px-28'
       >
         <div className='flex  w-full  gap-1 md:flex-row md:gap-20'>
           <span className='text-lg sm:text-xl md:text-[2.4vw]'>CHINASKI:</span>

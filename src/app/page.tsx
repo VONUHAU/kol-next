@@ -8,14 +8,14 @@ import SplitStringToSpans from '../components/splitWords/index'
 
 export default function Home() {
   return (
-    <main className='relative  min-h-screen'>
+    <main className='relative  '>
       <Hero />
       <Video />
       <SplitStringToSpans />
-      {/* <DrawClient />
+      <DrawClient />
       <Branding />
       <Slider />
-      <Contact /> */}
+      <Contact />
     </main>
   )
 }
