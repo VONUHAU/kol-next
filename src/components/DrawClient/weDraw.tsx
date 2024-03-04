@@ -22,9 +22,9 @@ const webCards = [
   webCard4,
   webCard5,
 ]
-type Ref = HTMLDivElement
+
 gsap.registerPlugin(ScrollTrigger)
-export const WeDraw = forwardRef<Ref>((imageRef) => {
+export const WeDraw = forwardRef((_props, imageRef) => {
   const container = useRef<HTMLDivElement>(null)
   const elemRef = useRef<HTMLDivElement>(null)
   // useGSAP(
@@ -63,16 +63,17 @@ export const WeDraw = forwardRef<Ref>((imageRef) => {
           />
         </div> */}
           {webCards.map((card, key) => (
-            <div ref={imageRef} key={key}>
+            <div key={key}>
               <Image
+                ref={(el) => (imageRef!.current[key] = el)}
                 src={card}
                 alt='kol-next-card'
                 sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 24vw'
                 style={{
-                  rotate: `${(webCards.length - key - 1) * -5}deg`,
+                  // rotate: `${(webCards.length - key - 1) * -5}deg`,
                   transformOrigin: 'left top',
                 }}
-                className={`absolute left-1/2 top-1/2 m-auto  w-[24vw] -translate-x-1/2 -translate-y-1/2`}
+                className={`absolute left-1/2 top-1/2 m-auto w-[24vw]  -translate-x-1/2 -translate-y-1/2 opacity-0`}
               />
             </div>
           ))}

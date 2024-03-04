@@ -11,17 +11,28 @@ type Props = {
 export const WeDrawIntro = () => {
   const container = useRef<HTMLDivElement>(null)
   const weDrawRef = useRef<HTMLDivElement>(null)
-  const imageRefs = useRef<HTMLDivElement>(null)
+  const imageRefs = useRef<HTMLDivElement[]>([])
   const tl = useRef<GSAPTimeline>()
 
   useGSAP(
     () => {
+      const initImage = () => {
+        const animations = imageRefs.current.map((el, index) =>
+          gsap.to(el, {
+            opacity: 1,
+            xPercent: Math.random() > 0.5 ? 1 : -1 * Math.random() * 40,
+            duration: 0.1,
+            delay: index * 0.05,
+          })
+        )
+
+        return animations
+      }
       tl.current = gsap.timeline({
         scrollTrigger: {
           trigger: container.current,
           pin: true,
-          end: '+=4000',
-          toggleActions: 'play complete restart complete',
+          end: '+=6000',
         },
       })
       tl.current
@@ -31,6 +42,30 @@ export const WeDrawIntro = () => {
           ease: 'power3.inOut',
         })
         .to('.intro', { opacity: 0 })
+        .to(imageRefs.current, {
+          opacity: 1,
+          stagger: 0.1,
+        })
+        .to(imageRefs.current, {
+          stagger: 0.1,
+          rotation: (index) => index * 5,
+        })
+
+      gsap.fromTo(
+        imageRefs.current,
+        { scale: 0.4 },
+        {
+          rotate: 720,
+          scrollTrigger: {
+            trigger: imageRefs.current,
+            scrub: true,
+            pin: true,
+            end: '+=600 ',
+            start: 'center center',
+            markers: true,
+          },
+        }
+      )
     },
     { scope: container }
   )
