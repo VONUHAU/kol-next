@@ -21,7 +21,6 @@ export const Video = () => {
             pin: wrapper.current,
             end: '+=600 ',
             start: 'center center',
-            markers: true,
           },
         }
       )

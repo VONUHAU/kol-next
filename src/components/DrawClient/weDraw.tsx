@@ -73,7 +73,7 @@ export const WeDraw = forwardRef((_props, imageRef) => {
                   // rotate: `${(webCards.length - key - 1) * -5}deg`,
                   transformOrigin: 'left top',
                 }}
-                className={`absolute left-1/2 top-1/2 m-auto w-[24vw]  -translate-x-1/2 -translate-y-1/2 opacity-0`}
+                className={`opacity-1 absolute left-1/2 top-1/2 m-auto  w-[54vw] -translate-x-1/2 -translate-y-1/2`}
               />
             </div>
           ))}

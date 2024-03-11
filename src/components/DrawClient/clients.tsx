@@ -7,7 +7,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-export type Ref = HTMLDivElement
+type Ref = HTMLDivElement
 export const Clients = forwardRef<Ref>((ref) => {
   const container = useRef<HTMLDivElement>(null)
   // useEffect(() => {

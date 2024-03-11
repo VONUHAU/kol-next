@@ -53,7 +53,6 @@ export default function SplitStringToSpans() {
             pin: true,
             start: 'center center',
             end: `+=${wrapper.current?.offsetHeight * 6}`,
-            markers: true,
           },
         }
       )
