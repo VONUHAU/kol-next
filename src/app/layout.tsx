@@ -60,8 +60,6 @@ export default function RootLayout({
         </div>
         <Header />
         <Suspense fallback={<Loading />}>{children}</Suspense>
-
-        <Footer />
       </body>
     </html>
   )

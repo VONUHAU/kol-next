@@ -1,8 +1,12 @@
 {
   "root": true,
-  "plugins": ["@typescript-eslint", "unused-imports"],
+  "plugins": ["@typescript-eslint", "unused-imports", "prettier"],
   "ignorePatterns": ["node_modules/", "*.snap", "schema-types.ts"],
-  "extends": ["next", "plugin:@typescript-eslint/recommended", "prettier"],
+  "extends": [
+    "next",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
   "rules": {
     "prettier/prettier": ["error", { "endOfLine": "auto" }],
     "prefer-destructuring": ["error", { "object": true, "array": false }],
@@ -20,8 +24,6 @@
     "@typescript-eslint/no-non-null-assertion": "off",
     "@typescript-eslint/no-unnecessary-type-assertion": "off",
     "@typescript-eslint/no-unused-expressions": "off",
-    "@typescript-eslint/no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars-experimental": "error",
     "@typescript-eslint/no-use-before-define": "off",
     "@typescript-eslint/prefer-regexp-exec": "off",
     "@typescript-eslint/unbound-method": "off",
