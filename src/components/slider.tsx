@@ -43,8 +43,8 @@ const RImage = forwardRef<Ref, IAppProps>(({ src, rotate, top }, ref) => {
         top: top,
         minWidth: '200px',
         minHeight: '200px',
-        height: '14vw',
-        width: '14vw',
+        height: '20vw',
+        width: '20vw',
       }}
     >
       <Image alt='kok-next-slider' src={src} fill={true} objectFit='contain' />
@@ -61,6 +61,7 @@ export const Slider = () => {
   //set up images slide animation
   useGSAP(() => {
     if (imageRefs && imageRefs.current) {
+      console.log('is okie')
       imageRefs.current.map((el, _index) =>
         gsap.to(el, {
           rotation:
@@ -72,94 +73,52 @@ export const Slider = () => {
           scrollTrigger: {
             trigger: container.current,
             scrub: true,
-            pin: container.current,
+            pin: true,
+            start: 'end center',
             end: '+=600 ',
-            start: 'center center',
           },
         })
       )
     }
 
-    gsap.to(container.current, {
+    gsap.to('.container-img', {
       xPercent: -100,
       ease: 'none',
       scrollTrigger: {
         trigger: container.current,
         scrub: true,
+        start: 'end center',
         end: '+=900',
         pin: true,
+        markers: true,
       },
     })
   })
-  // useLayoutEffect(() => {
-  //   const ctx = gsap.context(() => {
-  //     const q = gsap.utils.selector(container)
-  //     const imgArr = gsap.utils.toArray('.imgFlex')
-  //     console.log(imgArr)
-  //     imgArr.map((ele: any) => {
-  //       gsap.to(ele, {
-  //         rotation:
-  //           Math.random() * 60 * (Math.round(Math.random()) * 2 - 1) + 5,
-  //         rotationY:
-  //           Math.random() * 10 * (Math.round(Math.random()) * 2 - 1) + 5,
-  //         rotationX:
-  //           Math.random() * 10 * (Math.round(Math.random()) * 2 - 1) + 5,
-
-  //         scrollTrigger: {
-  //           trigger: q('.container-img'),
-  //           scrub: true,
-  //           end: '+=900',
-  //         },
-  //       })
-  //     })
-  //     const tl = gsap.timeline({
-  //       defaults: {
-  //         ease: 'power2.in',
-  //       },
-  //     })
-  //     tl.to(q('.container-img'), {
-  //       xPercent: -100,
-  //       ease: 'none',
-  //       scrollTrigger: {
-  //         trigger: q('.container-img'),
-  //         scrub: true,
-  //         end: '+=900',
-  //       },
-  //     })
-  //   }, container) // <- IMPORTANT! Scopes selector text imgFlex
-
-  //   return () => ctx.revert() // cleanup
-  // }, [])
-
   return (
-    <>
-      {isCompleted ? (
-        <section className='slider relative clear-both -mx-8 mb-36 mt-8 overflow-x-clip'>
-          <div ref={container} className='relative '>
-            <div className='container-img flex'>
-              {images.map((value, index) => (
-                <RImage
-                  ref={(el) => {
-                    if (imageRefs && imageRefs.current) {
-                      return (imageRefs.current[index] = el)
-                    }
-                  }}
-                  key={index}
-                  src={value}
-                  w={350}
-                  h={350}
-                  rotate={`${Math.floor(
-                    Math.random() * 30 * (Math.round(Math.random()) * 2 - 1) + 5
-                  )}deg`}
-                  top={`${Math.floor(
-                    Math.random() * 20 * (Math.round(Math.random()) * 2 - 1) + 8
-                  )}px`}
-                />
-              ))}
-            </div>
-          </div>
-        </section>
-      ) : null}
-    </>
+    <section className='slider relative clear-both -mx-8 my-36 overflow-x-clip'>
+      <div ref={container} className='relative '>
+        <div className='container-img flex'>
+          {images.map((value, index) => (
+            <RImage
+              ref={(el) => {
+                if (imageRefs && imageRefs.current) {
+                  return (imageRefs.current[index] = el)
+                }
+              }}
+              key={index}
+              src={value}
+              w={350}
+              h={350}
+              rotate={`${Math.floor(
+                Math.random() * 30 * (Math.round(Math.random()) * 2 - 1) + 5
+              )}deg`}
+              top={`${Math.floor(
+                Math.random() * 20 * (Math.round(Math.random()) * 2 - 1) + 8
+              )}px`}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
   )
 }
