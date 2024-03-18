@@ -6,7 +6,6 @@ html,
   position: relative;
   left: 0;
   width: 100vw;
-  overflow-x: hidden;
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -21,6 +20,9 @@ html,
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+body{
+   overflow-x: hidden;
 }
 /* body {
   font-family: localTungsten, Impact, Haettenschweiler, 'Arial Narrow Bold',

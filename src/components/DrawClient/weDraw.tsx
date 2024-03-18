@@ -1,6 +1,6 @@
 /* eslint-disable react/display-name */
 'use client'
-import React, { forwardRef, useRef } from 'react'
+import React, { ForwardedRef, forwardRef, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import webCard from '../../../public/assets/images/webcard01.jpg'
@@ -23,7 +23,7 @@ const webCards = [
 ]
 
 gsap.registerPlugin(ScrollTrigger)
-export const WeDraw = forwardRef((_props, imageRef) => {
+export const WeDraw = forwardRef((_props, imageRef: any) => {
   const container = useRef<HTMLDivElement>(null)
 
   return (
@@ -32,7 +32,9 @@ export const WeDraw = forwardRef((_props, imageRef) => {
         {webCards.map((card, key) => (
           <div key={key}>
             <Image
-              ref={(el) => (imageRef!.current[key] = el)}
+              ref={(el) => {
+                return (imageRef!.current[key] = el)
+              }}
               src={card}
               alt='kol-next-card'
               sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 24vw'

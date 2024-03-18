@@ -33,89 +33,104 @@ interface IAppProps {
   top?: string
 }
 type Ref = HTMLDivElement
-const RImage = forwardRef<Ref, IAppProps>(({ src, rotate, top }, ref) => {
-  return (
-    <div
-      ref={ref}
-      className={`imgFlex relative shrink-0`}
-      style={{
-        rotate: rotate,
-        top: top,
-        minWidth: '200px',
-        minHeight: '200px',
-        height: '20vw',
-        width: '20vw',
-      }}
-    >
-      <Image alt='kok-next-slider' src={src} fill={true} objectFit='contain' />
-    </div>
-  )
-})
+
+// const RImage = forwardRef<Ref, IAppProps>(({ src, rotate, top }, ref) => {
+//   return (
+//     <div
+//       ref={ref}
+//       className={`imgFlex relative shrink-0`}
+//       style={{
+//         rotate: rotate,
+//         top: top,
+//         minWidth: '200px',
+//         minHeight: '200px',
+//         height: '20vw',
+//         width: '20vw',
+//       }}
+//     >
+//       <Image alt='kok-next-slider' src={src} fill={true} objectFit='contain' />
+//     </div>
+//   )
+// })
 
 gsap.registerPlugin(ScrollTrigger)
 
 export const Slider = () => {
   const container = useRef<HTMLDivElement>(null)
-  const imageRefs = useRef<HTMLDivElement[]>(null)
-  const { isCompleted } = useWeDraw()
+  const imageRefs = useRef<Ref[]>(null)
+  const tl = useRef<GSAPTimeline>()
   //set up images slide animation
   useGSAP(() => {
-    if (imageRefs && imageRefs.current) {
-      console.log('is okie')
-      imageRefs.current.map((el, _index) =>
-        gsap.to(el, {
-          rotation:
-            Math.random() * 60 * (Math.round(Math.random()) * 2 - 1) + 5,
-          rotationY:
-            Math.random() * 10 * (Math.round(Math.random()) * 2 - 1) + 5,
-          rotationX:
-            Math.random() * 10 * (Math.round(Math.random()) * 2 - 1) + 5,
-          scrollTrigger: {
-            trigger: container.current,
-            scrub: true,
-            pin: true,
-            start: 'end center',
-            end: '+=600 ',
-          },
-        })
-      )
-    }
+    const imageArr: HTMLDivElement[] = gsap.utils.toArray('.imgFlex')
 
-    gsap.to('.container-img', {
-      xPercent: -100,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: container.current,
-        scrub: true,
-        start: 'end center',
-        end: '+=900',
-        pin: true,
-        markers: true,
-      },
-    })
+    // imageArr.forEach((el, _index) =>
+    //   gsap.timeline().to(el, {
+    //     rotation: Math.random() * 60 * (Math.round(Math.random()) * 2 - 1) + 5,
+    //     rotationY: Math.random() * 10 * (Math.round(Math.random()) * 2 - 1) + 5,
+    //     rotationX: Math.random() * 10 * (Math.round(Math.random()) * 2 - 1) + 5,
+    //     scrollTrigger: {
+    //       trigger: container.current,
+    //       scrub: true,
+    //       pin: true,
+    //       start: 'center center',
+    //       markers: true,
+    //     },
+    //   })
+    // )
+
+    tl.current = gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: container.current,
+          scrub: true,
+          start: 'center center',
+          end: () => `+=${window.innerHeight}`,
+          pin: true,
+          markers: true,
+        },
+      })
+      .to('.container-img', {
+        xPercent: -100,
+        ease: 'none',
+      })
+      .to(
+        '.imgFlex',
+        {
+          rotation: 'random(-30, 30)',
+          rotationY: 'random(-30, 30)',
+          rotationX: 'random(-10, 10)',
+        },
+        '<0'
+      )
   })
   return (
     <section className='slider relative clear-both -mx-8 my-36 overflow-x-clip'>
-      <div ref={container} className='relative '>
-        <div className='container-img flex'>
+      <div className='relative '>
+        <div ref={container} className='container-img flex'>
           {images.map((value, index) => (
-            <RImage
-              ref={(el) => {
-                if (imageRefs && imageRefs.current) {
-                  return (imageRefs.current[index] = el)
-                }
-              }}
+            <div
               key={index}
-              src={value}
-              w={350}
-              h={350}
-              rotate={`${Math.floor(
-                Math.random() * 30 * (Math.round(Math.random()) * 2 - 1) + 5
-              )}deg`}
-              top={`${Math.floor(
-                Math.random() * 20 * (Math.round(Math.random()) * 2 - 1) + 8
-              )}px`}
-            />
+              className='imgFlex relative shrink-0'
+              style={{
+                transform: `rotate(${Math.floor(
+                  Math.random() * 30 * (Math.round(Math.random()) * 2 - 1) + 5
+                )}deg)`,
+                top: `${Math.floor(
+                  Math.random() * 20 * (Math.round(Math.random()) * 2 - 1) + 8
+                )}px`,
+                minWidth: '200px',
+                minHeight: '200px',
+                height: '20vw',
+                width: '20vw',
+              }}
+            >
+              <Image
+                alt='kok-next-slider'
+                src={value}
+                fill={true}
+                objectFit='contain'
+              />
+            </div>
           ))}
         </div>
       </div>

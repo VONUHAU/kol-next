@@ -38,11 +38,16 @@ export const WeDrawIntro = () => {
         },
       })
       tl.current
-        .set('.intro', { opacity: 1 })
+        .set('.intro', {
+          opacity: 1,
+        })
         .to('.part-01', {
           xPercent: '-250',
           duration: 2,
           ease: 'power3.inOut',
+          onStart: () => {
+            document.body.style.overflow = 'hidden'
+          },
         })
         .to('.intro', {
           opacity: 0,

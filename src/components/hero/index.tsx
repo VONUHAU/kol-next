@@ -35,9 +35,14 @@ export const Hero = () => {
   useGSAP(
     () => {
       tl.current = gsap.timeline()
-
       tl.current
-        .from('.creating, .ignore', { xPercent: 20, duration: 0.7 })
+        .from('.creating, .ignore', {
+          xPercent: 20,
+          duration: 0.7,
+          onStart: () => {
+            document.body.style.overflow = 'hidden'
+          },
+        })
         .from('.brand', { xPercent: -20, duration: 0.7 }, '<0')
         .to(
           '.creating > span',
@@ -102,15 +107,23 @@ export const Hero = () => {
         )
         .to(
           '.hero8',
-          { xPercent: 240, yPercent: 50, duration: 0.9, ease: 'expo' },
+          {
+            xPercent: 240,
+            yPercent: 50,
+            duration: 0.9,
+            ease: 'expo',
+            onComplete: () => {
+              document.body.style.overflowY = 'auto'
+            },
+          },
           '<0'
         )
-      // .add(imageScrolling('.hero2', '.hero-small-text', 0, -40))
-      // .add(imageScrolling('.hero3', '.hero-small-text', 160, 90))
-      // .add(imageScrolling('.hero5', '.hero-small-text', -250, 100))
-      // .add(imageScrolling('.hero6', '.hero-small-text', 260, -80))
-      // .add(imageScrolling('.hero7', '.hero-small-text', -320, -25))
-      // .add(imageScrolling('.hero8', '.hero-small-text', 235, 50))
+        .add(imageScrolling('.hero2', '.hero-small-text', 0, -40))
+        .add(imageScrolling('.hero3', '.hero-small-text', 160, 90))
+        .add(imageScrolling('.hero5', '.hero-small-text', -250, 100))
+        .add(imageScrolling('.hero6', '.hero-small-text', 260, -80))
+        .add(imageScrolling('.hero7', '.hero-small-text', -320, -25))
+        .add(imageScrolling('.hero8', '.hero-small-text', 235, 50))
 
       // .to('.hero2', {
       //   immediateRender: false,
