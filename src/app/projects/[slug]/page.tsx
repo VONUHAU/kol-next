@@ -1,6 +1,6 @@
 'use client'
-import Image from 'next/image'
-import { projects, ImageCardProp } from '@/components/constants/data'
+import Image from 'next/legacy/image'
+import { projects } from '@/components/constants/data'
 import { useRef, useState } from 'react'
 
 export default function Project({ params }: { params: { slug: string } }) {
@@ -68,7 +68,7 @@ export default function Project({ params }: { params: { slug: string } }) {
                         objectFit='cover'
                         sizes=''
                         alt='kol-next-storyboard'
-                        fill
+                        layout='fill'
                       />
                       <div className='absolute bottom-0 left-0 flex h-1/5 w-full items-center'>
                         <svg
@@ -125,7 +125,7 @@ export default function Project({ params }: { params: { slug: string } }) {
                         objectFit='cover'
                         sizes=''
                         alt='kol-next-storyboard'
-                        fill
+                        layout='fill'
                       />
                     </div>
                   ))}

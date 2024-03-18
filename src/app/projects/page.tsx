@@ -1,5 +1,5 @@
-import Image from 'next/image'
-import Gain from '../../../public/assets/images/gain.jpg'
+import Image from 'next/legacy/image'
+
 import Link from 'next/link'
 import { ImageCardProp, projects } from '@/components/constants/data'
 const ImageCard: React.FC<ImageCardProp> = ({
@@ -13,7 +13,8 @@ const ImageCard: React.FC<ImageCardProp> = ({
       <div className='group relative mb-2.5'>
         <div className='absolute inset-0 h-full w-full opacity-0 group-hover:opacity-40'>
           <Image
-            src={Gain}
+            src={'/assets/images/gain.jpg'}
+            layout='fill'
             alt='gain'
             className='h-full w-full object-cover object-center'
           />

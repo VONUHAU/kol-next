@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 import { Oswald } from 'next/font/google'
-import Gain from '../../public/assets/images/gain.jpg'
 import Header from '@/components/header'
 import Loading from './loading'
 import { Footer } from '@/components/footer'
@@ -53,13 +52,15 @@ export default function RootLayout({
       <body className={`${oswald.className} overflow-x-hidden px-8 pt-8`}>
         <div className='overlay fixed left-0 top-0 block h-full w-full opacity-30'>
           <Image
-            src={Gain}
+            src={'/assets/images/gain.jpg'}
+            layout='fill'
             alt='gain'
             className='h-full w-full object-cover object-center'
           />
         </div>
         <Header />
         <Suspense fallback={<Loading />}>{children}</Suspense>
+        <Footer />
       </body>
     </html>
   )

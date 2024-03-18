@@ -1,7 +1,7 @@
 import React, { ReactNode, useRef } from 'react'
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 type PopupProp = {
   start: number
   end: number
@@ -93,7 +93,7 @@ export const Branding = () => {
             objectFit='cover'
             sizes=''
             alt='kol-next-service'
-            fill
+            layout='fill'
           />
         </div>
 
@@ -107,7 +107,7 @@ export const Branding = () => {
             objectFit='cover'
             sizes=''
             alt='kol-next-service'
-            fill
+            layout='fill'
           />
         </div>
       </div>
@@ -122,7 +122,7 @@ export const Branding = () => {
             objectFit='cover'
             sizes=''
             alt='kol-next-service'
-            fill
+            layout='fill'
           />
         </div>
         <div className='relative text-[16vw]  text-secondary'>
@@ -137,7 +137,7 @@ export const Branding = () => {
             objectFit='cover'
             sizes=''
             alt='kol-next-service'
-            fill
+            layout='fill'
           />
         </div>
         <div className='relative text-[16vw] text-secondary'>
@@ -152,7 +152,7 @@ export const Branding = () => {
             objectFit='cover'
             sizes=''
             alt='kol-next-service'
-            fill
+            layout='fill'
           />
         </div>
       </div>

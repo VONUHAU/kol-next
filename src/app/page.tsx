@@ -1,4 +1,5 @@
 'use client'
+import { Suspense, useCallback, useEffect } from 'react'
 import { Hero } from '@/components/hero'
 import { Video } from '@/components/video'
 import { Branding } from '@/components/brand'
@@ -6,21 +7,30 @@ import { Slider } from '@/components/slider'
 import { Contact } from '@/components/contact'
 import { DrawClient } from '@/components/DrawClient'
 import SplitStringToSpans from '../components/splitWords/index'
-import { Footer } from '@/components/footer'
 import { WeDrawProvider } from '@/contexts/weDrawContext'
 
 export default function Home() {
+  // ensure scroll to top each time user reload window
+  const resetWindowScrollPosition = useCallback(() => window.scrollTo(0, 0), [])
+
+  useEffect(() => {
+    window.onbeforeunload = function () {
+      resetWindowScrollPosition()
+    }
+  }, [resetWindowScrollPosition])
+
   return (
     <main className='relative  '>
       <WeDrawProvider>
-        <Hero />
-        <Video />
-        <SplitStringToSpans />
-        <DrawClient />
-        <Branding />
-        <Slider />
-        <Contact />
-        <Footer />
+        <Suspense fallback={<>Loading...</>}>
+          <Hero />
+          <Video />
+          <SplitStringToSpans />
+          <DrawClient />
+          <Branding />
+          <Slider />
+          <Contact />
+        </Suspense>
       </WeDrawProvider>
     </main>
   )

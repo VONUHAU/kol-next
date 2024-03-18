@@ -2,7 +2,6 @@ import React, { useRef } from 'react'
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { WeDraw } from './weDraw'
 import { useWeDraw } from '@/contexts/weDrawContext'
 gsap.registerPlugin(ScrollTrigger)
 
@@ -51,9 +50,6 @@ export const WeDrawIntro = () => {
         })
         .to('.intro', {
           opacity: 0,
-          onComplete: () => {
-            console.log('completed hide intro')
-          },
         })
         .to(imageRefs.current, {
           opacity: 1,
@@ -68,29 +64,6 @@ export const WeDrawIntro = () => {
             setCompleted(true)
           },
         })
-      // .to(imageRefs.current, {
-      //   transformOrigin: '50% 50%',
-      //   rotation: (index) =>
-      //     (index + 1) % 2 == 0
-      //       ? 320 + Math.random() * 5
-      //       : -320 + Math.random() * 5,
-      //   x: (index) =>
-      //     (index + 1) % 2 == 0
-      //       ? index * 200 + Math.random() * 40
-      //       : -index * 200 + Math.random() * 40,
-      //   y: (index) =>
-      //     (index + 1) % 2 == 0
-      //       ? -index * 150 + Math.random() * 40
-      //       : index * 150 + Math.random() * 40,
-
-      //   scrollTrigger: {
-      //     trigger: imageRefs.current,
-      //     pin: true,
-      //     start: 'center center',
-      //     end: '+=2000',
-      //     scrub: 1,
-      //   },
-      // })
     },
     { scope: container }
   )
@@ -167,7 +140,6 @@ export const WeDrawIntro = () => {
             <span className='text-accent'>W</span>
             <span className='text-accent'>.</span>
           </div>
-          <WeDraw ref={imageRefs} />
         </div>
       </div>
     </div>

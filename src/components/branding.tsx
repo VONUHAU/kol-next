@@ -6,7 +6,7 @@ import webCard4 from '../../public/assets/images/webcard04.jpg'
 import webCard5 from '../../public/assets/images/webcard05.jpg'
 import webCard6 from '../../public/assets/images/webcard06.jpg'
 import webCard7 from '../../public/assets/images/webcard07.jpg'
-import Image from 'next/image'
+import Image from "next/legacy/image"
 type Props = {}
 const webCards = [
   webCard6,

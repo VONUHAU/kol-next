@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 import { Major } from './_major'
 
 type Job = {
@@ -106,7 +106,11 @@ export default function Home() {
             experience.
           </div>
           <div className='relative'>
-            <Image src='/assets/images/about/globe.png' alt='global' fill />
+            <Image
+              src='/assets/images/about/globe.png'
+              alt='global'
+              layout='fill'
+            />
           </div>
         </div>
         <div>
@@ -127,7 +131,7 @@ export default function Home() {
             Got a project in mind?
           </p>
           <p className='font-tungstenNarrow text-[clamp(48px,10vw,10vw)] text-accent'>
-            LET'S CONNECT
+            LET&apos;S CONNECT
           </p>
         </div>
         <div

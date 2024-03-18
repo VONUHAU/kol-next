@@ -1,6 +1,5 @@
 import Link from 'next/link'
-import Image from 'next/image'
-import Gain from '../../public/assets/images/gain.jpg'
+import Image from 'next/legacy/image'
 export default async function Header() {
   return (
     <header className='fixed z-[100] flex h-16 w-screen items-center justify-between'>
@@ -26,7 +25,8 @@ export default async function Header() {
       </a>
       <div className='menu-mobile fixed left-0 top-0 hidden h-screen w-full flex-col items-center justify-center gap-12 overflow-hidden bg-secondary sm:hidden'>
         <Image
-          src={Gain}
+          src={'/assets/images/gain.jpg'}
+          layout='fill'
           alt='gain'
           className='absolute z-[-1] h-screen w-full object-cover object-center opacity-30'
         />

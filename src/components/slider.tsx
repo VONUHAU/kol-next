@@ -2,8 +2,8 @@
 /* eslint-disable react/display-name */
 
 'use client'
-import { useRef, forwardRef } from 'react'
-import Image from 'next/image'
+import { useRef } from 'react'
+import Image from 'next/legacy/image'
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -33,25 +33,6 @@ interface IAppProps {
   top?: string
 }
 type Ref = HTMLDivElement
-
-// const RImage = forwardRef<Ref, IAppProps>(({ src, rotate, top }, ref) => {
-//   return (
-//     <div
-//       ref={ref}
-//       className={`imgFlex relative shrink-0`}
-//       style={{
-//         rotate: rotate,
-//         top: top,
-//         minWidth: '200px',
-//         minHeight: '200px',
-//         height: '20vw',
-//         width: '20vw',
-//       }}
-//     >
-//       <Image alt='kok-next-slider' src={src} fill={true} objectFit='contain' />
-//     </div>
-//   )
-// })
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -86,7 +67,6 @@ export const Slider = () => {
           start: 'center center',
           end: () => `+=${window.innerHeight}`,
           pin: true,
-          markers: true,
         },
       })
       .to('.container-img', {
@@ -127,7 +107,7 @@ export const Slider = () => {
               <Image
                 alt='kok-next-slider'
                 src={value}
-                fill={true}
+                layout='fill'
                 objectFit='contain'
               />
             </div>

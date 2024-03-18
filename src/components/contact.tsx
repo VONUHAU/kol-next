@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 gsap.registerPlugin(ScrollTrigger)
 
 export const Contact = () => {
@@ -103,14 +103,14 @@ export const Contact = () => {
               <Image
                 src='/assets/images/left-hand.webp'
                 alt='kol-next-connect'
-                fill
+                layout='fill'
               />
             </div>
             <div className='right-hand pointer-events-none relative h-[20vw] w-[49vw]'>
               <Image
                 src='/assets/images/right-hand.webp'
                 alt='kol-next-connect'
-                fill
+                layout='fill'
               />
             </div>
           </div>

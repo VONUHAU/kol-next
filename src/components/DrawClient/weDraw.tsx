@@ -1,6 +1,6 @@
 /* eslint-disable react/display-name */
 'use client'
-import React, { ForwardedRef, forwardRef, useRef } from 'react'
+import React, { forwardRef, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import webCard from '../../../public/assets/images/webcard01.jpg'
@@ -10,7 +10,7 @@ import webCard4 from '../../../public/assets/images/webcard04.jpg'
 import webCard5 from '../../../public/assets/images/webcard05.jpg'
 import webCard6 from '../../../public/assets/images/webcard06.jpg'
 import webCard7 from '../../../public/assets/images/webcard07.jpg'
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 
 const webCards = [
   webCard6,
@@ -32,7 +32,7 @@ export const WeDraw = forwardRef((_props, imageRef: any) => {
         {webCards.map((card, key) => (
           <div key={key}>
             <Image
-              ref={(el) => {
+              ref={(el: any) => {
                 return (imageRef!.current[key] = el)
               }}
               src={card}

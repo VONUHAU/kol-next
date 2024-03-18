@@ -1,7 +1,5 @@
 import React from 'react'
-import { useWeDraw } from '@/contexts/weDrawContext'
 export const Footer = () => {
-  const { isCompleted } = useWeDraw()
   return (
     <footer className='footer -mx-8 mt-16 bg-black font-medium'>
       <div className='text-slider flex font-tungstenNarrow text-[12vw]'>

@@ -1,10 +1,9 @@
 'use client'
 import React, { useRef } from 'react'
 import { gsap } from 'gsap'
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import Image2 from '../../../public/assets/images/hh6.png'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -124,85 +123,12 @@ export const Hero = () => {
         .add(imageScrolling('.hero6', '.hero-small-text', 260, -80))
         .add(imageScrolling('.hero7', '.hero-small-text', -320, -25))
         .add(imageScrolling('.hero8', '.hero-small-text', 235, 50))
-
-      // .to('.hero2', {
-      //   immediateRender: false,
-      //   yPercent: -40,
-      //   scrollTrigger: {
-      //     trigger: '.hero-small-text',
-      //     scrub: true,
-      //     start: 'center center',
-      //     end: 'bottom top',
-      //     toggleActions: 'play complete complete complete',
-      //   },
-      // })
-      // .to('.hero3', {
-      //   immediateRender: false,
-      //   xPercent: 160,
-      //   yPercent: 90,
-      //   scrollTrigger: {
-      //     trigger: '.hero-small-text',
-      //     scrub: true,
-      //     start: 'center center',
-      //     end: 'bottom top',
-      //     toggleActions: 'play complete complete complete',
-      //   },
-      // })
-      // .to('.hero5', {
-      //   immediateRender: false,
-      //   xPercent: -250,
-      //   yPercent: 100,
-      //   scrollTrigger: {
-      //     trigger: '.hero-small-text',
-      //     scrub: true,
-      //     start: 'center center',
-      //     end: 'bottom top',
-      //     toggleActions: 'play complete complete complete',
-      //   },
-      // })
-
-      // .to('.hero6', {
-      //   immediateRender: false,
-      //   xPercent: 260,
-      //   yPercent: -80,
-      //   scrollTrigger: {
-      //     trigger: '.hero-small-text',
-      //     scrub: true,
-      //     start: 'center center',
-      //     end: 'bottom top',
-      //     toggleActions: 'play complete complete complete',
-      //   },
-      // })
-      // .to('.hero7', {
-      //   immediateRender: false,
-      //   xPercent: -320,
-      //   yPercent: -25,
-      //   scrollTrigger: {
-      //     trigger: '.hero-small-text',
-      //     scrub: true,
-      //     start: 'center center',
-      //     end: 'bottom top',
-      //     toggleActions: 'play complete complete complete',
-      //   },
-      // })
-      // .to('.hero8', {
-      //   immediateRender: false,
-      //   xPercent: 235,
-      //   yPercent: 50,
-      //   scrollTrigger: {
-      //     trigger: '.hero-small-text',
-      //     scrub: true,
-      //     start: 'center center',
-      //     end: 'bottom top',
-      //     toggleActions: 'play complete complete complete',
-      //   },
-      // })
     },
     { scope: container }
   )
 
   return (
-    <div ref={container} className='relative mt-20 h-[60vh] w-full'>
+    <div ref={container} className='relative mt-20 h-[100vh] w-full'>
       <div className='texts flex flex-col items-center justify-center'>
         <div className='creating hero-text translate-y-1/2 font-serif'>
           <span className='opacity-20'>C</span>
@@ -239,25 +165,53 @@ export const Hero = () => {
         </p>
       </div>
       <div className='image-hero hero2 absolute left-1/2 top-1/2 hidden h-[clamp(90px,16vw,16vw)] w-[clamp(60px,12vw,12vw)] -translate-x-1/2 -translate-y-1/2 rotate-12'>
-        <Image src='/assets/images/hh1.png' fill alt='kol-next'></Image>
+        <Image
+          src='/assets/images/hh1.png'
+          layout='fill'
+          alt='kol-next'
+        ></Image>
       </div>
       <div className='image-hero hero3 -rotate-5 absolute left-1/2 top-1/2 hidden h-[clamp(90px,16vw,16vw)] w-[clamp(60px,12vw,12vw)] -translate-x-1/3 -translate-y-1/3'>
-        <Image src='/assets/images/hh3.png' fill alt='kol-next'></Image>
+        <Image
+          src='/assets/images/hh3.png'
+          layout='fill'
+          alt='kol-next'
+        ></Image>
       </div>
       <div className='image-hero hero4 absolute left-1/2 top-1/2 hidden h-[clamp(60px,4vw,4vw)] w-[clamp(120px,9vw,9vw)] -translate-x-1/2 -translate-y-1/2 '>
-        <Image src='/assets/images/hh4.png' fill alt='kol-next'></Image>
+        <Image
+          src='/assets/images/hh4.png'
+          layout='fill'
+          alt='kol-next'
+        ></Image>
       </div>
       <div className='image-hero hero5 rotate-5 absolute left-1/2 top-1/2 hidden h-[clamp(120px,7vw,7vw)] w-[clamp(140px,7.2vw,7.2vw)] -translate-x-1/2 -translate-y-1/2'>
-        <Image src='/assets/images/hh5.png' fill alt='kol-next'></Image>
+        <Image
+          src='/assets/images/hh5.png'
+          layout='fill'
+          alt='kol-next'
+        ></Image>
       </div>
       <div className='image-hero hero6 rotate-5 absolute left-1/2 top-1/2 hidden h-[clamp(70px,15vw,15vw)] w-[clamp(45px,11vw,11vw)] -translate-x-1/2 -translate-y-1/2'>
-        <Image src='/assets/images/hh6.png' fill alt='kol-next'></Image>
+        <Image
+          src='/assets/images/hh6.png'
+          layout='fill'
+          alt='kol-next'
+        ></Image>
       </div>
       <div className='image-hero hero7 rotate-5 absolute left-1/2 top-1/2 hidden h-[clamp(90px,16vw,16vw)] w-[clamp(60px,12vw,12vw)] -translate-x-1/2 -translate-y-1/2'>
-        <Image src='/assets/images/hh7.png' fill alt='kol-next'></Image>
+        <Image
+          src='/assets/images/hh7.png'
+          layout='fill'
+          alt='kol-next'
+        ></Image>
       </div>
       <div className='image-hero hero8 rotate-5 absolute left-1/2 top-1/2 hidden h-[clamp(120px,7vw,7vw)] w-[clamp(140px,7.2vw,7.2vw)] -translate-x-1/2 -translate-y-1/2'>
-        <Image src='/assets/images/hh8.png' fill alt='kol-next'></Image>
+        <Image
+          src='/assets/images/hh8.png'
+          layout='fill'
+          alt='kol-next'
+        ></Image>
       </div>
       <div className='hero-small-text mt-10 flex translate-y-[200%] items-center justify-center gap-4 whitespace-nowrap sm:gap-20'>
         <div className='md-text-xs flex flex-col items-center justify-center text-[10px] uppercase lg:text-[0.8vw]'>
