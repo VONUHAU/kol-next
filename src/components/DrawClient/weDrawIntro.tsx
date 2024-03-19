@@ -167,7 +167,6 @@ export const WeDrawIntro = () => {
             <span className='text-accent'>W</span>
             <span className='text-accent'>.</span>
           </div>
-          <WeDraw ref={imageRefs} />
         </div>
       </div>
     </div>

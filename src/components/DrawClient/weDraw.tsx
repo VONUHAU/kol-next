@@ -1,6 +1,6 @@
 /* eslint-disable react/display-name */
 'use client'
-import React, { forwardRef, useRef } from 'react'
+import React, { useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import webCard from '../../../public/assets/images/webcard01.jpg'
@@ -23,29 +23,40 @@ const webCards = [
 ]
 
 gsap.registerPlugin(ScrollTrigger)
-export const WeDraw = forwardRef((_props, imageRef: any) => {
+export const WeDraw = () => {
   const container = useRef<HTMLDivElement>(null)
 
   return (
-    <div ref={container} className='we-draw text-fill relative'>
-      <div className='absolute left-1/2 top-1/2 w-[40%] -translate-x-1/2 -translate-y-1/2'>
+    <div
+      ref={container}
+      className='we-draw text-fill relative -mt-[100vh] flex h-screen flex-col justify-center'
+    >
+      <div className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'>
+        <div className='text-center text-[clamp(30px,26vw,26vw)] uppercase leading-none text-accent '>
+          <span className='text-accent'>W</span>
+          <span className='text-accent'>E</span>
+          <span className='text-accent'>D</span>
+          <span className='text-accent'>R</span>
+          <span className='text-accent'>A</span>
+          <span className='text-accent'>W</span>
+          <span className='text-accent'>.</span>
+        </div>
+      </div>
+      {/* <div className='absolute left-1/2 top-1/2 w-[40%] -translate-x-1/2 -translate-y-1/2'>
         {webCards.map((card, key) => (
           <div key={key}>
             <Image
-              ref={(el: any) => {
-                return (imageRef!.current[key] = el)
-              }}
               src={card}
               alt='kol-next-card'
               sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 24vw'
               style={{
                 transformOrigin: 'left top',
               }}
-              className={`absolute left-1/2 top-1/2 m-auto w-[54vw]  -translate-x-1/2 -translate-y-1/2 opacity-0`}
+              className={`absolute left-1/2 top-1/2 m-auto w-[54vw] -translate-x-1/2 -translate-y-1/2 `}
             />
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   )
-})
+}

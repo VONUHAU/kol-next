@@ -130,17 +130,6 @@ export const WeDrawIntro = () => {
             </div>
           </div>
         </div>
-        <div className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'>
-          <div className='text-center text-[26vw] uppercase leading-none text-accent opacity-0 sm:text-[20vw]'>
-            <span className='text-accent'>W</span>
-            <span className='text-accent'>E</span>
-            <span className='text-accent'>D</span>
-            <span className='text-accent'>R</span>
-            <span className='text-accent'>A</span>
-            <span className='text-accent'>W</span>
-            <span className='text-accent'>.</span>
-          </div>
-        </div>
       </div>
     </div>
   )

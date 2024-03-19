@@ -35,7 +35,7 @@ export const Clients = () => {
       .to('.clients', {
         opacity: 0,
         onComplete: () => {
-          popupTl.current?.play()
+          popupTl.current?.restart()
         },
       })
 
@@ -43,23 +43,58 @@ export const Clients = () => {
       paused: true,
     })
     popupTl.current
-      .to('.intro', {
+      .to('.triple-word-popup', {
         opacity: 1,
         onStart: () => {
           document.body.style.overflow = 'hidden'
         },
       })
-      .from(
+      .fromTo(
         '.part-01',
         {
-          xPercent: '250',
-          stagger: 0.2,
+          xPercent: '0',
+          stagger: 0.1,
+          duration: 2,
+          ease: 'power3.inOut',
+        },
+        {
+          xPercent: '-200',
+          stagger: 0.1,
           duration: 2,
           ease: 'power3.inOut',
         },
         '<0'
       )
-      .to('.intro', {
+      .to('.triple-word-popup', {
+        opacity: 0,
+      })
+      .to(
+        '.triple-words-warper',
+        {
+          opacity: 1,
+        },
+        '<0'
+      )
+      .to('.center-tripleWord', { xPercent: 1, yPercent: 1, duration: 0.05 })
+      .to('.center-tripleWord', {
+        xPercent: 1.2,
+        yPercent: 1.3,
+        duration: 0.05,
+      })
+      .to('.center-tripleWord', {
+        xPercent: -1.3,
+        yPercent: -1.3,
+        duration: 0.05,
+      })
+      .to('.top-mask', {
+        opacity: 1,
+        stagger: 0.01,
+      })
+      .to('.bottom-mask', {
+        opacity: 1,
+        stagger: 0.01,
+      })
+      .to('.triple-words-warper', {
         opacity: 0,
         onComplete: () => {
           document.body.style.overflowY = 'auto'
@@ -67,11 +102,11 @@ export const Clients = () => {
       })
   })
   return (
-    <div
-      ref={container}
-      className='text-fill relative h-screen font-tungstenNarrow sm:py-20'
-    >
-      <div className='client  flex h-full w-full flex-col items-center justify-center'>
+    <div className='text-fill relative font-tungstenNarrow sm:py-20 '>
+      <div
+        ref={container}
+        className='client flex h-[100vh] w-full flex-col items-center justify-center'
+      >
         <div className='clients relative'>
           <p className=' text-center text-[clamp(30px,32vw,32vw)] uppercase leading-none text-accent '>
             CLIENTS:
@@ -166,10 +201,16 @@ export const Clients = () => {
           </div>
         </div>
       </div>
-      <div className='absolute -top-[3%] left-0 h-screen w-screen leading-[0.8] '>
-        <div className='intro rotate-[-10deg] opacity-0'>
+      <div className='fixed left-0 top-[0] flex h-screen w-screen flex-col justify-center leading-[0.8]'>
+        <div className='triple-word-popup opacity-1 rotate-[-10deg] opacity-0'>
           <div className='part-01 flex flex-col items-center justify-center'>
             <div className='flex flex-nowrap whitespace-nowrap'>
+              <span className='text-tungsten runningText text-[clamp(30px,30vw,30vw)] uppercase text-accent'>
+                WE DRAW.
+              </span>
+              <span className='text-tungsten runningText text-[clamp(30px,30vw,30vw)] uppercase text-accent'>
+                WE DRAW.
+              </span>
               <span className='text-tungsten runningText text-[clamp(30px,30vw,30vw)] uppercase text-accent'>
                 WE DRAW.
               </span>
@@ -203,8 +244,13 @@ export const Clients = () => {
             <span className='text-tungsten runningText text-[clamp(30px,30vw,30vw)] uppercase text-accent'>
               WE DRAW.
             </span>
+            <span className='text-tungsten runningText text-[clamp(30px,30vw,30vw)] uppercase text-accent'>
+              WE DRAW.
+            </span>
+            <span className='text-tungsten runningText text-[clamp(30px,30vw,30vw)] uppercase text-accent'>
+              WE DRAW.
+            </span>
           </div>
-
           <div className=' part-01 flex flex-nowrap whitespace-nowrap'>
             <span className='text-tungsten runningText text-[clamp(30px,30vw,30vw)] uppercase text-accent'>
               WE DRAW.
@@ -221,10 +267,53 @@ export const Clients = () => {
             <span className='text-tungsten runningText text-[clamp(30px,30vw,30vw)] uppercase text-accent'>
               WE DRAW.
             </span>
+            <span className='text-tungsten runningText text-[clamp(30px,30vw,30vw)] uppercase text-accent'>
+              WE DRAW.
+            </span>
+            <span className='text-tungsten runningText text-[clamp(30px,30vw,30vw)] uppercase text-accent'>
+              WE DRAW.
+            </span>
           </div>
         </div>
-        <div className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'>
-          <div className='text-center text-[26vw] uppercase leading-none text-accent opacity-0 sm:text-[20vw]'>
+        <div className='triple-words-warper absolute flex h-full w-full flex-col items-center justify-center opacity-0'>
+          <div className='top-mask -mt-[0.6vw] h-[1.6vw] overflow-hidden opacity-0'>
+            <span className='text-tungsten text-[clamp(30px,26vw,26vw)] uppercase leading-[0.73] text-accent'>
+              WE DRAW.
+            </span>
+          </div>
+          <div className='top-mask -mt-[0.6vw] h-[2vw] overflow-hidden opacity-0'>
+            <span className='text-tungsten text-[clamp(30px,26vw,26vw)] uppercase leading-[0.73] text-accent'>
+              WE DRAW.
+            </span>
+          </div>
+          <div className='top-mask -mt-[0.6vw] h-[2.5vw] overflow-hidden opacity-0'>
+            <span className='text-tungsten text-[clamp(30px,26vw,26vw)] uppercase leading-[0.73] text-accent'>
+              WE DRAW.
+            </span>
+          </div>
+          <span className='text-tungsten center-tripleWord -mb-[0.2vw] -mt-[0.6vw] text-[clamp(30px,26vw,26vw)]  uppercase leading-[0.73] text-accent'>
+            WE DRAW.
+          </span>
+          <div className='bottom-mask -mb-[0.2vw] flex h-[2vw] items-end overflow-hidden opacity-0'>
+            <span className='text-tungsten text-[clamp(30px,26vw,26vw)] uppercase leading-[0.75] text-accent'>
+              WE DRAW.
+            </span>
+          </div>
+
+          <div className='bottom-mask -mb-[0.2vw] flex h-[1.6vw] items-end overflow-hidden opacity-0'>
+            <span className='text-tungsten text-[clamp(30px,26vw,26vw)] uppercase leading-[0.75] text-accent'>
+              WE DRAW.
+            </span>
+          </div>
+
+          <div className='bottom-mask -mb-[0.2vw] flex h-[1.2vw] items-end overflow-hidden opacity-0'>
+            <span className='text-tungsten text-[clamp(30px,26vw,26vw)] uppercase leading-[0.75] text-accent'>
+              WE DRAW.
+            </span>
+          </div>
+        </div>
+        {/* <div className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'>
+          <div className='text-center text-[clamp(30px,26vw,26vw)] uppercase leading-none text-accent opacity-0 '>
             <span className='text-accent'>W</span>
             <span className='text-accent'>E</span>
             <span className='text-accent'>D</span>
@@ -233,7 +322,7 @@ export const Clients = () => {
             <span className='text-accent'>W</span>
             <span className='text-accent'>.</span>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   )
