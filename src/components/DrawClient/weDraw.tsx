@@ -11,6 +11,7 @@ import webCard5 from '../../../public/assets/images/webcard05.jpg'
 import webCard6 from '../../../public/assets/images/webcard06.jpg'
 import webCard7 from '../../../public/assets/images/webcard07.jpg'
 import Image from 'next/legacy/image'
+import { useGSAP } from '@gsap/react'
 
 const webCards = [
   webCard6,
@@ -23,26 +24,47 @@ const webCards = [
 ]
 
 gsap.registerPlugin(ScrollTrigger)
+
 export const WeDraw = () => {
   const container = useRef<HTMLDivElement>(null)
-
+  const tl = useRef<GSAPTimeline>()
+  useGSAP(
+    () => {
+      tl.current = gsap.timeline({
+        scrollTrigger: {
+          trigger: container.current,
+          scrub: true,
+          pin: true,
+          markers: true,
+          start: 'center center',
+          end: () => `+=${window.innerHeight * 1.2}`,
+        },
+      })
+      tl.current.to('.we-draw', {
+        opacity: 0,
+        duration: 0.03,
+      })
+    },
+    { scope: container }
+  )
   return (
     <div
       ref={container}
-      className='we-draw text-fill relative -mt-[100vh] flex h-screen flex-col justify-center'
+      className='text-fill relative -mt-[100vh] flex h-screen flex-col justify-center'
     >
-      <div className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'>
-        <div className='text-center text-[clamp(30px,26vw,26vw)] uppercase leading-none text-accent '>
-          <span className='text-accent'>W</span>
-          <span className='text-accent'>E</span>
-          <span className='text-accent'>D</span>
-          <span className='text-accent'>R</span>
-          <span className='text-accent'>A</span>
-          <span className='text-accent'>W</span>
-          <span className='text-accent'>.</span>
+      <div>
+        <div className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'>
+          <div className='we-draw text-center text-[clamp(30px,22vw,22vw)] uppercase leading-none text-accent opacity-0'>
+            <span className='text-accent'>W</span>
+            <span className='text-accent'>E</span>
+            <span className='text-accent'>D</span>
+            <span className='text-accent'>R</span>
+            <span className='text-accent'>A</span>
+            <span className='text-accent'>W</span>
+            <span className='text-accent'>.</span>
+          </div>
         </div>
-      </div>
-      {/* <div className='absolute left-1/2 top-1/2 w-[40%] -translate-x-1/2 -translate-y-1/2'>
+        {/* <div className='absolute left-1/2 top-1/2 w-[40%] -translate-x-1/2 -translate-y-1/2'>
         {webCards.map((card, key) => (
           <div key={key}>
             <Image
@@ -57,6 +79,7 @@ export const WeDraw = () => {
           </div>
         ))}
       </div> */}
+      </div>
     </div>
   )
 }

@@ -14,9 +14,10 @@ const popups = [
   'Transformation Branding',
   'Award Winning Experiment',
   "Design That's Noticed",
-  'Wow Worthy Website',
+  'Wow Worthy Motion',
   'Find Your Audience',
   'Impact Design',
+  'Visuals to life',
   'Look & Feel your Best',
 ]
 const bgs = ['#ffe7de', '#efbeac', '#fbf8f7', '#f3d1c4']
@@ -144,7 +145,7 @@ export const Branding = () => {
           <p className='font-tungstenNarrow uppercase leading-[0.8]'>
             STORYTELLING
           </p>
-          <Popup start={2} end={6} offsetLeft={30} offsetTop={20} />
+          <Popup start={2} end={7} offsetLeft={30} offsetTop={20} />
         </div>
         <div className='relative block h-[11vw] w-[20%] overflow-hidden rounded-lg'>
           <Image

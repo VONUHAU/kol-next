@@ -52,7 +52,7 @@ export default function SplitStringToSpans() {
             scrub: 1,
             pin: true,
             start: 'center center',
-            end: `+=${wrapper.current?.offsetHeight * 6}`,
+            end: `+=${window.innerHeight * 2}`,
           },
         }
       )
