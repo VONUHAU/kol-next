@@ -19,7 +19,7 @@ export const Video = () => {
             trigger: container.current,
             scrub: true,
             pin: wrapper.current,
-            end: '+=600 ',
+            end: () => `+=${window.innerWidth * 2}`,
             start: 'center center',
           },
         }
@@ -29,8 +29,8 @@ export const Video = () => {
   )
 
   return (
-    <section className='relative mb-56 ' ref={wrapper}>
-      <div ref={container} className='video-section -mx-8  w-screen'>
+    <section className='relative mb-56' ref={wrapper}>
+      <div ref={container} className='video-section -mx-8 w-screen'>
         <div className='video-container w-screen'>
           <video
             autoPlay

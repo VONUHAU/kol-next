@@ -38,8 +38,8 @@ const tungsten = localFont({
 })
 
 export const metadata: Metadata = {
-  title: 'K0-NEXT',
-  description: 'K0-NEXT-WEB3-EXPERIMENT',
+  title: 'KOdigital | We Build Engaging Digital Video Ads at Scale',
+  description: 'We Build Engaging Digital Video Ads at Scale',
 }
 
 export default function RootLayout({

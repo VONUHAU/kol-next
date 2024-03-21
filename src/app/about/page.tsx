@@ -1,3 +1,4 @@
+'use client'
 import Image from 'next/legacy/image'
 import { Major } from './_major'
 
@@ -78,7 +79,11 @@ export default function Home() {
             impactful digital experience.
           </div>
           <div className='absolute bottom-0 right-0 -z-[1] h-[clamp(110px,21vw,21vw)] w-[clamp(100px,20vw,20vw)]'>
-            <Image src='/assets/images/about/globe.png' alt='global' fill />
+            <Image
+              src='/assets/images/about/globe.png'
+              alt='global'
+              layout='fill'
+            />
           </div>
         </div>
         <Major />

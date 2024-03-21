@@ -59,8 +59,8 @@ export const Hero = () => {
         .to('.ignore > span', { opacity: 1, stagger: 0.1 }, '<0')
         .fromTo(
           '.impossible',
-          { scaleY: 0, display: 'none', yPercent: -60 },
-          { scaleY: 1, display: 'block', yPercent: -60 }
+          { scaleY: 0, display: 'none', y: '-8.6vw' },
+          { scaleY: 1, display: 'block', y: '-8.6vw' }
         )
         .to('.creating', { yPercent: -50 }, '<0')
         .to('.brand', { yPercent: -50 }, '<0')
@@ -128,91 +128,94 @@ export const Hero = () => {
   )
 
   return (
-    <div ref={container} className='relative mt-20 h-[100vh] w-full'>
-      <div className='texts flex flex-col items-center justify-center'>
-        <div className='creating hero-text translate-y-1/2 font-serif'>
-          <span className='opacity-20'>C</span>
-          <span className='opacity-20'>R</span>
-          <span className='opacity-20'>E</span>
-          <span className='opacity-20'>A</span>
-          <span className='opacity-20'>T</span>
-          <span className='opacity-20'>I</span>
-          <span className='opacity-20'>N</span>
-          <span className='opacity-20'>G</span>
-        </div>
+    <div ref={container} className='relative mt-20 w-full'>
+      <div className='relative'>
+        <div className='texts flex flex-col items-center justify-center'>
+          <div className='creating hero-text translate-y-1/2 font-serif'>
+            <span className='opacity-20'>C</span>
+            <span className='opacity-20'>R</span>
+            <span className='opacity-20'>E</span>
+            <span className='opacity-20'>A</span>
+            <span className='opacity-20'>T</span>
+            <span className='opacity-20'>I</span>
+            <span className='opacity-20'>N</span>
+            <span className='opacity-20'>G</span>
+          </div>
 
-        {/* <p className='hero-text brand font-serif'>CREATING</p> */}
-        <div className='hero-text brand translate-y-1/2 font-serif'>
-          <span className='opacity-20'>B</span>
-          <span className='opacity-20'>R</span>
-          <span className='opacity-20'>A</span>
-          <span className='opacity-20'>N</span>
-          <span className='opacity-20'>D</span>
+          {/* <p className='hero-text brand font-serif'>CREATING</p> */}
+          <div className='hero-text brand translate-y-1/2 font-serif'>
+            <span className='opacity-20'>B</span>
+            <span className='opacity-20'>R</span>
+            <span className='opacity-20'>A</span>
+            <span className='opacity-20'>N</span>
+            <span className='opacity-20'>D</span>
+          </div>
+          <p className='md:6xl ignore hero-text translate-y-1/2 whitespace-nowrap font-serif'>
+            <span className='opacity-20'>T</span>
+            <span className='opacity-20'>O</span>
+            <span> </span>
+            <span className='opacity-20'>I</span>
+            <span className='opacity-20'>G</span>
+            <span className='opacity-20'>N</span>
+            <span className='opacity-20'>O</span>
+            <span className='opacity-20'>R</span>
+            <span className='opacity-20'>E</span>
+          </p>
+          <p className='impossible hidden font-tungsten text-[clamp(4rem,18vw,18vw)] font-black leading-[0.8] text-secondary'>
+            IMPOSSIBLE
+          </p>
         </div>
-        <p className='md:6xl ignore hero-text translate-y-1/2 whitespace-nowrap font-serif'>
-          <span className='opacity-20'>T</span>
-          <span className='opacity-20'>O</span>
-          <span> </span>
-          <span className='opacity-20'>I</span>
-          <span className='opacity-20'>G</span>
-          <span className='opacity-20'>N</span>
-          <span className='opacity-20'>O</span>
-          <span className='opacity-20'>R</span>
-          <span className='opacity-20'>E</span>
-        </p>
-        <p className='impossible hidden font-tungsten text-[clamp(4rem,18vw,18vw)] font-black leading-[0.8] text-secondary'>
-          IMPOSSIBLE
-        </p>
+        <div className='image-hero hero2 absolute left-1/2 top-1/2 hidden h-[clamp(90px,16vw,16vw)] w-[clamp(60px,12vw,12vw)] -translate-x-1/2 -translate-y-1/2 rotate-12'>
+          <Image
+            src='/assets/images/hh1.png'
+            layout='fill'
+            alt='kol-next'
+          ></Image>
+        </div>
+        <div className='image-hero hero3 -rotate-5 absolute left-1/2 top-1/2 hidden h-[clamp(90px,16vw,16vw)] w-[clamp(60px,12vw,12vw)] -translate-x-1/3 -translate-y-1/3'>
+          <Image
+            src='/assets/images/hh3.png'
+            layout='fill'
+            alt='kol-next'
+          ></Image>
+        </div>
+        <div className='image-hero hero4 absolute left-1/2 top-1/2 hidden h-[clamp(60px,4vw,4vw)] w-[clamp(120px,9vw,9vw)] -translate-x-1/2 -translate-y-1/2 '>
+          <Image
+            src='/assets/images/hh4.png'
+            layout='fill'
+            alt='kol-next'
+          ></Image>
+        </div>
+        <div className='image-hero hero5 rotate-5 absolute left-1/2 top-1/2 hidden h-[clamp(120px,7vw,7vw)] w-[clamp(140px,7.2vw,7.2vw)] -translate-x-1/2 -translate-y-1/2'>
+          <Image
+            src='/assets/images/hh5.png'
+            layout='fill'
+            alt='kol-next'
+          ></Image>
+        </div>
+        <div className='image-hero hero6 rotate-5 absolute left-1/2 top-1/2 hidden h-[clamp(70px,15vw,15vw)] w-[clamp(45px,11vw,11vw)] -translate-x-1/2 -translate-y-1/2'>
+          <Image
+            src='/assets/images/hh6.png'
+            layout='fill'
+            alt='kol-next'
+          ></Image>
+        </div>
+        <div className='image-hero hero7 rotate-5 absolute left-1/2 top-1/2 hidden h-[clamp(90px,16vw,16vw)] w-[clamp(60px,12vw,12vw)] -translate-x-1/2 -translate-y-1/2'>
+          <Image
+            src='/assets/images/hh7.png'
+            layout='fill'
+            alt='kol-next'
+          ></Image>
+        </div>
+        <div className='image-hero hero8 rotate-5 absolute left-1/2 top-1/2 hidden h-[clamp(120px,7vw,7vw)] w-[clamp(140px,7.2vw,7.2vw)] -translate-x-1/2 -translate-y-1/2'>
+          <Image
+            src='/assets/images/hh8.png'
+            layout='fill'
+            alt='kol-next'
+          ></Image>
+        </div>
       </div>
-      <div className='image-hero hero2 absolute left-1/2 top-1/2 hidden h-[clamp(90px,16vw,16vw)] w-[clamp(60px,12vw,12vw)] -translate-x-1/2 -translate-y-1/2 rotate-12'>
-        <Image
-          src='/assets/images/hh1.png'
-          layout='fill'
-          alt='kol-next'
-        ></Image>
-      </div>
-      <div className='image-hero hero3 -rotate-5 absolute left-1/2 top-1/2 hidden h-[clamp(90px,16vw,16vw)] w-[clamp(60px,12vw,12vw)] -translate-x-1/3 -translate-y-1/3'>
-        <Image
-          src='/assets/images/hh3.png'
-          layout='fill'
-          alt='kol-next'
-        ></Image>
-      </div>
-      <div className='image-hero hero4 absolute left-1/2 top-1/2 hidden h-[clamp(60px,4vw,4vw)] w-[clamp(120px,9vw,9vw)] -translate-x-1/2 -translate-y-1/2 '>
-        <Image
-          src='/assets/images/hh4.png'
-          layout='fill'
-          alt='kol-next'
-        ></Image>
-      </div>
-      <div className='image-hero hero5 rotate-5 absolute left-1/2 top-1/2 hidden h-[clamp(120px,7vw,7vw)] w-[clamp(140px,7.2vw,7.2vw)] -translate-x-1/2 -translate-y-1/2'>
-        <Image
-          src='/assets/images/hh5.png'
-          layout='fill'
-          alt='kol-next'
-        ></Image>
-      </div>
-      <div className='image-hero hero6 rotate-5 absolute left-1/2 top-1/2 hidden h-[clamp(70px,15vw,15vw)] w-[clamp(45px,11vw,11vw)] -translate-x-1/2 -translate-y-1/2'>
-        <Image
-          src='/assets/images/hh6.png'
-          layout='fill'
-          alt='kol-next'
-        ></Image>
-      </div>
-      <div className='image-hero hero7 rotate-5 absolute left-1/2 top-1/2 hidden h-[clamp(90px,16vw,16vw)] w-[clamp(60px,12vw,12vw)] -translate-x-1/2 -translate-y-1/2'>
-        <Image
-          src='/assets/images/hh7.png'
-          layout='fill'
-          alt='kol-next'
-        ></Image>
-      </div>
-      <div className='image-hero hero8 rotate-5 absolute left-1/2 top-1/2 hidden h-[clamp(120px,7vw,7vw)] w-[clamp(140px,7.2vw,7.2vw)] -translate-x-1/2 -translate-y-1/2'>
-        <Image
-          src='/assets/images/hh8.png'
-          layout='fill'
-          alt='kol-next'
-        ></Image>
-      </div>
+
       <div className='hero-small-text mt-10 flex translate-y-[200%] items-center justify-center gap-4 whitespace-nowrap sm:gap-20'>
         <div className='md-text-xs flex flex-col items-center justify-center text-[10px] uppercase lg:text-[0.8vw]'>
           <span className='smallUpper'>Worldwide Design</span>

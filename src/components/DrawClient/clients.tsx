@@ -228,13 +228,10 @@ export const Clients = () => {
       .add(topMaskGlitch, '-=0.4')
       .add(bottomMaskGlitch, '<0.1')
       .to('.triple-words-warper', {
-        opacity: 1,
+        opacity: 0,
         onComplete: () => {
           document.body.style.overflowY = 'auto'
         },
-      })
-      .to('.triple-words-warper', {
-        opacity: 0,
       })
   })
   return (
@@ -337,7 +334,7 @@ export const Clients = () => {
           </div>
         </div>
       </div>
-      <div className='fixed left-0 top-[0] flex h-screen w-screen flex-col justify-center '>
+      <div className='pointer-events-none fixed left-0 top-[0] flex h-screen w-screen flex-col justify-center'>
         <div className='triple-word-popup  rotate-[-10deg] leading-[0.8] opacity-0'>
           <div className='part-01 flex flex-col items-center justify-center'>
             <div className='flex flex-nowrap whitespace-nowrap'>
