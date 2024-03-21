@@ -22,7 +22,6 @@ const popups = [
 ]
 const bgs = ['#ffe7de', '#efbeac', '#fbf8f7', '#f3d1c4']
 export const Popup: React.FC<PopupProp> = ({
-  style,
   start,
   end,
   offsetTop,

@@ -1,8 +1,14 @@
+/* eslint-disable @next/next/no-async-client-component */
+'use client'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import Image from 'next/legacy/image'
 export default async function Header() {
+  const pathname = usePathname()
   return (
-    <header className='fixed z-[100] flex h-16 w-screen items-center justify-between'>
+    <header
+      className={`fixed z-[100] flex h-16 w-screen items-center justify-between`}
+    >
       <a href='' className=''>
         <svg
           width={28}
@@ -28,17 +34,25 @@ export default async function Header() {
           src={'/assets/images/gain.jpg'}
           layout='fill'
           alt='gain'
-          className='absolute z-[-1] h-screen w-full object-cover object-center opacity-30'
+          className={`absolute z-[-1] h-screen w-full object-cover object-center opacity-30`}
         />
         <Link href='/'>
-          <div className='cursor-pointer font-tungstenNarrow text-6xl hover:text-accent'>
+          <div
+            className={`${
+              pathname === '/home' ? 'bg-accent' : 'bg-text'
+            }cursor-pointer font-tungstenNarrow text-6xl hover:text-accent`}
+          >
             {' '}
             HOME
           </div>
         </Link>
 
         <Link href='/about'>
-          <div className='cursor-pointer font-tungstenNarrow text-6xl hover:text-accent'>
+          <div
+            className={`${
+              pathname === '/about' ? 'bg-accent' : 'bg-text'
+            }cursor-pointer font-tungstenNarrow text-6xl hover:text-accent`}
+          >
             {' '}
             ABOUT
           </div>
@@ -50,7 +64,11 @@ export default async function Header() {
           </div>
         </Link>
         <Link href='/contact'>
-          <div className='cursor-pointer font-tungstenNarrow text-6xl hover:text-accent'>
+          <div
+            className={`${
+              pathname === '/projects' ? 'bg-accent' : 'bg-text'
+            }cursor-pointer font-tungstenNarrow text-6xl hover:text-accent`}
+          >
             CONTACT
           </div>
         </Link>

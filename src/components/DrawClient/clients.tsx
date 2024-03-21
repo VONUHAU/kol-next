@@ -64,6 +64,58 @@ export const Clients = () => {
           amount: 0.05,
         },
       })
+    const bottomMaskGlitch = gsap
+      .timeline()
+      .to('.bottom-mask', {
+        opacity: 1,
+        duration: 0.02,
+        stagger: {
+          from: 'random',
+          amount: 0.05,
+        },
+      })
+      .to('.bottom-mask', {
+        skewX: 8,
+        duration: 0.02,
+        ease: 'Power4.easeInOut',
+        stagger: {
+          from: 'random',
+          amount: 0.1,
+        },
+      })
+      .to('.bottom-mask', {
+        skewX: 0,
+        duration: 0.02,
+        ease: 'Power4.easeInOut',
+        stagger: {
+          from: 'random',
+          amount: 0.1,
+        },
+      })
+      .to('.bottom-mask', {
+        opacity: 0,
+        duration: 0.02,
+        stagger: {
+          from: 'random',
+          amount: 0.05,
+        },
+      })
+      .to('.bottom-mask', {
+        opacity: 1,
+        duration: 0.02,
+        stagger: {
+          from: 'random',
+          amount: 0.05,
+        },
+      })
+      .to('.bottom-mask', {
+        opacity: 0,
+        duration: 0.02,
+        stagger: {
+          from: 'random',
+          amount: 0.05,
+        },
+      })
     const glitch = gsap
       .timeline()
       .to('.center-tripleWord', {
@@ -86,6 +138,10 @@ export const Clients = () => {
       })
       .to('.center-tripleWord', {
         x: -20,
+        duration: 0.04,
+      })
+      .to('.center-tripleWord', {
+        x: 0,
         duration: 0.04,
       })
       .to('.center-tripleWord', {
@@ -154,9 +210,13 @@ export const Clients = () => {
         },
         '<0'
       )
-      .to('.triple-word-popup', {
-        opacity: 0,
-      })
+      .to(
+        '.triple-word-popup',
+        {
+          opacity: 0,
+        },
+        '-=5%'
+      )
       .to(
         '.triple-words-warper',
         {
@@ -166,11 +226,15 @@ export const Clients = () => {
       )
       .add(glitch)
       .add(topMaskGlitch, '-=0.4')
+      .add(bottomMaskGlitch, '<0.1')
       .to('.triple-words-warper', {
-        opacity: 0,
+        opacity: 1,
         onComplete: () => {
           document.body.style.overflowY = 'auto'
         },
+      })
+      .to('.triple-words-warper', {
+        opacity: 0,
       })
   })
   return (
