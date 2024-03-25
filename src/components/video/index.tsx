@@ -11,7 +11,7 @@ export const Video = () => {
   useGSAP(
     () => {
       gsap.fromTo(
-        '.video-container',
+        '.youtube-container',
         { scale: 0.4 },
         {
           scale: 1,
@@ -31,8 +31,14 @@ export const Video = () => {
   return (
     <section className='relative mb-56' ref={wrapper}>
       <div ref={container} className='video-section -mx-8 w-screen'>
-        <div className='video-container w-screen'>
-          <video
+        <div className='youtube-container w-screen'>
+          <iframe
+            src='https://www.youtube-nocookie.com/embed/bmJuGXXSgfE?si=Zei9rHshR7ytnRP7&autoplay=1&mute=1&loop=1&color=white&controls=0&rel=0&playlist=bmJuGXXSgfE'
+            title='YouTube video player'
+            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+            allowfullscreen
+          ></iframe>
+          {/* <video
             autoPlay
             loop
             preload='preload'
@@ -43,7 +49,7 @@ export const Video = () => {
               src='https://a.storyblok.com/f/150329/x/28eda8d691/smv_intro_cc35.mp4'
               type='video/mp4'
             />
-          </video>
+          </video> */}
         </div>
       </div>
     </section>

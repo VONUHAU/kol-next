@@ -43,7 +43,9 @@ export const Major = () => {
     <div className='branding text-fill relative max-h-max w-full'>
       <div className='flex items-center justify-around gap-4'>
         <div className='relative text-[13vw] text-secondary'>
-          <p className='font-tungstenNarrow leading-[0.8]'>VISUAL</p>
+          <p className='font-tungstenNarrow leading-[0.8] transition-all duration-75 hover:text-accent'>
+            VISUAL
+          </p>
         </div>
         <div className='relative block h-[9.5vw] w-[70%] overflow-hidden rounded-lg'>
           <Image
@@ -66,12 +68,14 @@ export const Major = () => {
           />
         </div>
         <div className='relative text-[13vw] text-secondary'>
-          <p className='font-tungstenNarrow leading-[0.8]'>MOTION</p>
+          <p className='font-tungstenNarrow leading-[0.8] transition-all duration-75 hover:text-accent'>
+            MOTION
+          </p>
         </div>
       </div>
       <div className='flex items-center justify-around'>
         <div className='relative text-[13vw] text-secondary'>
-          <p className='font-tungstenNarrow uppercase leading-[0.8]'>
+          <p className='font-tungstenNarrow uppercase leading-[0.8] transition-all duration-75 hover:text-accent'>
             HTML5 BANNER
           </p>
         </div>

@@ -1,42 +1,66 @@
 'use client'
 import Image from 'next/legacy/image'
+import { useRef } from 'react'
+import { gsap } from 'gsap'
+import { useGSAP } from '@gsap/react'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { Major } from './_major'
+import AboutMe from './_aboutMe'
 
+gsap.registerPlugin(ScrollTrigger)
 type Job = {
   year: number | string
   jobTitle: string
   companyName: string
+  desc: string
 }
 
 const experiences = [
   {
-    year: 'Now',
-    jobTitle: 'Motion Designer',
-    companyName: 'unknow.com',
+    year: 'Dec 2020 - Apr 2024',
+    jobTitle: 'Motion Graphic Designer',
+    companyName: 'Shuttlerock',
+    desc: 'Created thousands of dynamic motion videos and images for diverse advertising campaigns across platforms like Facebook, Instagram, Google, YouTube, TikTok, Hulu, Amazon, X (Twitter), and Pinterest.',
   },
   {
-    year: '2020',
-    jobTitle: 'Motion Designer',
-    companyName: 'unknow.com',
+    year: 'Mar 2020 - Present',
+    jobTitle: 'Freelance Graphic Designer',
+    companyName: 'Lead Like Jesus',
+    desc: 'Design and oversee production of various printing products.',
   },
   {
-    year: '2018',
+    year: 'Oct 2019 - Mar 2020',
     jobTitle: 'Motion Designer',
-    companyName: 'unknow.com',
+    companyName: 'Plasma Khang Viet',
+    desc: `Designed a wide range of print materials (banners, posters, flyers, brochures, catalogs, coupons).
+          Managed social media presence, including hashtag campaigns and fan page engagement.
+          Executed video production tasks as a cameraman and editor.`,
   },
   {
-    year: '2016',
-    jobTitle: 'Motion Designer',
-    companyName: 'unknow.com',
+    year: 'Jun-Aug 2020',
+    jobTitle: 'Background Artist',
+    companyName: 'SUNRISE MEDIA - Entertainment',
+    desc: 'Contributed to the animated series "Quà tặng cuộc sống".',
+  },
+  {
+    year: 'Oct 2018 - Dec 2018',
+    jobTitle: 'Freelance Graphic Designer',
+    companyName: 'SUNRISE MEDIA - Entertainment',
+    desc: 'Designed engaging educational products for children, focusing on alphabet and image descriptions.',
   },
 ]
-export const JobBar = ({ year, jobTitle, companyName }: Job) => {
+export const JobBar = ({ year, jobTitle, companyName, desc }: Job) => {
   return (
-    <div className='flex cursor-pointer gap-6 border-b border-secondary bg-black px-6 py-6 text-[clamp(32px,7vw,7vw)] leading-[0.9] text-secondary transition-all duration-300 last:border-0 hover:bg-accent hover:text-black sm:px-16 md:gap-36'>
-      <p>{year}</p>
-      <div>
-        <p className=''>{jobTitle}</p>
+    <div className='job-bar group relative flex cursor-pointer border-b border-secondary bg-black px-6 py-6 leading-[0.9] text-secondary last:border-0 sm:px-16 '>
+      <p className='w-[30%] text-[clamp(24px,4vw,4vw)]'>{year}</p>
+      <div className='job-title w-[70%]'>
+        <p className='text-[clamp(32px,6vw,6vw)]'>{jobTitle}</p>
         <p className='text-[clamp(16px,2vw,2vw)]'>{companyName}</p>
+      </div>
+      <div className='job-desc absolute left-0 top-0 flex h-full w-full items-center justify-start overflow-hidden bg-accent px-4 md:px-8'>
+        <p className='font-sans text-[clamp(14px,2vw,2vw)] text-white'>
+          {desc}
+        </p>
       </div>
     </div>
   )
@@ -69,37 +93,23 @@ export default function Home() {
       </div>
 
       <div className='space-y-8 font-tungsten text-secondary sm:space-y-14 sm:px-4 md:px-12 lg:space-y-24 lg:px-24'>
-        <div className='relative my-4 sm:my-4 md:my-12 lg:my-24'>
-          <div className='text-[clamp(20px,3vw,3vw)] font-medium'>
-            <p>About me</p>
-          </div>
-          <div className='text-[clamp(32px,7vw,7vw)] font-medium leading-none'>
-            I'm a <span className='text-accent'>selectively skilled </span>
-            product designer with strong focus on producing high quality &
-            impactful digital experience.
-          </div>
-          <div className='absolute bottom-0 right-0 -z-[1] h-[clamp(110px,21vw,21vw)] w-[clamp(100px,20vw,20vw)]'>
-            <Image
-              src='/assets/images/about/globe.png'
-              alt='global'
-              layout='fill'
-            />
-          </div>
-        </div>
+        <AboutMe />
         <Major />
         <div
-          className='pattern relative  flex w-full items-center gap-4 overflow-hidden rounded-xl
+          className='pattern relative  overflow-hidden rounded-xl
           border-4 border-secondary bg-black font-tungstenNarrow text-[clamp(48px,10vw,10vw)] text-white md:rounded-3xl'
         >
-          <p className='z-10 text-accent'>CREATIVE.</p>
-          <p className='z-10'>CREATIVE.</p>
-          <p className='z-10 text-accent'>CREATIVE.</p>
-          <p className='z-10'>CREATIVE.</p>
-          <p className='z-10 text-accent'>CREATIVE.</p>
-          <p className='z-10'>CREATIVE.</p>
-          <p className='z-10 text-accent'>CREATIVE.</p>
-          <p className='z-10'>CREATIVE.</p>
-          <p className='z-10 text-accent'>CREATIVE.</p>
+          <div className=' creative-slider  flex w-full items-center gap-4'>
+            <p className='z-10 text-accent'>CREATIVE.</p>
+            <p className='z-10'>CREATIVE.</p>
+            <p className='z-10 text-accent'>CREATIVE.</p>
+            <p className='z-10'>CREATIVE.</p>
+            <p className='z-10 text-accent'>CREATIVE.</p>
+            <p className='z-10'>CREATIVE.</p>
+            <p className='z-10 text-accent'>CREATIVE.</p>
+            <p className='z-10'>CREATIVE.</p>
+            <p className='z-10 text-accent'>CREATIVE.</p>
+          </div>
         </div>
         <div className='my-8'>
           <div className='text-[clamp(20px,3vw,3vw)]'>

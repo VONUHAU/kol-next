@@ -7,14 +7,10 @@ export default function Header() {
   const pathname = usePathname()
   return (
     <header
-      className={`fixed z-[100] flex h-16 w-screen items-center justify-between`}
+      className={`fixed z-[100] flex h-14 w-screen items-center justify-between sm:h-16`}
     >
-      <a href='' className='w-[clamp(64px,8vw,8vw)] fill-accent'>
-        <svg
-          data-name='Layer 1'
-          xmlns='http://www.w3.org/2000/svg'
-          viewBox='0 0 400 145'
-        >
+      <a href='' className='w-[clamp(64px,8vw,8vw)] fill-white'>
+        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 145'>
           <defs></defs>
           <g>
             <path d='m68.2,125.1h-31l-7.2-50.9v50.9H0V1.8h30v52.5L38.5,1.8h30.1l-11.5,59.5,11.1,63.8Z' />
@@ -29,7 +25,7 @@ export default function Header() {
           <path d='m393.3,125.1V0h6.7v125.1h-6.7Z' />
         </svg>
       </a>
-      <div className='menu-mobile fixed left-0 top-0 hidden h-screen w-full flex-col items-center justify-center gap-12 overflow-hidden bg-secondary sm:hidden'>
+      <div className='menu-mobile fixed left-0 top-0 hidden h-screen w-screen flex-col items-center justify-center gap-12 overflow-hidden bg-secondary sm:hidden'>
         <Image
           src={'/assets/images/gain.jpg'}
           layout='fill'

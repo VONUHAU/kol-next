@@ -4,6 +4,21 @@ import React, { useRef } from 'react'
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import {
+  Dell,
+  Fatface,
+  AlienWare,
+  Gillete,
+  Google,
+  Mazda,
+  Mobilo,
+  Volkswagen,
+  Pepsi,
+  Meta,
+  WWF,
+  SCJ,
+  PizaHut,
+} from '../brandIcon'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -245,51 +260,21 @@ export const Clients = () => {
             CLIENTS:
           </p>
           <div className='clients absolute left-1/2 top-1/2  w-full -translate-x-1/2 -translate-y-1/2 whitespace-nowrap'>
-            <div className='flex items-center justify-center'>
-              <span className='client text-[3vw] leading-[1] opacity-0'>
-                RIOT GAMES.
-              </span>
-              <span className='client text-[3vw] leading-[1] opacity-0'>
-                Warner_logo WARNER BROS GAMES.
-              </span>
-              <span className='client text-[3vw] leading-[1] opacity-0'>
-                MARVEL.
-              </span>
-              <span className='client text-[3vw] leading-[1] opacity-0'>
-                HASBRO
-              </span>
-              <span className='client text-[3vw] leading-[1] opacity-0'>
-                ROCKSTEADY.
-              </span>
-              <span className='client text-[3vw] leading-[1] opacity-0'>
-                GUERRILLA GAMES
-              </span>
-              <span className='client text-[3vw] leading-[1] opacity-0'>
-                DEEP SILVER.
-              </span>
+            <div className='flex items-center justify-center gap-1'>
+              <Dell />
+              <Fatface />
+              <Gillete />
+              <AlienWare logoText='AlienWare' />
+              <Google width='clamp(30px,13vw,13vw)' />
+              <Mazda logoText='Mazda' />
             </div>
-            <div className='flex items-center justify-center'>
-              <span className='client text-[3vw] leading-[1] opacity-0'>
-                SANTA MONICA STUDIO.
-              </span>
-              <span className='client text-[3vw] leading-[1] opacity-0'>
-                BEENOX.
-              </span>
-              <span className='client text-[3vw] leading-[1] opacity-0'>
-                AVALANCHE STUDIOS.
-              </span>
-              <span className='client text-[3vw] leading-[1] opacity-0'>
-                YAGER.
-              </span>
-              <span className='client text-[3vw] leading-[1] opacity-0'>
-                RUMBLE.
-              </span>
-              <span className='client text-[3vw] leading-[1] opacity-0'>
-                . DENA.
-              </span>
-              <span className='client text-[3vw] leading-[1] opacity-0'>
-                . RELATED DESIGNS.
-              </span>
+            <div className='flex items-center justify-center gap-1'>
+              <Pepsi />
+              <PizaHut width='clamp(30px,13vw,13vw)' />
+              <SCJ width='clamp(30px,13vw,13vw)' />
+              <Meta width='clamp(30px,12vw,12vw)' />
+              <Mobilo />
+              <Volkswagen logoText='Volkswagen' />
             </div>
             <div className='flex items-center justify-center'>
               <span className='client text-[3vw] leading-[1] opacity-0'>

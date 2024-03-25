@@ -49,8 +49,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en' className={`${tungsten.variable} ${oswald.className}`}>
-      <body className={`${oswald.className} overflow-x-hidden px-8 pt-8`}>
-        <div className='overlay fixed left-0 top-0 block h-full w-full opacity-30'>
+      <body
+        className={`${oswald.className} overflow-x-hidden px-3 pt-3 sm:px-8 sm:pt-8`}
+      >
+        <div className='overlay fixed left-0 top-0 block h-screen w-screen opacity-30'>
           <Image
             src={'/assets/images/gain.jpg'}
             layout='fill'

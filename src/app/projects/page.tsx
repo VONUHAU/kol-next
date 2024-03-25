@@ -11,14 +11,14 @@ const ImageCard: React.FC<ImageCardProp> = ({
   return (
     <div className='card font-tungsten font-bold'>
       <div className='group relative mb-2.5'>
-        <div className='absolute inset-0 h-full w-full opacity-0 group-hover:opacity-40'>
+        {/* <div className='absolute inset-0 h-full w-full opacity-0 group-hover:opacity-40'>
           <Image
             src={'/assets/images/gain.jpg'}
             layout='fill'
             alt='gain'
             className='h-full w-full object-cover object-center'
           />
-        </div>
+        </div> */}
 
         <Image src={src} alt='kol-next-galley w-full h-full' />
       </div>

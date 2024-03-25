@@ -1,7 +1,30 @@
-import React from 'react'
+'use client'
+import React, { useEffect, useState } from 'react'
 export const Footer = () => {
+  const [isVisible, setIsVisible] = useState(false)
+  useEffect(() => {
+    const toggleVisibility = () => {
+      // if the user scrolls down, show the button
+      window.scrollY > 500 ? setIsVisible(true) : setIsVisible(false)
+    }
+    // listen for scroll events
+    window.addEventListener('scroll', toggleVisibility)
+
+    // clear the listener on component unmount
+    return () => {
+      window.removeEventListener('scroll', toggleVisibility)
+    }
+  }, [])
+
+  const handleBackToTop = () => {
+    isVisible &&
+      window.scrollTo({
+        top: 0,
+        behavior: 'auto',
+      })
+  }
   return (
-    <footer className='footer -mx-8 mt-16 bg-black font-medium'>
+    <footer className='footer -mx-8  bg-black font-medium'>
       <div className='text-slider flex font-tungstenNarrow text-[12vw]'>
         <span className='text-text leading-none'>
           SIXMOREVODKA.FAMOUS.FOR.NOTHING.
@@ -19,22 +42,23 @@ export const Footer = () => {
           SIXMOREVODKA.FAMOUS.FOR.NOTHING.
         </span>
       </div>
-      <div className='border-text flex flex-col items-start justify-start border-b-4 border-t-8 px-2 pt-4 md:flex-row md:items-center md:justify-between md:p-0 md:py-4'>
+      <div className='border-text flex flex-col items-start justify-start border-b-4 border-t-8 px-2 pt-4 md:flex-row md:items-start md:justify-between md:p-0 md:py-4'>
         <div className='px-4 pb-3'>
           <span>SIXMOREVODKA STUDIO</span>
           <br />
           <span>GENERAL INQUIRIES:</span>
-          <br />
-          <span className='text-accent'>INFO@SIXMOREVODKA.COM</span>
+          <a href='mailto:trankhacoai96@gmail.com'>
+            <p className='uppercase text-white'>trankhacoai96@gmail.com</p>
+          </a>
         </div>
         <div className='w-full border-t border-white px-4 py-3 md:w-auto md:border-0 md:py-0'>
           <span className='text-accent'>SIXMOREVODKA STUDIO GMBH</span>
           <br />
           <span>BOXHAGENER STRASSE 16</span>
           <br />
-          <span>10245 BERLIN, GERMANY</span>
+          <span>HCM VietNam</span>
           <br />
-          <span>PHONE: +49 (0) 30 / 7623103</span>
+          <span>PHONE: (+84) 834 243 285</span>
         </div>
         <div className='flex w-full flex-row items-end justify-between gap-6 border-t border-white px-4 py-3 md:w-auto md:border-0 md:py-0'>
           <div>
@@ -74,27 +98,33 @@ export const Footer = () => {
             </div>
             <span>IMPRINT</span>
             <br />
-            <span>COPYRIGHT © 2022 — SMV</span>
+            <span>COPYRIGHT © 2024 — KOdigital</span>
           </div>
           <div className='block md:hidden'>
             <span>Website by</span> <br />
-            <span className='text-accent'>kgeck</span>
+            <span className='text-accent'>KGECK</span>
           </div>
         </div>
         <div className='hidden px-4 md:block'>
           <span>Website by</span> <br />
-          <span className='text-accent'>kgeck</span>
+          <span className='text-accent'>KGECK</span>
         </div>
       </div>
-      <div className='back-to-header group relative overflow-hidden'>
-        <div className='absolute inset-0 translate-y-full bg-accent transition-all group-hover:translate-y-0'></div>
-        <div className='relative z-50 m-auto w-[clamp(30px,4%,50px)] py-2.5'>
+      <div
+        onClick={handleBackToTop}
+        className='back-to-header group fixed left-[90vw] top-[86vh] flex h-[clamp(24px,6vw,6vw)] w-[clamp(24px,6vw,6vw)] cursor-pointer items-center justify-center rounded-full'
+      >
+        <div className='relative'>
           <svg
+            className={`${
+              isVisible ? 'opacity-1' : 'opacity-0'
+            } fill-secondary transition-all group-hover:-translate-y-1/3 group-hover:fill-accent`}
+            width='clamp(18px,4vw,4vw)'
+            height='clamp(18px,4vw,4vw)'
+            viewBox='0 0 852 491'
             xmlns='http://www.w3.org/2000/svg'
-            viewBox='0 0 71 104'
-            className='back-to-header-icon cursor-pointer fill-white'
           >
-            <path d='M70.11,40.69,35.25,0,.39,40.69H19.47V103.5H51V40.69Z' />
+            <path d='M18.7383 471.282C30.7401 483.28 47.0158 490.021 63.9863 490.021C80.9568 490.021 97.2326 483.28 109.234 471.282L426.034 154.482L742.834 471.282C754.905 482.94 771.071 489.391 787.852 489.245C804.633 489.1 820.685 482.369 832.551 470.503C844.417 458.637 851.148 442.585 851.293 425.804C851.439 409.023 844.988 392.857 833.33 380.786L471.282 18.7383C459.281 6.74018 443.005 0 426.034 0C409.064 0 392.788 6.74018 380.786 18.7383L18.7383 380.786C6.74019 392.788 0 409.064 0 426.034C0 443.005 6.74019 459.281 18.7383 471.282Z' />
           </svg>
         </div>
       </div>
