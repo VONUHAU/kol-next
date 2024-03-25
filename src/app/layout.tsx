@@ -37,6 +37,17 @@ const tungsten = localFont({
   display: 'swap',
 })
 
+const rightGrotesk = localFont({
+  src: [
+    {
+      path: '../../public/assets/fonts/RightGrotesk-CompactMedium.woff2',
+      style: 'normal',
+    },
+  ],
+  variable: '--grotesk',
+  display: 'swap',
+})
+
 export const metadata: Metadata = {
   title: 'KOdigital | We Build Engaging Digital Video Ads at Scale',
   description: 'We Build Engaging Digital Video Ads at Scale',
@@ -48,9 +59,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang='en' className={`${tungsten.variable} ${oswald.className}`}>
+    <html
+      lang='en'
+      className={`${tungsten.variable} ${oswald.variable} ${rightGrotesk.variable}`}
+    >
       <body
-        className={`${oswald.className} overflow-x-hidden px-3 pt-3 sm:px-8 sm:pt-8`}
+        className={`${oswald.variable} overflow-x-hidden px-3 pt-3 sm:px-8 sm:pt-8`}
       >
         <div className='overlay fixed left-0 top-0 block h-screen w-screen opacity-30'>
           <Image

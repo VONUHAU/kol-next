@@ -13,14 +13,15 @@ html,
   --secondary: #c2bca6;
   --tertiary: #efbeac;
   --accent: #d53c00;
+  --clip: 0%;
 }
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-body{
-   overflow-x: hidden;
+body {
+  overflow-x: hidden;
 }
 /* body {
   font-family: localTungsten, Impact, Haettenschweiler, 'Arial Narrow Bold',
@@ -67,17 +68,16 @@ body {
 .back-to-header-icon:hover {
   animation: backToHeader 400ms cubic-bezier(0.075, 0.82, 0.165, 1);
 }
-.creative-slider{
+.creative-slider {
   -webkit-transform: translate3d(0, 0, 0);
   animation: scroll linear infinite 20s;
   transition: animation-play-state ease 0.3s;
 }
-.job-desc{
+.job-desc {
   clip-path: inset(50% 0 50% 0);
   transition: all ease-in-out 0.4s;
-
 }
-.job-bar:hover .job-desc{
+.job-bar:hover .job-desc {
   clip-path: inset(0);
 }
 @keyframes backToHeader {
@@ -91,19 +91,19 @@ body {
     translate: 0%;
   }
 }
-.youtube-container{
+.youtube-container {
   overflow: hidden;
-	width: 100%;
-	/* Keep it the right aspect-ratio */
-	aspect-ratio: 16/9;
-	/* No clicking/hover effects */
-	pointer-events: none;
+  width: 100%;
+  /* Keep it the right aspect-ratio */
+  aspect-ratio: 16/9;
+  /* No clicking/hover effects */
+  pointer-events: none;
 }
-.youtube-container iframe{
-  	width: 300%;
-		height: 100%;
-		/* ...and bring it back again */
-		margin-left: -100%;
+.youtube-container iframe {
+  width: 300%;
+  height: 100%;
+  /* ...and bring it back again */
+  margin-left: -100%;
 }
 .text-slider {
   animation: scroll 90s linear infinite;
@@ -155,10 +155,13 @@ iframe img {
 }
 
 @keyframes creative-scroll {
-  0% { transform: translateX(-5%) ; }
-  100% { transform: translateX(calc(-50%))}
+  0% {
+    transform: translateX(-5%);
+  }
+  100% {
+    transform: translateX(calc(-50%));
+  }
 }
-
 
 @keyframes scroll {
   0% {

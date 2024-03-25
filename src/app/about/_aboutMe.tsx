@@ -8,21 +8,24 @@ gsap.registerPlugin(ScrollTrigger)
 
 const sentences = [
   "Hi! I'm Tran Khac Oai (Oil), a Vietnam-based motion graphic",
-  ' designer who brings visuals to life for various clients and platforms.',
-  ' With a passion for dynamic design, my 5 years',
-  ' of experience have sharpened my eye for detail',
-  ' making me a meticulous problem-solver and dedicated trainer.',
-  ' I thrive on collaboration, always eager to listen, learn,',
-  ' and guide colleagues to find the best solutions and reach their full potential.',
+  ' designer who brings visuals to life for various clients and ',
+  'platforms. With a passion for dynamic design, my 5 years',
+  ' of experience have sharpened my eye for detail  making me ',
+  'a meticulous problem-solver and dedicated trainer. I thrive ',
+  'on  collaboration, always eager to listen, learn, and guide ',
+  'colleagues to find the best solutions and reach their full potential.',
 ]
 
 export default function AboutMe() {
   const container = useRef<HTMLDivElement>(null)
   useGSAP(
     () => {
-      gsap.from('.char', {
+      gsap.to('.line', {
         opacity: 0.3,
-        stagger: 0.2,
+        clipPath: 'inset(0px 0% 0% 0)',
+        stagger: {
+          amount: 2,
+        },
         scrollTrigger: {
           trigger: container.current,
           scrub: 1,
@@ -43,14 +46,23 @@ export default function AboutMe() {
     { scope: container }
   )
   return (
-    <div className='space-y-8 font-tungsten text-secondary sm:space-y-14 sm:px-4 md:px-6 lg:space-y-24 '>
+    <div className='space-y-8  font-tungsten text-secondary sm:space-y-14  lg:space-y-24 '>
       <div className='relative my-4 sm:my-4 md:my-12 lg:my-24' ref={container}>
         <div className='text-[clamp(20px,3vw,3vw)] font-medium'>
           <p>About me</p>
         </div>
 
-        <div className='text-[clamp(30px,6vw,6vw)] font-medium leading-none'>
-          {sentences[0].split('').map((char, index) => (
+        <div className='text-[clamp(30px,5.5vw,5.5vw)] font-medium leading-none'>
+          {sentences.map((value, key) => (
+            <div
+              className='line'
+              style={{ clipPath: 'inset(0px 100% 0% 0);' }}
+              key={key}
+            >
+              {value}
+            </div>
+          ))}
+          {/* {sentences[0].split('').map((char, index) => (
             <span
               className={
                 char != ' '
@@ -137,7 +149,7 @@ export default function AboutMe() {
             >
               {char}
             </span>
-          ))}
+          ))} */}
         </div>
 
         <div className='globe absolute bottom-0 right-0 -z-[1] h-[clamp(110px,21vw,21vw)] w-[clamp(100px,20vw,20vw)]'>

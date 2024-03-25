@@ -23,6 +23,7 @@ const config: Config = {
       fontFamily: {
         tungstenNarrow: ['TungstenNarrow', 'Impact'],
         tungsten: ['var(--tungsten)'],
+        grotesk: ['var(--grotesk)'],
       },
     },
   },

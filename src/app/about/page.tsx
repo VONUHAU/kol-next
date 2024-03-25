@@ -40,7 +40,7 @@ const experiences = [
     year: 'Jun-Aug 2020',
     jobTitle: 'Background Artist',
     companyName: 'SUNRISE MEDIA - Entertainment',
-    desc: 'Contributed to the animated series "Quà tặng cuộc sống".',
+    desc: 'Contributed to the animated series "Qua Tang Cuoc Song".',
   },
   {
     year: 'Oct 2018 - Dec 2018',
@@ -51,14 +51,14 @@ const experiences = [
 ]
 export const JobBar = ({ year, jobTitle, companyName, desc }: Job) => {
   return (
-    <div className='job-bar group relative flex cursor-pointer border-b border-secondary bg-black px-6 py-6 leading-[0.9] text-secondary last:border-0 sm:px-16 '>
+    <div className='job-bar group relative flex cursor-pointer border-b border-secondary bg-black px-6 py-8 leading-[0.9] text-secondary last:border-0 sm:px-16 '>
       <p className='w-[30%] text-[clamp(24px,4vw,4vw)]'>{year}</p>
       <div className='job-title w-[70%]'>
         <p className='text-[clamp(32px,6vw,6vw)]'>{jobTitle}</p>
         <p className='text-[clamp(16px,2vw,2vw)]'>{companyName}</p>
       </div>
       <div className='job-desc absolute left-0 top-0 flex h-full w-full items-center justify-start overflow-hidden bg-accent px-4 md:px-8'>
-        <p className='font-sans text-[clamp(14px,2vw,2vw)] text-white'>
+        <p className='font-grotesk text-[clamp(16px,2vw,2vw)] text-white'>
           {desc}
         </p>
       </div>
@@ -69,28 +69,11 @@ export default function Home() {
   return (
     <main className='relative mt-28 min-h-screen '>
       <div
-        className='relative -mx-8 flex items-center justify-center p-16
-      before:absolute before:inset-0 before:z-[-1] before:block before:h-full before:w-full
-      before:bg-[url("/assets/images/about/hh_left.png")] before:bg-cover before:bg-center
-      before:opacity-20 '
-      >
-        <div className='item-center z-[20] flex justify-center'>
-          <div className='good peer text-center font-tungstenNarrow text-[clamp(48px,10vw,10vw)] leading-[0.8] hover:hidden'>
-            <p>MAKING</p>
-            <p className='text-accent'>GOOD</p>
-            <p className='text-accent'>SHIT</p>
-            <p>SINCE</p>
-            <p>2016</p>
-          </div>
-          <div className='hidden text-center font-tungstenNarrow text-[clamp(48px,10vw,10vw)] leading-[0.8] peer-hover:block'>
-            <p>HIDING</p>
-            <p className='text-accent'>BAD</p>
-            <p className='text-accent'>SHIT</p>
-            <p>SINCE</p>
-            <p>2016</p>
-          </div>
-        </div>
-      </div>
+        className='relative -mx-8 flex h-[clamp(200px,60vw,60vw)] items-center justify-center
+      p-16 before:absolute before:inset-0 before:z-[-1] before:block before:h-full
+      before:w-full before:bg-[url("/assets/images/about/Web_portrait.png")] before:bg-cover
+      before:bg-top before:opacity-90'
+      ></div>
 
       <div className='space-y-8 font-tungsten text-secondary sm:space-y-14 sm:px-4 md:px-12 lg:space-y-24 lg:px-24'>
         <AboutMe />
