@@ -2,10 +2,8 @@
 'use client'
 import React, { useRef } from 'react'
 import { gsap } from 'gsap'
-import Image from 'next/legacy/image'
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { isContext } from 'vm'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -43,7 +41,7 @@ export const Hero = () => {
         },
         ({ conditions }) => {
           tl.current = gsap.timeline()
-          const { isDesktop, isMobile } = conditions
+          const { isMobile } = conditions
 
           tl.current
             .from('.creating, .ignore', {
@@ -189,7 +187,10 @@ export const Hero = () => {
   )
 
   return (
-    <div ref={container} className='relative mt-[75px] w-full sm:mt-[90px]'>
+    <div
+      ref={container}
+      className='relative mt-[75px] h-[80vw] w-full sm:mt-[90px]'
+    >
       <div className='relative'>
         <div className='hero-text flex translate-y-[20%] flex-col items-center justify-center sm:translate-y-0'>
           <div className='creating hero-text translate-y-1/2 font-serif'>
@@ -283,7 +284,7 @@ export const Hero = () => {
       <div className='hero-small-text mt-10 flex items-center justify-center gap-4 whitespace-nowrap opacity-0 sm:gap-20'>
         <div className='md-text-xs flex flex-col items-center justify-center text-[10px] uppercase lg:text-[0.8vw]'>
           <span className='smallUpper'>Worldwide Design</span>
-          <span className='swearLine'>USA, SA, Tokyo</span>
+          <span className='swearLine'>EMEA, NAM, APAC, UKI</span>
         </div>
         <div className='md-text-xs flex flex-col items-center justify-center text-[10px] uppercase lg:text-[0.8vw]'>
           <span className='smallUpper'>Branding and</span>

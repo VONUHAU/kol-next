@@ -7,7 +7,7 @@ export const DrawClient = () => {
   return (
     <div className='relative py-5 font-tungstenNarrow sm:py-20'>
       <Clients />
-      <WeDraw />
+      {/* <WeDraw /> */}
     </div>
   )
 }
