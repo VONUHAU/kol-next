@@ -6,17 +6,12 @@ import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import {
   Dell,
-  Fatface,
-  AlienWare,
   Gillete,
-  Google,
   Mazda,
-  Mobilo,
   Volkswagen,
   Pepsi,
   Meta,
   SCJ,
-  PizaHut,
 } from '../brandIcon'
 import webCard from '../../../public/assets/images/webcard01.jpg'
 import webCard2 from '../../../public/assets/images/webcard02.jpg'
@@ -50,12 +45,18 @@ export const Clients = () => {
     () => {
       rotationTL.current = gsap.timeline()
       rotationTL.current
+        .set('.we-draw-image', {
+          left: '50%',
+          top: '50%',
+          xPercent: -50,
+          yPercent: -50,
+          rotation: 0,
+        })
         .from('.we-draw-image', {
           opacity: 0,
         })
         .to('.we-draw-image', {
           opacity: 1,
-          x: 'random(-10,10)',
           stagger: 0.04,
           ease: 'power3.inOut',
         })
@@ -291,6 +292,9 @@ export const Clients = () => {
           '.we-draw',
           {
             opacity: 1,
+            onComplete: () => {
+              rotationTL.current?.restart()
+            },
           },
           '<0'
         )
@@ -299,7 +303,6 @@ export const Clients = () => {
       ctl.current = gsap
         .timeline({
           paused: true,
-          delay: 1,
           scrollTrigger: {
             trigger: imageContainer.current,
             scrub: true,
@@ -307,13 +310,6 @@ export const Clients = () => {
             markers: true,
             start: 'center center',
             end: () => `+=${window.innerHeight * 1.5}`,
-            onLeaveBack: () => {
-              gsap.set('.we-draw-image', {
-                rotate: 'none',
-                xPercent: 'none',
-                yPercent: 'none',
-              })
-            },
           },
           ease: 'power3.inOut',
         })
@@ -324,6 +320,13 @@ export const Clients = () => {
             from: 'center',
           },
         })
+        .set(
+          '.we-draw-image',
+          {
+            rotation: (index) => index * 5,
+          },
+          '<8%'
+        )
         .to(
           '.we-draw-image',
           {
@@ -339,7 +342,7 @@ export const Clients = () => {
                 ? Math.cos(Math.PI * index) * 30 - Math.random() * 60
                 : Math.cos(Math.PI / index) * 30 + Math.random() * 60,
           },
-          '<8%'
+          '<0'
         )
     },
     { scope: masterContainer }
@@ -541,7 +544,7 @@ export const Clients = () => {
       </div>
       <div
         ref={imageContainer}
-        className='text-fill pointer-events-none relative -mt-[95vh] flex h-screen flex-col justify-center'
+        className='text-fill pointer-events-none relative -mt-[100vh] flex h-screen flex-col justify-center'
       >
         <div>
           <div className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'>
@@ -562,9 +565,6 @@ export const Clients = () => {
                 src={card}
                 alt='KOdigital-card'
                 sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 20vw'
-                style={{
-                  transformOrigin: 'left top',
-                }}
                 className={`we-draw-image absolute left-1/2 top-1/2 m-auto w-[clamp(30px,20vw,20vw)] -translate-x-1/2 -translate-y-1/2 opacity-0 `}
               />
             ))}

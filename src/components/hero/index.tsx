@@ -48,6 +48,7 @@ export const Hero = () => {
               xPercent: 20,
               duration: 0.7,
               onStart: () => {
+                console.log('still on lock')
                 document.body.style.overflow = 'hidden'
               },
             })
@@ -189,7 +190,7 @@ export const Hero = () => {
   return (
     <div
       ref={container}
-      className='relative mt-[75px] h-[80vw] w-full sm:mt-[90px]'
+      className='relative mt-[75px] h-[50vw] w-full sm:mt-[90px]'
     >
       <div className='relative'>
         <div className='hero-text flex translate-y-[20%] flex-col items-center justify-center sm:translate-y-0'>

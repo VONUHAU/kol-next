@@ -1,13 +1,31 @@
 /* eslint-disable @next/next/no-async-client-component */
 'use client'
 import Link from 'next/link'
+import React, { useRef } from 'react'
 import { usePathname } from 'next/navigation'
+import { gsap } from 'gsap'
+import { useGSAP } from '@gsap/react'
 import Image from 'next/legacy/image'
+import { useState } from 'react'
+
 export default function Header() {
   const pathname = usePathname()
+  const container = useRef<HTMLDivElement>(null)
+  const [isOpenMenu, setOpenMenu] = useState(false)
+  const { contextSafe } = useGSAP({ scope: container })
+  const onClickGood = contextSafe(() => {
+    setOpenMenu(!isOpenMenu)
+    const tl = gsap.timeline()
+    tl.to('.bar-top', { yPercent: 130 })
+      .to('.bar-mid', { opacity: 0 }, '<0')
+      .to('.bar-bottom', { yPercent: -130 }, '<0')
+      .to('.bar-top', { rotate: -45, transformOrigin: 'center center' })
+      .to('.bar-bottom', { rotate: 45, transformOrigin: 'center center' }, '<0')
+  })
   return (
     <header
-      className={`fixed z-[100] flex h-14 w-screen items-center justify-between sm:h-16`}
+      ref={container}
+      className={`fixed z-[100] flex h-14 w-full items-center justify-between sm:h-16`}
     >
       <a href='' className='w-[clamp(64px,8vw,8vw)] fill-white'>
         <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 145'>
@@ -25,7 +43,19 @@ export default function Header() {
           <path d='m393.3,125.1V0h6.7v125.1h-6.7Z' />
         </svg>
       </a>
-      <div className='menu-mobile fixed left-0 top-0 hidden h-screen w-screen flex-col items-center justify-center gap-12 overflow-hidden bg-secondary sm:hidden'>
+      <div
+        onClick={onClickGood}
+        className='menu-icon round absolute left-[86%] z-[99999] flex h-6 w-8 cursor-pointer flex-col items-center justify-around sm:hidden'
+      >
+        <div className='bar-top h-[4px] w-7 rounded-full bg-accent'></div>
+        <div className='bar-mid h-[4px] w-7 rounded-full bg-accent'></div>
+        <div className='bar-bottom h-[4px] w-7 rounded-full bg-accent'></div>
+      </div>
+      <div
+        className={`menu-mobile  fixed left-0 top-0 ${
+          isOpenMenu ? 'block' : 'hidden'
+        }  h-screen w-screen flex-col items-center justify-center gap-12 overflow-hidden bg-secondary sm:hidden`}
+      >
         <Image
           src={'/assets/images/gain.jpg'}
           layout='fill'
@@ -61,15 +91,6 @@ export default function Header() {
             PROJECTS
           </div>
         </Link>
-        <Link href='/contact'>
-          <div
-            className={`${
-              pathname === '/projects' ? 'text-accent' : 'text-white'
-            }cursor-pointer font-tungstenNarrow text-6xl hover:text-accent`}
-          >
-            CONTACT
-          </div>
-        </Link>
       </div>
       <div className='menu relative hidden w-[120%] items-center justify-center gap-6 sm:flex'>
         <Link href='/'>
@@ -99,15 +120,6 @@ export default function Header() {
             } cursor-pointer font-tungstenNarrow text-2xl hover:text-accent`}
           >
             PROJECTS
-          </div>
-        </Link>
-        <Link href='/contact'>
-          <div
-            className={` ${
-              pathname === '/contact' ? 'text-accent' : 'text-white'
-            } cursor-pointer font-tungstenNarrow text-2xl hover:text-accent`}
-          >
-            CONTACT
           </div>
         </Link>
       </div>

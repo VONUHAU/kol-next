@@ -1,11 +1,11 @@
 'use client'
+import { usePathname, useSearchParams } from 'next/navigation'
 import Image from 'next/legacy/image'
-import { useRef } from 'react'
 import { gsap } from 'gsap'
-import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { Major } from './_major'
 import AboutMe from './_aboutMe'
+import { useEffect } from 'react'
 
 gsap.registerPlugin(ScrollTrigger)
 type Job = {
@@ -66,6 +66,13 @@ export const JobBar = ({ year, jobTitle, companyName, desc }: Job) => {
   )
 }
 export default function Home() {
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
+  useEffect(() => {
+    if (pathname == '/about') {
+      document.body.style.overflowY = 'auto'
+    }
+  }, [pathname, searchParams])
   return (
     <main className='relative mt-28 min-h-screen '>
       <div

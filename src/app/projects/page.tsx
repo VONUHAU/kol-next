@@ -1,13 +1,22 @@
+'use client'
 import Image from 'next/legacy/image'
-
+import { usePathname, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { ImageCardProp, projects } from '@/components/constants/data'
+import { useEffect } from 'react'
 const ImageCard: React.FC<ImageCardProp> = ({
   src,
   projectName,
   brand,
   campaign,
 }) => {
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
+  useEffect(() => {
+    if (pathname == '/projects') {
+      document.body.style.overflowY = 'auto'
+    }
+  }, [pathname, searchParams])
   return (
     <div className='card font-tungsten font-bold'>
       <div className='group relative mb-2.5'>

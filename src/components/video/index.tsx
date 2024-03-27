@@ -19,7 +19,7 @@ export const Video = () => {
             trigger: container.current,
             scrub: true,
             pin: wrapper.current,
-            end: () => `+=${window.innerWidth * 2}`,
+            end: () => `+=${window.innerWidth * 1.5}`,
             start: 'center center',
           },
         }

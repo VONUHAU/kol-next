@@ -112,15 +112,15 @@ export const Footer = () => {
       </div>
       <div
         onClick={handleBackToTop}
-        className='back-to-header group fixed left-[90vw] top-[86vh] flex h-[clamp(24px,6vw,6vw)] w-[clamp(24px,6vw,6vw)] cursor-pointer items-center justify-center rounded-full'
+        className={`${
+          isVisible ? 'opacity-1' : 'opacity-0'
+        } back-to-header group fixed left-[85%] top-[95%] flex h-[clamp(24px,2.2vw,2.2vw)] w-[clamp(24px,2.2vw,2.2vw)] cursor-pointer items-center justify-center rounded-full border border-solid border-accent sm:left-[95%] sm:top-[92%] `}
       >
         <div className='relative'>
           <svg
-            className={`${
-              isVisible ? 'opacity-1' : 'opacity-0'
-            } fill-secondary transition-all group-hover:-translate-y-1/3 group-hover:fill-accent`}
-            width='clamp(18px,4vw,4vw)'
-            height='clamp(18px,4vw,4vw)'
+            className={`-translate-y-[5%] fill-secondary transition-all group-hover:-translate-y-[25%] group-hover:fill-accent`}
+            width='clamp(13px,1.2vw,1.2vw)'
+            height='clamp(14px,1.2vw,1.2vw)'
             viewBox='0 0 852 491'
             xmlns='http://www.w3.org/2000/svg'
           >

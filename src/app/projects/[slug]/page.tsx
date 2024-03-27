@@ -1,7 +1,8 @@
 'use client'
 import Image from 'next/legacy/image'
+import { usePathname, useSearchParams } from 'next/navigation'
 import { projects } from '@/components/constants/data'
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 export default function Project({ params }: { params: { slug: string } }) {
   const [isPlay, setPlay] = useState(false)
@@ -15,7 +16,13 @@ export default function Project({ params }: { params: { slug: string } }) {
   }
 
   const project = getProject(params.slug)
-
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
+  useEffect(() => {
+    if (pathname !== '/') {
+      document.body.style.overflowY = 'auto'
+    }
+  }, [pathname, searchParams])
   return (
     <main className='relative mb-5 mt-4 font-tungsten sm:mt-8 sm:px-4 md:mt-14 md:px-12 lg:px-24'>
       <div className='text-center font-tungstenNarrow text-[clamp(48px,10vw,10vw)] leading-[1] text-accent'>
