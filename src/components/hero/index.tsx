@@ -48,7 +48,6 @@ export const Hero = () => {
               xPercent: 20,
               duration: 0.7,
               onStart: () => {
-                console.log('still on lock')
                 document.body.style.overflow = 'hidden'
               },
             })

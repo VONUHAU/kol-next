@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-async-client-component */
 'use client'
 import Link from 'next/link'
-import React, { useRef } from 'react'
-import { usePathname } from 'next/navigation'
+import React, { useEffect, useRef } from 'react'
+import { usePathname, useSearchParams } from 'next/navigation'
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
 import Image from 'next/legacy/image'
@@ -10,24 +10,61 @@ import { useState } from 'react'
 
 export default function Header() {
   const pathname = usePathname()
+  const searchParams = useSearchParams()
   const container = useRef<HTMLDivElement>(null)
   const [isOpenMenu, setOpenMenu] = useState(false)
-  const { contextSafe } = useGSAP({ scope: container })
-  const onClickGood = contextSafe(() => {
-    setOpenMenu(!isOpenMenu)
-    const tl = gsap.timeline()
-    tl.to('.bar-top', { yPercent: 130 })
-      .to('.bar-mid', { opacity: 0 }, '<0')
-      .to('.bar-bottom', { yPercent: -130 }, '<0')
-      .to('.bar-top', { rotate: -45, transformOrigin: 'center center' })
-      .to('.bar-bottom', { rotate: 45, transformOrigin: 'center center' }, '<0')
+  const tl = useRef<GSAPTimeline>()
+  const { contextSafe } = useGSAP({
+    scope: container,
+  })
+  useEffect(() => {
+    tl.current?.restart()
+    setOpenMenu(false)
+  }, [pathname, searchParams])
+
+  const handleOpenMenu = contextSafe(() => {
+    const state = !isOpenMenu
+    setOpenMenu(state)
+    const openTimeline = gsap.timeline({ paused: true })
+    tl.current = gsap.timeline({ paused: true })
+    openTimeline
+      .to('.bar-top', { top: '50%', duration: 0.04 })
+      .to('.bar-mid', { opacity: 0, duration: 0.04 }, '<0')
+      .to('.bar-bottom', { top: '50%', duration: 0.04 }, '<0')
+      .to('.bar-top', {
+        rotate: -45,
+        transformOrigin: 'center center',
+        duration: 0.1,
+      })
+      .to(
+        '.bar-bottom',
+        { rotate: 45, transformOrigin: 'center center', duration: 0.1 },
+        '<0'
+      )
+
+    tl.current
+      .to('.bar-top', {
+        rotate: 0,
+        transformOrigin: 'center center',
+        duration: 0.05,
+      })
+      .to(
+        '.bar-bottom',
+        { rotate: 0, transformOrigin: 'center center', duration: 0.05 },
+        '<0'
+      )
+      .to('.bar-bottom', { top: '100%', duration: 0.1 })
+      .to('.bar-mid', { opacity: 1, duration: 0.1 }, '<0')
+      .to('.bar-top', { top: '0%', duration: 0.1 }, '<0')
+
+    state ? openTimeline.restart() : tl.current.restart()
   })
   return (
     <header
       ref={container}
-      className={`fixed z-[100] flex h-14 w-full items-center justify-between sm:h-16`}
+      className={`fixed z-[100] flex h-14 w-screen items-center justify-between sm:h-16`}
     >
-      <a href='' className='w-[clamp(64px,8vw,8vw)] fill-white'>
+      <a href='' className='z-[100] w-[clamp(64px,8vw,8vw)] fill-white'>
         <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 145'>
           <defs></defs>
           <g>
@@ -44,53 +81,60 @@ export default function Header() {
         </svg>
       </a>
       <div
-        onClick={onClickGood}
-        className='menu-icon round absolute left-[86%] z-[99999] flex h-6 w-8 cursor-pointer flex-col items-center justify-around sm:hidden'
+        onClick={handleOpenMenu}
+        className={`menu-icon round absolute left-[86%] z-[100] flex h-4 w-8 cursor-pointer flex-col items-center justify-around sm:hidden`}
       >
-        <div className='bar-top h-[4px] w-7 rounded-full bg-accent'></div>
-        <div className='bar-mid h-[4px] w-7 rounded-full bg-accent'></div>
-        <div className='bar-bottom h-[4px] w-7 rounded-full bg-accent'></div>
+        <div className='bars relative h-full w-full'>
+          <div className='bar-top absolute left-0 top-[0%] h-[25%] w-full -translate-y-1/2 rounded-full bg-accent'></div>
+          <div className='bar-mid absolute left-0 top-[50%] h-[25%] w-full -translate-y-1/2 rounded-full bg-accent'></div>
+          <div className='bar-bottom absolute left-0 top-[100%] h-[25%] w-full -translate-y-1/2 rounded-full bg-accent'></div>
+        </div>
       </div>
       <div
         className={`menu-mobile  fixed left-0 top-0 ${
-          isOpenMenu ? 'block' : 'hidden'
-        }  h-screen w-screen flex-col items-center justify-center gap-12 overflow-hidden bg-secondary sm:hidden`}
+          isOpenMenu ? 'max-h-[100vh]' : 'max-h-[0]'
+        }  h-screen w-screen flex-col  items-center justify-center gap-12 overflow-hidden bg-secondary transition-all duration-300 sm:hidden`}
       >
-        <Image
-          src={'/assets/images/gain.jpg'}
-          layout='fill'
-          alt='gain'
-          className={`absolute z-[-1] h-screen w-full object-cover object-center opacity-30`}
-        />
-        <Link href='/'>
-          <div
-            className={`${
-              pathname === '/' ? 'text-accent' : 'text-white'
-            }cursor-pointer font-tungstenNarrow text-6xl hover:text-accent`}
-          >
-            HOME
-          </div>
-        </Link>
+        <div className='pointer-events-none'>
+          <Image
+            src={'/assets/images/gain.jpg'}
+            layout='fill'
+            alt='gain'
+            className={`absolute z-[-1] h-screen w-full object-cover object-center opacity-30`}
+          />
+        </div>
 
-        <Link href='/about'>
-          <div
-            className={`${
-              pathname === '/about' ? 'text-accent' : 'text-white'
-            }cursor-pointer font-tungstenNarrow text-6xl hover:text-accent`}
-          >
-            ABOUT
-          </div>
-        </Link>
+        <div className='flex h-screen w-screen flex-col items-center justify-center space-y-10'>
+          <Link href='/'>
+            <div
+              className={`${
+                pathname === '/' ? 'text-accent' : 'text-white'
+              }cursor-pointer font-tungstenNarrow text-6xl hover:text-accent`}
+            >
+              HOME
+            </div>
+          </Link>
 
-        <Link href='/projects'>
-          <div
-            className={`${
-              pathname === '/projects' ? 'text-accent' : 'text-white'
-            }cursor-pointer font-tungstenNarrow text-6xl hover:text-accent`}
-          >
-            PROJECTS
-          </div>
-        </Link>
+          <Link href='/about'>
+            <div
+              className={`${
+                pathname === '/about' ? 'text-accent' : 'text-white'
+              }cursor-pointer font-tungstenNarrow text-6xl hover:text-accent`}
+            >
+              ABOUT
+            </div>
+          </Link>
+
+          <Link href='/projects'>
+            <div
+              className={`${
+                pathname === '/projects' ? 'text-accent' : 'text-white'
+              }cursor-pointer font-tungstenNarrow text-6xl hover:text-accent`}
+            >
+              PROJECTS
+            </div>
+          </Link>
+        </div>
       </div>
       <div className='menu relative hidden w-[120%] items-center justify-center gap-6 sm:flex'>
         <Link href='/'>

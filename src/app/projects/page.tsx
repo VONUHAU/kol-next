@@ -1,8 +1,8 @@
 'use client'
 import Image from 'next/legacy/image'
 import { usePathname, useSearchParams } from 'next/navigation'
-import Link from 'next/link'
 import { ImageCardProp, projects } from '@/components/constants/data'
+import YoutubePlayer from '@/components/youtubePlayer'
 import { useEffect } from 'react'
 const ImageCard: React.FC<ImageCardProp> = ({
   src,
@@ -10,13 +10,6 @@ const ImageCard: React.FC<ImageCardProp> = ({
   brand,
   campaign,
 }) => {
-  const pathname = usePathname()
-  const searchParams = useSearchParams()
-  useEffect(() => {
-    if (pathname == '/projects') {
-      document.body.style.overflowY = 'auto'
-    }
-  }, [pathname, searchParams])
   return (
     <div className='card font-tungsten font-bold'>
       <div className='group relative mb-2.5'>
@@ -68,6 +61,14 @@ const ImageCard: React.FC<ImageCardProp> = ({
   )
 }
 export default function Projects() {
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
+  useEffect(() => {
+    if (pathname == '/projects') {
+      document.body.style.overflowY = 'auto'
+      console.log('hey')
+    }
+  }, [pathname, searchParams])
   return (
     <main className='relative top-16 mt-5 min-h-screen sm:px-4 md:px-12 lg:px-24'>
       <div className='head mb-8 text-center font-tungstenNarrow'>
@@ -89,15 +90,17 @@ export default function Projects() {
           OPENER? EVERYTHING FOR FREE ON
         </p>
       </div>
-      <div className='gallery mt-4 flex flex-wrap justify-around gap-5 md:mt-12 lg:mt-20'>
+      <div className='gallery mb-24 mt-4 flex flex-wrap justify-around gap-5 md:mt-12 lg:mt-20'>
         {projects.map((project, key) => (
-          <Link
-            href={`/projects/${project.slug}`}
-            key={key}
-            className='flex-[1_1_200px]'
-          >
-            <ImageCard {...project} />
-          </Link>
+          <div key={key}>
+            <YoutubePlayer
+              url={project.src}
+              id={project.id}
+              ratio={project.ratio}
+              brand={project.brand}
+              campaign={project.campaign}
+            />
+          </div>
         ))}
       </div>
     </main>
