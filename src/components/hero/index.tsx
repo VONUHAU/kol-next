@@ -212,7 +212,7 @@ export const Hero = () => {
             <span className='opacity-20'>N</span>
             <span className='opacity-20'>D</span>
           </div>
-          <p className='md:6xl ignore hero-text translate-y-1/2 whitespace-nowrap font-tungsten'>
+          <p className='md:6xl ignore hero-text translate-y-1/2 whitespace-nowrap font-serif'>
             <span className='opacity-20'>T</span>
             <span className='opacity-20'>O</span>
             <span> </span>
@@ -223,7 +223,7 @@ export const Hero = () => {
             <span className='opacity-20'>R</span>
             <span className='opacity-20'>E</span>
           </p>
-          <p className='impossible hidden -translate-y-[8.6vw] font-tungsten text-[clamp(4rem,18vw,18vw)] font-black leading-[0.8] text-secondary'>
+          <p className='impossible hidden -translate-y-[8.6vw] font-tungsten text-[clamp(4rem,18vw,18vw)] font-black font-bold leading-[0.8] text-secondary'>
             IMPOSSIBLE
           </p>
         </div>

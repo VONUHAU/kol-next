@@ -39,6 +39,14 @@ body {
     font-family: TungstenNarrow;
     src: url(/assets/fonts/TungstenNarrow-Black_Web.woff2) format('woff2');
   }
+  @font-face {
+    font-family: Tungsten;
+    src: url(/assets/fonts/TungstenCond-Bold.woff2) format('woff2');
+  }
+   @font-face {
+    font-family: grotesk;
+    src: url(/assets/fonts/RightGrotesk-CompactMedium.woff2) format('woff2');
+  }
 }
 @layer components {
   .hero-text {
