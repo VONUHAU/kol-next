@@ -1,7 +1,6 @@
 'use client'
 import React from 'react'
 import { Clients } from './clients'
-import { WeDraw } from './weDraw'
 
 export const DrawClient = () => {
   return (

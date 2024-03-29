@@ -8,12 +8,6 @@ import AboutMe from './_aboutMe'
 import { useEffect } from 'react'
 
 gsap.registerPlugin(ScrollTrigger)
-type Job = {
-  year: number | string
-  jobTitle: string
-  companyName: string
-  desc: string
-}
 
 const experiences = [
   {
@@ -49,7 +43,7 @@ const experiences = [
     desc: 'Designed engaging educational products for children, focusing on alphabet and image descriptions.',
   },
 ]
-export const JobBar = ({ year, jobTitle, companyName, desc }: Job) => {
+export const JobBar = ({ year, jobTitle, companyName, desc }) => {
   return (
     <div className='job-bar group relative flex cursor-pointer border-b border-secondary bg-black px-6 py-8 leading-[0.9] text-secondary last:border-0 sm:px-16 '>
       <p className='w-[30%] text-[clamp(24px,4vw,4vw)]'>{year}</p>

@@ -9,17 +9,7 @@ type PopupProp = {
   background?: string
   style?: any
 }
-const popups = [
-  'Crazy Ideal Make Real',
-  'Transformation Branding',
-  'Award Winning Experiment',
-  "Design That's Noticed",
-  'Wow Worthy Website',
-  'Find Your Audience',
-  'Impact Design',
-  'Look & Feel your Best',
-]
-const bgs = ['#ffe7de', '#efbeac', '#fbf8f7', '#f3d1c4']
+
 export const Popup: React.FC<PopupProp> = ({
   sentence,
   animationDelay,
