@@ -130,7 +130,7 @@ export const Contact = () => {
               <path d='m109.2,20.66c.47-1.24,1.26-2.64,2.39-4.44.08-.13-.06-.31-.16-.2-1.4,1.43-2.5,2.43-3.47,3.06-1.17-2.13-1.6-5.49-2.05-11.08-.46,5.66-.89,9.04-2.1,11.17-1-.59-2.12-1.57-3.57-2.97-.11-.1-.25.07-.16.2,1.15,1.74,1.96,3.11,2.46,4.32-1.71,1.46-4.42,1.99-8.91,2.56,4.55.58,7.27,1.11,8.98,2.61-.47,1.24-1.26,2.64-2.39,4.44-.08.13.06.31.16.2,1.4-1.43,2.5-2.43,3.47-3.06,1.17,2.13,1.6,5.49,2.05,11.08.46-5.66.89-9.04,2.1-11.17,1,.59,2.13,1.57,3.57,2.97.11.1.25-.07.16-.2-1.15-1.74-1.96-3.11-2.46-4.32,1.71-1.46,4.42-1.98,8.91-2.56-4.55-.58-7.27-1.11-8.98-2.61Z' />
             </svg>
           </div>
-          <div className='email absolute left-[30%] top-[30%] flex scale-0 cursor-pointer  items-center justify-center gap-1 rounded-full bg-[#ffe7de] px-2 md:left-1/2 md:top-1/3'>
+          <div className='email absolute left-[30%] top-[30%] flex scale-0 cursor-pointer items-center  justify-center gap-1 rounded-full bg-[#ffe7de] px-2 sm:px-7 md:left-1/2 md:top-1/3'>
             <div className='relative flex items-center justify-center'>
               <svg
                 width='clamp(20px,3vw,3vw)'
@@ -149,7 +149,7 @@ export const Contact = () => {
               </a>
             </div>
           </div>
-          <div className='email absolute left-[40%] top-[70%] flex scale-0 cursor-pointer  items-center justify-center gap-1 rounded-full bg-[#ffe7de] px-2 md:top-[60%]'>
+          <div className='email absolute left-[40%] top-[70%] flex scale-0 cursor-pointer items-center  justify-center gap-1 rounded-full bg-[#ffe7de] px-2 sm:px-7 md:top-[60%]'>
             <div className='relative flex items-center justify-center'>
               <svg
                 width='clamp(20px,3vw,3vw)'
@@ -168,7 +168,7 @@ export const Contact = () => {
               </a>
             </div>
           </div>
-          <div className='email absolute left-[50%] top-[70%] hidden scale-0 cursor-pointer  items-center justify-center gap-1 rounded-full bg-[#ffe7de] px-2 md:flex'>
+          <div className='email absolute left-[50%] top-[70%] hidden scale-0 cursor-pointer items-center  justify-center gap-1 rounded-full bg-[#ffe7de] px-2 sm:px-7 md:flex'>
             <div className='relative flex items-center justify-center'>
               <svg
                 width='clamp(20px,3vw,3vw)'

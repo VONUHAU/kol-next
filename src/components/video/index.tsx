@@ -12,9 +12,10 @@ export const Video = () => {
     () => {
       gsap.fromTo(
         '.youtube-container',
-        { scale: 0.4 },
+        { scale: 0.4, borderRadius: 32 },
         {
           scale: 1,
+          borderRadius: 0,
           scrollTrigger: {
             trigger: container.current,
             scrub: true,

@@ -27,39 +27,31 @@ export const Footer = () => {
     <footer className='footer -mx-8  bg-black font-medium'>
       <div className='text-slider flex font-tungstenNarrow text-[12vw]'>
         <span className='text-text leading-none'>
-          SIXMOREVODKA.FAMOUS.FOR.NOTHING.
+          KODIGITAL.FAMOUS.FOR.NOTHING.
         </span>
         <span className='leading-none text-accent'>
-          SSIXMOREVODKA.FAMOUS.FOR.NOTHING
+          KODIGITAL.FAMOUS.FOR.NOTHING
         </span>
         <span className='text-text leading-none'>
-          SIXMOREVODKA.FAMOUS.FOR.NOTHING.
+          KODIGITAL.FAMOUS.FOR.NOTHING.
         </span>
         <span className='leading-none text-accent'>
-          SSIXMOREVODKA.FAMOUS.FOR.NOTHING
+          KODIGITAL.FAMOUS.FOR.NOTHING
         </span>
         <span className='text-text leading-none'>
-          SIXMOREVODKA.FAMOUS.FOR.NOTHING.
+          KODIGITAL.FAMOUS.FOR.NOTHING.
         </span>
       </div>
-      <div className='border-text flex flex-col items-start justify-start border-b-4 border-t-8 px-2 pt-4 md:flex-row md:items-start md:justify-between md:p-0 md:py-4'>
+      <div className='border-text flex flex-col items-start justify-start border-b-4 border-t-8 px-2 pt-4 md:flex-row md:items-start md:justify-around  md:py-4'>
         <div className='px-4 pb-3'>
-          <span>SIXMOREVODKA STUDIO</span>
+          <span> KODIGITAL STUDIO</span>
           <br />
           <span>GENERAL INQUIRIES:</span>
           <a href='mailto:trankhacoai96@gmail.com'>
             <p className='uppercase text-white'>trankhacoai96@gmail.com</p>
           </a>
         </div>
-        <div className='w-full border-t border-white px-4 py-3 md:w-auto md:border-0 md:py-0'>
-          <span className='text-accent'>SIXMOREVODKA STUDIO GMBH</span>
-          <br />
-          <span>BOXHAGENER STRASSE 16</span>
-          <br />
-          <span>HCM VietNam</span>
-          <br />
-          <span>PHONE: (+84) 834 243 285</span>
-        </div>
+
         <div className='flex w-full flex-row items-end justify-between gap-6 border-t border-white px-4 py-3 md:w-auto md:border-0 md:py-0'>
           <div>
             <div className='flex items-center gap-2'>

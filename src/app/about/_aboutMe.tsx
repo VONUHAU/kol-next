@@ -21,7 +21,6 @@ export default function AboutMe() {
   useGSAP(
     () => {
       gsap.to('.line', {
-        opacity: 0.3,
         clipPath: 'inset(0px 0% 0% 0)',
         stagger: {
           amount: 2,

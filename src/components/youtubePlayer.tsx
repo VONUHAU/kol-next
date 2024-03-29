@@ -57,7 +57,7 @@ export default function YoutubePlayer({
   return (
     <div className='video-card' style={{ width: size.w }}>
       <div
-        className='youtube-container w-full overflow-hidden rounded-md md:rounded-lg'
+        className='youtube-container w-full overflow-hidden rounded-[12px] md:rounded-[16px]'
         style={{ aspectRatio: size.ratio, width: size.w }}
       >
         <div

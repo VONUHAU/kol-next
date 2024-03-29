@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import localFont from 'next/font/local'
 import Image from 'next/legacy/image'
 import { Oswald } from 'next/font/google'
 import Header from '@/components/header'
@@ -14,39 +13,39 @@ const oswald = Oswald({
   display: 'swap',
 })
 
-// Font files can be colocated inside of `app`
-const tungsten = localFont({
-  src: [
-    {
-      path: '../../public/assets/fonts/TungstenNarrow-Bold.woff2',
-      weight: '700',
-      style: 'normal',
-    },
-    {
-      path: '../../public/assets/fonts/TungstenNarrow-Semibold.woff2',
-      weight: '600',
-      style: 'normal',
-    },
-    {
-      path: '../../public/assets/fonts/TungstenNarrow-medium.woff2',
-      weight: '500',
-      style: 'normal',
-    },
-  ],
-  variable: '--tungsten',
-  display: 'swap',
-})
+// // Font files can be colocated inside of `app`
+// const tungsten = localFont({
+//   src: [
+//     {
+//       path: '../../public/assets/fonts/TungstenNarrow-Bold.woff2',
+//       weight: '700',
+//       style: 'normal',
+//     },
+//     {
+//       path: '../../public/assets/fonts/TungstenNarrow-Semibold.woff2',
+//       weight: '600',
+//       style: 'normal',
+//     },
+//     {
+//       path: '../../public/assets/fonts/TungstenNarrow-medium.woff2',
+//       weight: '500',
+//       style: 'normal',
+//     },
+//   ],
+//   variable: '--tungsten',
+//   display: 'swap',
+// })
 
-const rightGrotesk = localFont({
-  src: [
-    {
-      path: '../../public/assets/fonts/RightGrotesk-CompactMedium.woff2',
-      style: 'normal',
-    },
-  ],
-  variable: '--grotesk',
-  display: 'swap',
-})
+// const rightGrotesk = localFont({
+//   src: [
+//     {
+//       path: '../../public/assets/fonts/RightGrotesk-CompactMedium.woff2',
+//       style: 'normal',
+//     },
+//   ],
+//   variable: '--grotesk',
+//   display: 'swap',
+// })
 
 export const metadata: Metadata = {
   title: 'KOdigital | We Build Engaging Digital Video Ads at Scale',
@@ -59,10 +58,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html
-      lang='en'
-      className={`${tungsten.variable} ${oswald.variable} ${rightGrotesk.variable}`}
-    >
+    <html lang='en' className={`${oswald.variable}`}>
       <body
         className={`${oswald.variable} overflow-x-hidden px-3 pt-3 sm:px-8 sm:pt-8`}
       >
