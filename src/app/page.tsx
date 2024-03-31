@@ -20,7 +20,7 @@ export default function Home() {
 
   return (
     <main className='relative overflow-hidden'>
-      <Suspense fallback={<>Loading...</>}>
+      <Suspense>
         <Hero />
         <Video />
         <SplitStringToSpans />

@@ -20,19 +20,25 @@ export default function AboutMe() {
   const container = useRef<HTMLDivElement>(null)
   useGSAP(
     () => {
-      gsap.to('.line', {
-        clipPath: 'inset(0px 0% 0% 0)',
-        stagger: {
-          amount: 2,
+      gsap.fromTo(
+        '.line',
+        {
+          clipPath: 'inset(0px 100% 0% 0)',
         },
-        scrollTrigger: {
-          trigger: container.current,
-          scrub: 1,
-          pin: true,
-          start: 'center center',
-          end: `+=${window.innerHeight * 2}`,
-        },
-      })
+        {
+          clipPath: 'inset(0px 0% 0% 0)',
+          stagger: {
+            amount: 2,
+          },
+          scrollTrigger: {
+            trigger: container.current,
+            scrub: 1,
+            pin: true,
+            start: 'center center',
+            end: `+=${window.innerHeight * 2}`,
+          },
+        }
+      )
       gsap.to('.globe', {
         yPercent: -80,
         scrollTrigger: {
@@ -53,11 +59,7 @@ export default function AboutMe() {
 
         <div className='text-[clamp(30px,5.5vw,5.5vw)] font-medium leading-none'>
           {sentences.map((value, key) => (
-            <div
-              className='line'
-              style={{ clipPath: 'inset(0px 100% 0% 0);' }}
-              key={key}
-            >
+            <div className='line' key={key}>
               {value}
             </div>
           ))}

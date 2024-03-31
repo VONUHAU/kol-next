@@ -1,11 +1,13 @@
 'use client'
-import { usePathname, useSearchParams } from 'next/navigation'
+import { Suspense, useRef } from 'react'
+import { usePathname } from 'next/navigation'
 import Image from 'next/legacy/image'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { Major } from './_major'
 import AboutMe from './_aboutMe'
 import { useEffect } from 'react'
+import { useGSAP } from '@gsap/react'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -39,44 +41,78 @@ const experiences = [
   {
     year: 'Oct 2018 - Dec 2018',
     jobTitle: 'Freelance Graphic Designer',
-    companyName: 'SUNRISE MEDIA - Entertainment',
+    companyName: '',
     desc: 'Designed engaging educational products for children, focusing on alphabet and image descriptions.',
   },
 ]
 export const JobBar = ({ year, jobTitle, companyName, desc }) => {
   return (
-    <div className='job-bar group relative flex cursor-pointer border-b border-secondary bg-black px-6 py-8 leading-[0.9] text-secondary last:border-0 sm:px-16 '>
-      <p className='w-[35%] text-[clamp(24px,4vw,4vw)]'>{year}</p>
-      <div className='job-title w-[65%]'>
-        <p className='text-[clamp(32px,6vw,6vw)]'>{jobTitle}</p>
-        <p className='text-[clamp(16px,2vw,2vw)]'>{companyName}</p>
+    <Suspense>
+      <div className='job-bar group relative flex cursor-pointer border-b border-secondary bg-black px-6 py-8 leading-[0.9] text-secondary last:border-0 sm:px-16 '>
+        <p className='w-[35%] text-[clamp(24px,4vw,4vw)]'>{year}</p>
+        <div className='job-title w-[65%]'>
+          <p className='text-[clamp(32px,6vw,6vw)]'>{jobTitle}</p>
+          <p className='text-[clamp(16px,2vw,2vw)]'>{companyName}</p>
+        </div>
+        <div className='job-desc absolute left-0 top-0 flex h-full w-full items-center justify-start overflow-hidden bg-accent px-4 md:px-8'>
+          <p className='font-grotesk text-[clamp(16px,2vw,2vw)] text-white'>
+            {desc}
+          </p>
+        </div>
       </div>
-      <div className='job-desc absolute left-0 top-0 flex h-full w-full items-center justify-start overflow-hidden bg-accent px-4 md:px-8'>
-        <p className='font-grotesk text-[clamp(16px,2vw,2vw)] text-white'>
-          {desc}
-        </p>
-      </div>
-    </div>
+    </Suspense>
   )
 }
 export default function Home() {
   const pathname = usePathname()
-  const searchParams = useSearchParams()
+  const container = useRef()
+  useGSAP(
+    () => {
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: container.current,
+            scrub: 1,
+            start: 'top center',
+          },
+        })
+        .from('.gpim', {
+          yPercent: -20,
+        })
+        .from('.let-connect', { yPercent: 20 }, '<0')
+        .from(
+          '.in-icon, .wa-icon',
+          {
+            xPercent: -40,
+          },
+          '<0'
+        )
+        .from(
+          '.fb-icon',
+          {
+            xPercent: 40,
+          },
+          '<0'
+        )
+    },
+    { scope: container }
+  )
   useEffect(() => {
     if (pathname == '/about') {
       document.body.style.overflowY = 'auto'
     }
-  }, [pathname, searchParams])
+  }, [pathname])
+
   return (
-    <main className='relative min-h-screen sm:mt-24 mt-16'>
+    <main className='relative mt-4 min-h-screen sm:mt-12'>
       <div
         className='relative flex h-[clamp(200px,60vw,60vw)] items-center justify-center
       p-16 before:absolute before:inset-0 before:z-[-1] before:block before:h-full
-      before:w-full before:bg-[url("/assets/images/about/Web_portrait.png")] before:bg-cover
+      before:w-full before:bg-[url("/assets/images/about/Web_portrait.webp")] before:bg-cover
       before:bg-top before:opacity-90'
       ></div>
 
-      <div className='space-y-8 px-3 sm:px-8 font-tungsten text-secondary sm:space-y-14 sm:px-4 md:px-12 lg:space-y-24 lg:px-24'>
+      <div className='space-y-8 px-3 font-tungsten text-secondary sm:space-y-14 sm:px-4 sm:px-8 md:px-12 lg:space-y-24 lg:px-24'>
         <AboutMe />
         <Major />
         <div
@@ -100,9 +136,10 @@ export default function Home() {
             <p>Experience</p>
           </div>
           <div className='text-[clamp(32px,7vw,7vw)] font-[400] leading-none'>
-            Over <span className='text-accent'>a decade</span> product designer
-            with strong focus on producing high quality &impactful digital
-            experience.
+            With <span className='text-accent'>5+ years</span> of experience,
+            I&apos;ve created a library of{' '}
+            <span className='text-accent'>over 1,000</span> high-performing
+            graphics that have engaged audiences across diverse platforms
           </div>
           <div className='relative'>
             <Image
@@ -119,6 +156,7 @@ export default function Home() {
         </div>
       </div>
       <div
+        ref={container}
         className='relative mt-24 flex h-[50vw] items-center justify-center before:absolute
         before:inset-0 before:z-[-1] before:block before:h-full before:w-full before:bg-[url("/assets/images/about/let_connect.jpg")] 
         before:bg-cover
@@ -126,31 +164,49 @@ export default function Home() {
         after:inset-0 after:z-[-1] after:block after:h-full after:w-full after:bg-black after:opacity-80 sm:h-[40vw]'
       >
         <div className='item-center flex-col justify-center'>
-          <p className='text-center font-tungsten text-[clamp(24px,5vw,5vw)] font-medium'>
+          <p className='gpim text-center font-tungsten text-[clamp(24px,5vw,5vw)] font-medium'>
             Got a project in mind?
           </p>
-          <p className='font-tungstenNarrow text-[clamp(48px,10vw,10vw)] text-accent'>
+          <p className='let-connect font-tungstenNarrow text-[clamp(48px,10vw,10vw)] text-accent'>
             LET&apos;S CONNECT
           </p>
         </div>
-        <div
-          className='absolute left-[8%] top-[14%] flex h-[clamp(42px,8vw,8vw)] w-[clamp(42px,8vw,8vw)] items-center justify-center
+        <a
+          href='https://www.linkedin.com/in/tr%E1%BA%A7n-oai-418b591a6/'
+          target='_blank'
+          className='cursor-pointer'
+        >
+          <div
+            className='in-icon absolute left-[8%] top-[14%] flex h-[clamp(42px,8vw,8vw)] w-[clamp(42px,8vw,8vw)] cursor-pointer items-center justify-center
         rounded-full border-2 border-white font-tungsten font-medium sm:left-[22%] sm:border-4'
+          >
+            <p className='text-[clamp(18px,3vw,3vw)]'>Linkin</p>
+          </div>
+        </a>
+        <a
+          href='https://wa.me/+84834243285'
+          target='_blank'
+          className='cursor-pointer'
         >
-          <p className='text-[clamp(18px,3vw,3vw)]'>Linkin</p>
-        </div>
-        <div
-          className='absolute left-[26%] top-[60%] flex h-[clamp(48px,8vw,8vw)] w-[clamp(48px,8vw,8vw)] items-center
+          <div
+            className='wa-icon absolute left-[26%] top-[60%] flex h-[clamp(48px,8vw,8vw)] w-[clamp(48px,8vw,8vw)] cursor-pointer items-center
         justify-center rounded-full border-2 border-white font-tungsten font-medium sm:border-4'
+          >
+            <p className='text-[clamp(18px,3vw,3vw)]'>Whatapp</p>
+          </div>
+        </a>
+        <a
+          target='_blank'
+          className='cursor-pointer'
+          href='https://www.facebook.com/trankhacoai'
         >
-          <p className='text-[clamp(18px,3vw,3vw)]'>Whatapp</p>
-        </div>
-        <div
-          className='absolute left-[68%] top-[36%] flex h-[clamp(54px,9vw,9vw)] w-[clamp(54px,9vw,9vw)] items-center
+          <div
+            className='fb-icon absolute left-[68%] top-[36%] flex h-[clamp(54px,9vw,9vw)] w-[clamp(54px,9vw,9vw)] cursor-pointer items-center
         justify-center rounded-full border-2 border-white font-tungsten font-medium sm:border-4'
-        >
-          <p className='text-[clamp(18px,3vw,3vw)]'>Instagram</p>
-        </div>
+          >
+            <p className='text-[clamp(18px,3vw,3vw)]'>Facebook</p>
+          </div>
+        </a>
       </div>
     </main>
   )

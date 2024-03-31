@@ -2,19 +2,19 @@
 import React, { useEffect, useState } from 'react'
 export const Footer = () => {
   const [isVisible, setIsVisible] = useState(false)
-  // useEffect(() => {
-  //   const toggleVisibility = () => {
-  //     // if the user scrolls down, show the button
-  //     window.scrollY > 500 ? setIsVisible(true) : setIsVisible(false)
-  //   }
-  //   // listen for scroll events
-  //   window.addEventListener('scroll', toggleVisibility)
+  useEffect(() => {
+    const toggleVisibility = () => {
+      // if the user scrolls down, show the button
+      window.scrollY > 500 ? setIsVisible(true) : setIsVisible(false)
+    }
+    // listen for scroll events
+    window.addEventListener('scroll', toggleVisibility)
 
-  //   // clear the listener on component unmount
-  //   return () => {
-  //     window.removeEventListener('scroll', toggleVisibility)
-  //   }
-  // }, [])
+    // clear the listener on component unmount
+    return () => {
+      window.removeEventListener('scroll', toggleVisibility)
+    }
+  }, [])
 
   const handleBackToTop = () => {
     isVisible &&
@@ -41,6 +41,12 @@ export const Footer = () => {
         <span className='text-text leading-none'>
           KODIGITAL.FAMOUS.FOR.NOTHING.
         </span>
+        <span className='text-text leading-none'>
+          KODIGITAL.FAMOUS.FOR.NOTHING.
+        </span>
+        <span className='text-text leading-none'>
+          KODIGITAL.FAMOUS.FOR.NOTHING.
+        </span>
       </div>
       <div className='border-text flex flex-col items-start justify-start border-b-4 border-t-8 px-2 pt-4 md:flex-row md:items-start md:justify-around  md:py-4'>
         <div className='px-4 pb-3'>
@@ -56,9 +62,9 @@ export const Footer = () => {
           <div>
             <div className='flex items-center gap-2 pb-[4px]'>
               <a
+                href='https://wa.me/+84834243285'
                 target='_blank'
                 className='cursor-pointer'
-                href='whatsapp://send?abid=+84834243285&text=Hello%2C%20Oil!'
               >
                 <svg
                   className='w-6 fill-accent'

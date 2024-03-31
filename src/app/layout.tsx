@@ -13,43 +13,10 @@ const oswald = Oswald({
   display: 'swap',
 })
 
-// // Font files can be colocated inside of `app`
-// const tungsten = localFont({
-//   src: [
-//     {
-//       path: '../../public/assets/fonts/TungstenNarrow-Bold.woff2',
-//       weight: '700',
-//       style: 'normal',
-//     },
-//     {
-//       path: '../../public/assets/fonts/TungstenNarrow-Semibold.woff2',
-//       weight: '600',
-//       style: 'normal',
-//     },
-//     {
-//       path: '../../public/assets/fonts/TungstenNarrow-medium.woff2',
-//       weight: '500',
-//       style: 'normal',
-//     },
-//   ],
-//   variable: '--tungsten',
-//   display: 'swap',
-// })
-
-// const rightGrotesk = localFont({
-//   src: [
-//     {
-//       path: '../../public/assets/fonts/RightGrotesk-CompactMedium.woff2',
-//       style: 'normal',
-//     },
-//   ],
-//   variable: '--grotesk',
-//   display: 'swap',
-// })
-
 export const metadata: Metadata = {
-  title: 'KOdigital | We Build Engaging Digital Video Ads at Scale',
-  description: 'We Build Engaging Digital Video Ads at Scale',
+  title: 'KOdigital | Your Gateway to Digital Excellence',
+  description:
+    'KOdigital - Your gateway to digital excellence! Explore our services now.',
 }
 
 export default function RootLayout({
