@@ -180,7 +180,7 @@ export default function Home() {
             className='in-icon absolute left-[8%] top-[14%] flex h-[clamp(42px,8vw,8vw)] w-[clamp(42px,8vw,8vw)] cursor-pointer items-center justify-center
         rounded-full border-2 border-white font-tungsten font-medium sm:left-[22%] sm:border-4'
           >
-            <p className='text-[clamp(18px,3vw,3vw)]'>Linkin</p>
+            <p className='text-[clamp(18px,3vw,3vw)]'>LinkedIn</p>
           </div>
         </a>
         <a

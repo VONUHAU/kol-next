@@ -13,6 +13,7 @@ export default function Header() {
   const container = useRef<HTMLDivElement>(null)
   const [isOpenMenu, setOpenMenu] = useState(false)
   const tl = useRef<GSAPTimeline>()
+
   const { contextSafe } = useGSAP({
     scope: container,
   })
@@ -64,9 +65,13 @@ export default function Header() {
         ref={container}
         className={`fixed z-[100] flex h-14 w-full items-center justify-between px-3 sm:h-16 sm:px-8`}
       >
-        <a href='' className='z-[100] w-[clamp(64px,8vw,8vw)] fill-white'>
-          <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 145'>
-            <defs></defs>
+        <Link href='/'>
+          <div className='z-[100] w-[clamp(64px,8vw,8vw)]'></div>
+          <svg
+            className='fill-white'
+            xmlns='http://www.w3.org/2000/svg'
+            viewBox='0 0 400 145'
+          >
             <g>
               <path d='m68.2,125.1h-31l-7.2-50.9v50.9H0V1.8h30v52.5L38.5,1.8h30.1l-11.5,59.5,11.1,63.8Z' />
               <path d='m135,27.1v72.6c0,17.6-8.8,26.4-26.4,26.4h-14.1c-17.6,0-26.4-8.8-26.4-26.4V27.1c-.1-17.6,8.7-26.4,26.4-26.4h14.1c17.6,0,26.4,8.8,26.4,26.4Zm-30,72.1V27.7c0-1.5-.8-2.3-2.3-2.3h-2.5c-1.5,0-2.3.8-2.3,2.3v71.5c0,1.5.8,2.3,2.3,2.3h2.5c1.6,0,2.3-.8,2.3-2.3Z' />
@@ -79,7 +84,8 @@ export default function Header() {
             <path d='m336,111v-17.4c0-5.1,1-8.9,3.1-11.6s5.7-5.1,10.8-7l19.4-7.4v-19.5c0-7.8-4.1-11.6-12.2-11.6h-1.2c-8.3,0-12.5,3.9-12.5,11.6v12.5h-6.5v-12.3c0-12.1,6.3-18.2,19-18.2h1.4c12.5,0,18.7,6.1,18.7,18.2v76.8h-6.7v-6.7c-6.6,5.1-12.5,7.6-17.8,7.6h-.5c-10,0-15-5-15-15Zm16.8,8.7h.5c4.2,0,9.6-2.2,16-6.7v-39.3l-16.7,6.7c-3.8,1.5-6.3,3.2-7.8,5.1-1.4,1.9-2.1,4.6-2.1,8.3v16.2c0,6.4,3.4,9.7,10.1,9.7Z' />
             <path d='m393.3,125.1V0h6.7v125.1h-6.7Z' />
           </svg>
-        </a>
+        </Link>
+
         <div
           onClick={handleOpenMenu}
           className={`menu-icon round relative  z-[100] flex h-4 w-8 cursor-pointer flex-col items-center justify-around sm:hidden`}

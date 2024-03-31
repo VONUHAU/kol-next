@@ -4,9 +4,10 @@ import { projects } from '@/components/constants/data'
 import YoutubePlayer from '@/components/youtubePlayer'
 import { useEffect, useState, Suspense } from 'react'
 
+const loadProject = 9
 export default function Projects() {
   const pathname = usePathname()
-  const [visibleProjects, setVisibleProjects] = useState(11)
+  const [visibleProjects, setVisibleProjects] = useState(loadProject)
   useEffect(() => {
     if (pathname == '/projects') {
       document.body.style.overflowY = 'auto'
@@ -14,7 +15,7 @@ export default function Projects() {
   }, [pathname])
 
   const loadMoreProjects = () => {
-    setVisibleProjects(visibleProjects + 8) // Increase the number of visible projects by 5
+    setVisibleProjects(visibleProjects + loadProject) // Increase the number of visible projects by 5
   }
   return (
     <Suspense>
@@ -40,9 +41,9 @@ export default function Projects() {
             AN OPENER? EVERYTHING FOR FREE ON
           </p>
         </div>
-        <div className='gallery mt-4 flex flex-wrap justify-around gap-3 md:mt-12 lg:mt-20'>
+        <div className='gallery mt-4 flex flex-wrap justify-around gap-4 md:mt-12 lg:mt-20'>
           {projects.slice(0, visibleProjects).map((project, key) => (
-            <div key={key}>
+            <div key={key} className='mb-4'>
               <YoutubePlayer
                 url={project.src}
                 id={project.id}
@@ -53,11 +54,11 @@ export default function Projects() {
             </div>
           ))}
         </div>
-        <div className='load-more flex justify-end font-tungstenNarrow text-[clamp(24px,2vw,2vw)] text-secondary underline underline-offset-1 hover:text-accent'>
+        <div className='load-more flex justify-end font-tungstenNarrow text-[clamp(24px,2vw,2vw)]  '>
           <p
             className={`${
               visibleProjects >= projects.length ? 'hidden' : 'inline-block'
-            } cursor-pointer`}
+            } cursor-pointer text-secondary underline underline-offset-1 hover:text-accent`}
             onClick={loadMoreProjects}
           >
             More

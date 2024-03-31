@@ -192,7 +192,7 @@ export const Hero = () => {
       className='relative mt-[75px] h-[60vw] w-full sm:mt-[90px]'
     >
       <div className='relative'>
-        <div className='hero-text flex translate-y-[20%] flex-col items-center justify-center sm:translate-y-0'>
+        <div className='hero-text flex translate-y-[20%] flex-col items-center justify-center leading-[0.9] sm:translate-y-0 sm:leading-[0.8]'>
           <div className='creating hero-text translate-y-1/2 font-serif'>
             <span className='opacity-20'>C</span>
             <span className='opacity-20'>R</span>
@@ -223,7 +223,7 @@ export const Hero = () => {
             <span className='opacity-20'>R</span>
             <span className='opacity-20'>E</span>
           </p>
-          <p className='impossible hidden -translate-y-[8.6vw] font-tungsten text-[clamp(4rem,18vw,18vw)] font-black leading-[0.8] text-secondary'>
+          <p className='impossible s hidden -translate-y-[8.2vw] font-tungsten text-[clamp(4rem,18vw,18vw)] text-secondary sm:-translate-y-[8.6vw]'>
             IMPOSSIBLE
           </p>
         </div>

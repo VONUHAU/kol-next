@@ -98,32 +98,6 @@ export const projects: ImageCardProp[] = [
   },
 
   {
-    id: 'tfWodvRoNM8',
-    src: 'https://www.youtube.com/embed/mr6otileZtA?si=cBmbiAZxGaF3p68a',
-    projectName: 'MSI',
-    brand: 'MSI',
-    campaign: 'Highlighting the Live Event Partners',
-    slug: 'msi',
-    ratio: '9x16',
-    detail: {
-      overview: {
-        challenge:
-          ' The team at Istria wanted a new design system and digital experience to elevate ffEir and reflate their investments incompatibles that make a difference in advancing social issues',
-        approach:
-          ' We overhauled their current design system and content strategy with a unique and sophisticated look that better reflated the company vision',
-      },
-      storyboard: {
-        creativeBlurb:
-          'We overhauled their current design system and content mega with anile and sophisticated look that better reflated the company vision',
-        imgs: [],
-      },
-      finalArt: {
-        keyword: 'Leave',
-        url: '',
-      },
-    },
-  },
-  {
     id: 'N-h-lgnsUl0',
     src: 'https://www.youtube.com/embed/N-h-lgnsUl0?si=8XLE5nZ40tmry2il',
     projectName: 'Uplift in Kind',
@@ -910,6 +884,32 @@ export const projects: ImageCardProp[] = [
     brand: 'Paramount Pictures Corporation',
     campaign: 'Halo S2 Main Art Promo',
     slug: 'paramount-pictures-corporation',
+    ratio: '9x16',
+    detail: {
+      overview: {
+        challenge:
+          ' The team at Istria wanted a new design system and digital experience to elevate ffEir and reflate their investments incompatibles that make a difference in advancing social issues',
+        approach:
+          ' We overhauled their current design system and content strategy with a unique and sophisticated look that better reflated the company vision',
+      },
+      storyboard: {
+        creativeBlurb:
+          'We overhauled their current design system and content mega with anile and sophisticated look that better reflated the company vision',
+        imgs: [],
+      },
+      finalArt: {
+        keyword: 'Leave',
+        url: '',
+      },
+    },
+  },
+  {
+    id: 'tfWodvRoNM8',
+    src: 'https://www.youtube.com/embed/mr6otileZtA?si=cBmbiAZxGaF3p68a',
+    projectName: 'UFC Fight Pass',
+    brand: 'UFC Fight Pass',
+    campaign: 'Highlighting the Live Event Partners',
+    slug: 'UFC-Fight-Pass-event',
     ratio: '9x16',
     detail: {
       overview: {

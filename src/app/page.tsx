@@ -7,11 +7,11 @@ import { Slider } from '@/components/slider'
 import { Contact } from '@/components/contact'
 import { DrawClient } from '@/components/DrawClient'
 import SplitStringToSpans from '../components/splitWords/index'
-
+import { useLoader } from '@/hook/useLoader'
 export default function Home() {
   // ensure scroll to top each time user reload window
   const resetWindowScrollPosition = useCallback(() => window.scrollTo(0, 0), [])
-
+  const { windowWidth, isFontLoading } = useLoader()
   useEffect(() => {
     window.onbeforeunload = function () {
       resetWindowScrollPosition()
@@ -20,9 +20,19 @@ export default function Home() {
 
   return (
     <main className='relative overflow-hidden'>
+      {isFontLoading && !windowWidth ? (
+        <div className='fixed left-0 top-0 z-[9999] flex h-full w-full flex-col items-center justify-center bg-primary'>
+          <div className='lds-ellipsis'>
+            <div style={{ background: 'var(--accent)' }}></div>
+            <div style={{ background: 'var(--accent)' }}></div>
+            <div style={{ background: 'var(--accent)' }}></div>
+            <div style={{ background: 'var(--accent)' }}></div>
+          </div>
+        </div>
+      ) : null}
       <Suspense>
         <Hero />
-        <Video />
+        <Video windowWidth={windowWidth} />
         <SplitStringToSpans />
         <DrawClient />
         <Branding />

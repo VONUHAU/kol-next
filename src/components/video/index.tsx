@@ -1,5 +1,5 @@
 'use client'
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useRef } from 'react'
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -32,26 +32,9 @@ const DestopVideo = () => {
     </video>
   )
 }
-export const Video = () => {
+export const Video = ({ windowWidth }: { windowWidth: number | undefined }) => {
   const container = useRef<HTMLDivElement>(null)
   const wrapper = useRef<HTMLDivElement>(null)
-  const [windowWidth, setWindowWidth] = useState<number>()
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth)
-    }
-
-    // Initial width
-    handleResize()
-
-    // Event listener for window resize
-    window.addEventListener('resize', handleResize)
-
-    // Cleanup
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
-
-  // Define your video URLs based on the window width
   useGSAP(
     () => {
       gsap.fromTo(

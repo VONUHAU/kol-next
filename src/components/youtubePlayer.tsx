@@ -11,18 +11,21 @@ const CalculateSize = (ratio: string) => {
   switch (ratio) {
     case '9x16':
       return {
-        w: `clamp(200px,20vw,400px)`,
+        w: `clamp(220px,20vw,400px)`,
         ratio: '9/16',
+        id: 'video-916',
       }
     case '16x9':
       return {
         w: `clamp(300px,40vw,700px)`,
         ratio: '16/9',
+        id: 'video-169',
       }
     default:
       return {
-        w: `clamp(20px,20vw,400px)`,
+        w: `clamp(200px,20vw,400px)`,
         ratio: '9/16',
+        id: 'video-916',
       }
   }
 }
@@ -55,9 +58,9 @@ export default function YoutubePlayer({
     }
   }, [])
   return (
-    <div className='video-card' style={{ width: size.w }}>
+    <div className={`video-card ${size.id}`} style={{ width: size.w }}>
       <div
-        className='youtube-container w-full overflow-hidden rounded-[12px] md:rounded-[16px]'
+        className={`youtube-container ${size.id} w-full overflow-hidden rounded-[12px] md:rounded-[16px]`}
         style={{ aspectRatio: size.ratio, width: size.w }}
       >
         <div
