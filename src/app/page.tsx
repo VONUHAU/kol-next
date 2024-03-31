@@ -7,7 +7,6 @@ import { Slider } from '@/components/slider'
 import { Contact } from '@/components/contact'
 import { DrawClient } from '@/components/DrawClient'
 import SplitStringToSpans from '../components/splitWords/index'
-import { WeDrawProvider } from '@/contexts/weDrawContext'
 
 export default function Home() {
   // ensure scroll to top each time user reload window
@@ -20,18 +19,16 @@ export default function Home() {
   }, [resetWindowScrollPosition])
 
   return (
-    <main className='relative  '>
-      <WeDrawProvider>
-        <Suspense fallback={<>Loading...</>}>
-          <Hero />
-          <Video />
-          <SplitStringToSpans />
-          <DrawClient />
-          <Branding />
-          <Slider />
-          <Contact />
-        </Suspense>
-      </WeDrawProvider>
+    <main className='relative overflow-hidden'>
+      <Suspense fallback={<>Loading...</>}>
+        <Hero />
+        <Video />
+        <SplitStringToSpans />
+        <DrawClient />
+        <Branding />
+        <Slider />
+        <Contact />
+      </Suspense>
     </main>
   )
 }

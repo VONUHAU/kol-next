@@ -64,7 +64,7 @@ export const Major = () => {
         </div>
       </div>
       <div className='flex items-center justify-around'>
-        <div className='relative text-[13vw] text-secondary'>
+        <div className='relative text-[12.5vw] text-secondary'>
           <p className='font-tungstenNarrow uppercase leading-[0.8] transition-all duration-75 hover:text-accent'>
             HTML5 BANNER
           </p>

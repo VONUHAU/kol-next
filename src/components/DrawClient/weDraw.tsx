@@ -61,7 +61,6 @@ export const WeDraw = () => {
           trigger: container.current,
           scrub: true,
           pin: true,
-          markers: true,
           start: 'center center',
           end: () => `+=${window.innerHeight * 1.5}`,
           onLeaveBack: () => {

@@ -46,8 +46,8 @@ const experiences = [
 export const JobBar = ({ year, jobTitle, companyName, desc }) => {
   return (
     <div className='job-bar group relative flex cursor-pointer border-b border-secondary bg-black px-6 py-8 leading-[0.9] text-secondary last:border-0 sm:px-16 '>
-      <p className='w-[30%] text-[clamp(24px,4vw,4vw)]'>{year}</p>
-      <div className='job-title w-[70%]'>
+      <p className='w-[35%] text-[clamp(24px,4vw,4vw)]'>{year}</p>
+      <div className='job-title w-[65%]'>
         <p className='text-[clamp(32px,6vw,6vw)]'>{jobTitle}</p>
         <p className='text-[clamp(16px,2vw,2vw)]'>{companyName}</p>
       </div>
@@ -68,22 +68,22 @@ export default function Home() {
     }
   }, [pathname, searchParams])
   return (
-    <main className='relative mt-28 min-h-screen '>
+    <main className='relative min-h-screen sm:mt-24 mt-16'>
       <div
-        className='relative -mx-8 flex h-[clamp(200px,60vw,60vw)] items-center justify-center
+        className='relative flex h-[clamp(200px,60vw,60vw)] items-center justify-center
       p-16 before:absolute before:inset-0 before:z-[-1] before:block before:h-full
       before:w-full before:bg-[url("/assets/images/about/Web_portrait.png")] before:bg-cover
       before:bg-top before:opacity-90'
       ></div>
 
-      <div className='space-y-8 font-tungsten text-secondary sm:space-y-14 sm:px-4 md:px-12 lg:space-y-24 lg:px-24'>
+      <div className='space-y-8 px-3 sm:px-8 font-tungsten text-secondary sm:space-y-14 sm:px-4 md:px-12 lg:space-y-24 lg:px-24'>
         <AboutMe />
         <Major />
         <div
           className='pattern relative  overflow-hidden rounded-xl
           border-4 border-secondary bg-black font-tungstenNarrow text-[clamp(48px,10vw,10vw)] text-white md:rounded-3xl'
         >
-          <div className=' creative-slider  flex w-full items-center gap-4'>
+          <div className='creative-slider flex w-full items-center gap-4'>
             <p className='z-10 text-accent'>CREATIVE.</p>
             <p className='z-10'>CREATIVE.</p>
             <p className='z-10 text-accent'>CREATIVE.</p>
@@ -119,7 +119,7 @@ export default function Home() {
         </div>
       </div>
       <div
-        className='relative -mx-8 mt-24 flex h-[50vw] items-center justify-center before:absolute
+        className='relative mt-24 flex h-[50vw] items-center justify-center before:absolute
         before:inset-0 before:z-[-1] before:block before:h-full before:w-full before:bg-[url("/assets/images/about/let_connect.jpg")] 
         before:bg-cover
         before:bg-center before:opacity-40 after:absolute 

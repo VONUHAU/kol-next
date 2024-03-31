@@ -14,30 +14,6 @@ const sentences = [
 ]
 export default function SplitStringToSpans() {
   const container = useRef<HTMLDivElement>(null)
-  const wrapper = useRef<HTMLDivElement>(null)
-
-  // useEffect(() => {
-  //   const ctx = gsap.context(() => {
-  //     gsap.fromTo(
-  //       '.char',
-  //       { opacity: 0.1, textShadow: 'rgb(0, 0, 0) 0px 0px 3px' },
-  //       {
-  //         opacity: 1,
-  //         textShadow: 'rgb(245, 245, 245) 0px 0px 1.7px',
-  //         stagger: 0.2,
-  //         scrollTrigger: {
-  //           trigger: container.current,
-  //           scrub: 1,
-  //           pin: wrapper.current,
-  //           // end: 'bottom+=500 top-=650',
-  //           // markers: true,
-  //           pinSpacing: false,
-  //         },
-  //       }
-  //     )
-  //   }, wrapper)
-  //   return () => ctx.revert()
-  // }, [])
   useGSAP(
     () => {
       gsap.fromTo(
@@ -61,10 +37,10 @@ export default function SplitStringToSpans() {
   )
   // Split the input string into an array of characters
   return (
-    <section className='wrapper relative' ref={wrapper}>
+    <section className='relative px-3 sm:px-8'>
       <div
         ref={container}
-        className='text-fill px -ml-4 flex flex-col justify-center font-tungstenNarrow sm:ml-0 sm:px-14 md:px-28'
+        className='text-fill flex flex-col justify-center font-tungstenNarrow  sm:px-10 md:px-14'
       >
         <div className='flex  w-full  gap-1 md:flex-row md:gap-20'>
           <span className='text-lg sm:text-xl md:text-[2.4vw]'>CHINASKI:</span>

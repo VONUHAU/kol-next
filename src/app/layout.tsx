@@ -59,10 +59,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en' className={`${oswald.variable}`}>
-      <body
-        className={`${oswald.variable} overflow-x-hidden px-3 pt-3 sm:px-8 sm:pt-8`}
-      >
-        <div className='overlay fixed left-0 top-0 block h-screen w-screen opacity-30'>
+      <head>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+      </head>
+      <body className={`${oswald.variable} overflow-x-hidden pt-3 sm:pt-8`}>
+        <div className='overlay pointer-events-none fixed left-0 top-0 block h-screen w-screen opacity-30'>
           <Image
             src={'/assets/images/gain.jpg'}
             layout='fill'

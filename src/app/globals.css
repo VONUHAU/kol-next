@@ -115,6 +115,7 @@ body {
 .text-slider {
   animation: scroll 90s linear infinite;
   width: calc(80% * 4);
+  
 }
 
 .pattern::before {

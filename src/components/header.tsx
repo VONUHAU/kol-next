@@ -62,7 +62,7 @@ export default function Header() {
   return (
     <header
       ref={container}
-      className={`fixed z-[100] flex h-14 w-screen items-center justify-between sm:h-16`}
+      className={`fixed z-[100] flex h-14 w-full items-center justify-between px-3 sm:h-16 sm:px-8`}
     >
       <a href='' className='z-[100] w-[clamp(64px,8vw,8vw)] fill-white'>
         <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 145'>
@@ -82,7 +82,7 @@ export default function Header() {
       </a>
       <div
         onClick={handleOpenMenu}
-        className={`menu-icon round absolute left-[86%] z-[100] flex h-4 w-8 cursor-pointer flex-col items-center justify-around sm:hidden`}
+        className={`menu-icon round relative  z-[100] flex h-4 w-8 cursor-pointer flex-col items-center justify-around sm:hidden`}
       >
         <div className='bars relative h-full w-full'>
           <div className='bar-top absolute left-0 top-[0%] h-[25%] w-full -translate-y-1/2 rounded-full bg-accent'></div>
@@ -114,17 +114,6 @@ export default function Header() {
               HOME
             </div>
           </Link>
-
-          <Link href='/about'>
-            <div
-              className={`${
-                pathname === '/about' ? 'text-accent' : 'text-white'
-              }cursor-pointer font-tungstenNarrow text-6xl hover:text-accent`}
-            >
-              ABOUT
-            </div>
-          </Link>
-
           <Link href='/projects'>
             <div
               className={`${
@@ -132,6 +121,15 @@ export default function Header() {
               }cursor-pointer font-tungstenNarrow text-6xl hover:text-accent`}
             >
               PROJECTS
+            </div>
+          </Link>
+          <Link href='/about'>
+            <div
+              className={`${
+                pathname === '/about' ? 'text-accent' : 'text-white'
+              }cursor-pointer font-tungstenNarrow text-6xl hover:text-accent`}
+            >
+              ABOUT
             </div>
           </Link>
         </div>
@@ -146,17 +144,6 @@ export default function Header() {
             HOME
           </div>
         </Link>
-
-        <Link href='/about'>
-          <div
-            className={` ${
-              pathname === '/about' ? 'text-accent' : 'text-white'
-            } cursor-pointer font-tungstenNarrow text-2xl hover:text-accent`}
-          >
-            ABOUT
-          </div>
-        </Link>
-
         <Link href='/projects'>
           <div
             className={` ${
@@ -166,27 +153,16 @@ export default function Header() {
             PROJECTS
           </div>
         </Link>
+        <Link href='/about'>
+          <div
+            className={` ${
+              pathname === '/about' ? 'text-accent' : 'text-white'
+            } cursor-pointer font-tungstenNarrow text-2xl hover:text-accent`}
+          >
+            ABOUT
+          </div>
+        </Link>
       </div>
-      <a href='' className='invisible'>
-        <svg
-          width={28}
-          height={24}
-          xmlns='http://www.w3.org/2000/svg'
-          className='header-hamburger-mobile'
-          viewBox='0 0 32 24'
-        >
-          <g fill='none' stroke='#fff' strokeWidth='2'>
-            <path d='M31 0v23.5' data-name='Linie 44' />
-            <g data-name='Gruppe 45'>
-              <path d='M3 0v24' data-name='Pfad 17' />
-              <path d='M9 0v23.5' data-name='Linie 41' />
-              <path d='M15 0v23.5' data-name='Linie 42' />
-              <path d='M21 0v23.5' data-name='Linie 43' />
-              <path d='M0 11.75h24' data-name='Linie 45' />
-            </g>
-          </g>
-        </svg>
-      </a>
     </header>
   )
 }

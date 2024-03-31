@@ -28,7 +28,7 @@ export const Video = () => {
   return (
     <div
       ref={container}
-      className='video-section -mx-8 my-8 w-screen max-w-[100vw] sm:my-24'
+      className='video-section my-8 w-screen max-w-[100vw] sm:my-24'
     >
       <video autoPlay loop muted className='video w-screen'>
         <source

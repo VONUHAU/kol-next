@@ -11,11 +11,10 @@ export const Video = () => {
   useGSAP(
     () => {
       gsap.fromTo(
-        '.youtube-container',
-        { scale: 0.4, borderRadius: 32 },
+        '.video-container',
+        { scale: 0.4 },
         {
           scale: 1,
-          borderRadius: 0,
           scrollTrigger: {
             trigger: container.current,
             scrub: true,
@@ -31,14 +30,8 @@ export const Video = () => {
 
   return (
     <section className='relative mb-56' ref={wrapper}>
-      <div ref={container} className='video-section -mx-8 w-screen'>
-        <div className='youtube-container w-screen'>
-          {/* <iframe
-            src='https://www.youtube-nocookie.com/embed/bmJuGXXSgfE?si=Zei9rHshR7ytnRP7&autoplay=1&mute=1&loop=1&color=white&controls=0&rel=0&playlist=bmJuGXXSgfE'
-            title='YouTube video player'
-            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-            allowfullscreen
-          ></iframe> */}
+      <div ref={container} className='video-section'>
+        <div className='video-container'>
           <video
             autoPlay
             loop

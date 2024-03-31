@@ -91,7 +91,7 @@ export const Popup: React.FC<PopupProp> = ({
 
 export const Branding = () => {
   return (
-    <div className='branding text-fill relative max-h-max w-full py-5 sm:py-20'>
+    <div className='branding text-fill relative max-h-max w-full px-3 py-5 sm:px-8 sm:py-20'>
       <div className='flex items-center justify-around gap-4'>
         <div className='relative block h-[11vw] w-1/3 overflow-hidden rounded-lg'>
           <Image
@@ -117,7 +117,7 @@ export const Branding = () => {
           />
         </div>
       </div>
-      <div className='my-2.5 flex items-center justify-around border-y border-secondary py-4'>
+      <div className='flex items-center justify-around border-y border-secondary py-1 sm:my-2.5 sm:py-4'>
         <div className='relative text-[16vw] text-secondary'>
           <p className='font-tungstenNarrow leading-[0.8]'>DIGITAL</p>
           <Popup start={4} end={7} offsetLeft={20} offsetTop={20} />

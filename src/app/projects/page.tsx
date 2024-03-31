@@ -18,7 +18,7 @@ export default function Projects() {
     setVisibleProjects(visibleProjects + 8) // Increase the number of visible projects by 5
   }
   return (
-    <main className='relative top-16 mb-24 mt-5 min-h-screen sm:px-4 md:px-12 lg:px-24 '>
+    <main className='relative top-16 mb-24 mt-5 min-h-screen px-3 sm:px-8 md:px-12 lg:px-24 '>
       <div className='head mb-8 text-center font-tungstenNarrow'>
         <div className='mb-3 flex items-end justify-center gap-2 md:gap-4'>
           <p className='text-[clamp(36px,6vw,6vw)] leading-[0.7] text-accent'>

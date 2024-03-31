@@ -40,25 +40,8 @@ export const Slider = () => {
   const container = useRef<HTMLDivElement>(null)
   const imageRefs = useRef<Ref[]>(null)
   const tl = useRef<GSAPTimeline>()
-  //set up images slide animation
   useGSAP(() => {
     const imageArr: HTMLDivElement[] = gsap.utils.toArray('.imgFlex')
-
-    // imageArr.forEach((el, _index) =>
-    //   gsap.timeline().to(el, {
-    //     rotation: Math.random() * 60 * (Math.round(Math.random()) * 2 - 1) + 5,
-    //     rotationY: Math.random() * 10 * (Math.round(Math.random()) * 2 - 1) + 5,
-    //     rotationX: Math.random() * 10 * (Math.round(Math.random()) * 2 - 1) + 5,
-    //     scrollTrigger: {
-    //       trigger: container.current,
-    //       scrub: true,
-    //       pin: true,
-    //       start: 'center center',
-    //       markers: true,
-    //     },
-    //   })
-    // )
-
     tl.current = gsap
       .timeline({
         scrollTrigger: {
@@ -98,8 +81,8 @@ export const Slider = () => {
                 top: `${Math.floor(
                   Math.random() * 20 * (Math.round(Math.random()) * 2 - 1) + 8
                 )}px`,
-                minWidth: '200px',
-                minHeight: '200px',
+                minWidth: '120px',
+                minHeight: '120px',
                 height: '20vw',
                 width: '20vw',
               }}
