@@ -230,14 +230,14 @@ export const Hero = () => {
         <div className='hero-image-warper '>
           <div className='image-hero hero3 -rotate-5 absolute left-[84%] top-[80%] hidden  w-[clamp(60px,12vw,12vw)] '>
             <img
-              src='/assets/images/hh3.png'
+              src='/assets/images/4.jpg'
               alt='KOdigital'
               className='w-full'
             />
           </div>
           <div className='image-hero hero4 absolute left-[84%] top-[54%] hidden w-[clamp(54px,9vw,9vw)]  '>
             <img
-              src='/assets/images/hh4.png'
+              src='/assets/images/6.jpg'
               alt='KOdigital'
               className='w-full'
             />
@@ -245,21 +245,21 @@ export const Hero = () => {
 
           <div className='image-hero hero5 rotate-5 absolute left-[80%] top-[2%] hidden w-[clamp(72px,13vw,13vw)] '>
             <img
-              src='/assets/images/hh5.png'
+              src='/assets/images/3.jpg'
               alt='KOdigital'
               className='w-full'
             />
           </div>
           <div className='image-hero hero6 rotate-5 absolute left-[10%] top-[90%] hidden  w-[clamp(45px,11vw,11vw)] '>
             <img
-              src='/assets/images/hh6.png'
+              src='/assets/images/2.jpg'
               alt='KOdigital'
               className='w-full'
             />
           </div>
           <div className='image-hero hero7 rotate-5 absolute -left-[2%] top-[30%] hidden  w-[clamp(60px,12vw,12vw)] sm:left-[1%]'>
             <img
-              src='/assets/images/hh7.png'
+              src='/assets/images/5.jpg'
               alt='KOdigital'
               className='w-full'
             />
@@ -273,7 +273,7 @@ export const Hero = () => {
           </div>
           <div className='image-hero hero2 absolute left-1/2 top-1/2 hidden w-[clamp(60px,12vw,12vw)] -translate-x-1/2 -translate-y-1/2  rotate-12'>
             <img
-              src='/assets/images/hh1.png'
+              src='/assets/images/1.jpg'
               alt='KOdigital'
               className='w-full'
             />

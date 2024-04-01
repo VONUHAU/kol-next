@@ -194,6 +194,38 @@ iframe img {
   animation: lds-ellipsis3 0.6s infinite;
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+-ms-overflow-style: none;  /* IE and Edge */
+scrollbar-width: 0;  /* Firefox */
+}
+/* popup display */
+@media screen and (max-width: 640px) {
+  .award-p1:nth-child(n+3) {
+    display:none;
+ }
+ .award-p2:nth-child(n+2) {
+  display:none;
+}
+.award-p3:nth-child(n+2) {
+  display:none;
+}
+.award-p4:nth-child(n+3) {
+  display:none;
+}
+}
+
+@media screen and (max-width: 460px) {
+  .video-916{
+    width: 300px !important;
+  }
+  
+}
 
 @keyframes lds-ellipsis1 {
   0% {
@@ -220,11 +252,7 @@ iframe img {
   }
 }
 
-@media screen and (max-width: 460px) {
-  .video-916{
-    width: 300px !important;
-  }
-}
+
 
 @keyframes dot-master-1 {
     100%{transform: translateX(25px)}

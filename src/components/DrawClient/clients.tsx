@@ -19,16 +19,17 @@ import webCard3 from '../../../public/assets/images/webcard03.jpg'
 import webCard4 from '../../../public/assets/images/webcard04.jpg'
 import webCard5 from '../../../public/assets/images/webcard05.jpg'
 import webCard6 from '../../../public/assets/images/webcard06.jpg'
-import webCard7 from '../../../public/assets/images/webcard07.jpg'
+
+import webCard8 from '../../../public/assets/images/webcard08.jpg'
 import Image from 'next/image'
 const webCards = [
-  webCard6,
-  webCard7,
   webCard,
+  webCard8,
   webCard2,
-  webCard3,
   webCard4,
+  webCard3,
   webCard5,
+  webCard6,
 ]
 
 gsap.registerPlugin(ScrollTrigger)

@@ -10,19 +10,20 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useWeDraw } from '@/contexts/weDrawContext'
 
 const images = [
-  '/assets/images/album1-640x640.jpg',
-  '/assets/images/album2-640x640.jpg',
-  '/assets/images/album6-640x640.jpg',
-  '/assets/images/Black_Midi-640x640.jpg',
-  '/assets/images/cool_side-640x640.jpg',
-  '/assets/images/Home-640x640.png',
-  '/assets/images/Primal_Heart-640x640.jpg',
-  '/assets/images/group_drinks-640x640.png',
-  '/assets/images/album1-640x640.jpg',
-  '/assets/images/album2-640x640.jpg',
-  '/assets/images/album6-640x640.jpg',
-  '/assets/images/Black_Midi-640x640.jpg',
-  '/assets/images/cool_side-640x640.jpg',
+  '/assets/images/album1.jpg',
+  '/assets/images/album3.jpg',
+  '/assets/images/album4.jpg',
+  '/assets/images/album5.jpg',
+  '/assets/images/album6.jpg',
+  '/assets/images/album2.jpg',
+  '/assets/images/album7.jpg',
+  '/assets/images/album1.jpg',
+  '/assets/images/album3.jpg',
+  '/assets/images/album4.jpg',
+  '/assets/images/album5.jpg',
+  '/assets/images/album6.jpg',
+  '/assets/images/album2.jpg',
+  '/assets/images/album7.jpg',
 ]
 
 interface IAppProps {

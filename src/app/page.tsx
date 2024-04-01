@@ -33,7 +33,7 @@ export default function Home() {
       <Suspense>
         <Hero />
         <Video windowWidth={windowWidth} />
-        <SplitStringToSpans />
+        <SplitStringToSpans windowWidth={windowWidth} />
         <DrawClient />
         <Branding />
         <Slider />

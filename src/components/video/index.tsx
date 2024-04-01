@@ -45,7 +45,7 @@ export const Video = ({ windowWidth }: { windowWidth: number | undefined }) => {
           scrollTrigger: {
             trigger: container.current,
             scrub: true,
-            pin: wrapper.current,
+            pin: true,
             end: () => `+=${window.innerWidth * 1.5}`,
             start: 'center center',
           },
@@ -56,9 +56,9 @@ export const Video = ({ windowWidth }: { windowWidth: number | undefined }) => {
   )
 
   return (
-    <section className='relative mb-56 mt-4' ref={wrapper}>
-      <div ref={container} className='video-section'>
-        <div className='video-container'>
+    <section className='relative mt-4 sm:mb-56' ref={wrapper}>
+      <div ref={container} className='video-section h-screen sm:h-auto'>
+        <div className='video-container '>
           {windowWidth && windowWidth < 450 ? <MobileVideo /> : <DestopVideo />}
         </div>
       </div>
