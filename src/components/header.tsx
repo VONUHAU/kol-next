@@ -11,7 +11,6 @@ import { useState } from 'react'
 export default function Header() {
   const pathname = usePathname()
   const container = useRef<HTMLDivElement>(null)
-  const [isVisible, setIsVisible] = useState(false)
   const [isOpenMenu, setOpenMenu] = useState(false)
   const tl = useRef<GSAPTimeline>()
 
@@ -61,29 +60,11 @@ export default function Header() {
     state ? openTimeline.restart() : tl.current.restart()
   })
 
-  useEffect(() => {
-    const toggleVisibility = () => {
-      // if the user scrolls down, show the button
-      window.scrollY > 500 ? setIsVisible(true) : setIsVisible(false)
-    }
-    // listen for scroll events
-    window.addEventListener('scroll', toggleVisibility)
-
-    // clear the listener on component unmount
-    return () => {
-      window.removeEventListener('scroll', toggleVisibility)
-    }
-  }, [])
-
   return (
     <Suspense>
       <header
         ref={container}
-        className={`fixed z-[100] ${
-          isVisible
-            ? 'top-0 bg-primary after:absolute after:left-0 after:top-0 after:z-[-1] after:h-full after:w-full after:bg-[url("/assets/images/gain.jpg")] after:opacity-[26%]'
-            : 'header-normal top-auto'
-        } flex h-14 w-full items-center justify-between px-3 transition-all duration-300 ease-in-out sm:h-16 sm:px-8`}
+        className={`fixed z-[100] flex h-14 w-full items-center justify-between px-3 transition-all duration-300 ease-in-out sm:h-16 sm:px-8`}
       >
         <Link href='/'>
           <div className='z-[100] w-[clamp(64px,8vw,8vw)]'></div>

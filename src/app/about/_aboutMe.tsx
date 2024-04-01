@@ -6,15 +6,18 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useRef } from 'react'
 gsap.registerPlugin(ScrollTrigger)
 
-const sentences = [
-  "Hi! I'm Tran Khac Oai (Oil), a Vietnam-based motion graphic",
-  ' designer who brings visuals to life for various clients and ',
-  'platforms. With a passion for dynamic design, my 5 years',
-  ' of experience have sharpened my eye for detail  making me ',
-  'a meticulous problem-solver and dedicated trainer. I thrive ',
-  'on  collaboration, always eager to listen, learn, and guide ',
-  'colleagues to find the best solutions and reach their full potential.',
-]
+const sentences =
+  "Hi! I'm Tran Khac Oai (Oil), a Vietnam-based motion graphic designer who brings visuals to life for various clients and platforms. With a passion for dynamic design, my 5 years of experience have sharpened my eye for detail, making me a meticulous problem-solver and dedicated trainer. I thrive on collaboration, always eager to listen, learn, and guide colleagues to find the best solutions and reach their full potential."
+
+// const sentences = [
+//   "Hi! I'm Tran Khac Oai (Oil), a Vietnam-based motion graphic",
+//   ' designer who brings visuals to life for various clients and ',
+//   'platforms. With a passion for dynamic design, my 5 years',
+//   ' of experience have sharpened my eye for detail  making me ',
+//   'a meticulous problem-solver and dedicated trainer. I thrive ',
+//   'on  collaboration, always eager to listen, learn, and guide ',
+//   'colleagues to find the best solutions and reach their full potential',
+// ]
 
 export default function AboutMe() {
   const container = useRef<HTMLDivElement>(null)
@@ -27,9 +30,7 @@ export default function AboutMe() {
         },
         {
           clipPath: 'inset(0px 0% 0% 0)',
-          stagger: {
-            amount: 2,
-          },
+          stagger: 0.3,
           scrollTrigger: {
             trigger: container.current,
             scrub: 1,
@@ -58,99 +59,22 @@ export default function AboutMe() {
         </div>
 
         <div className='text-[clamp(30px,5.5vw,5.5vw)] font-medium leading-none'>
-          {sentences.map((value, key) => (
-            <div className='line' key={key}>
-              {value}
-            </div>
-          ))}
-          {/* {sentences[0].split('').map((char, index) => (
+          {sentences.split(/(\b|\s|,)/).map((value, key) => (
             <span
               className={
-                char != ' '
-                  ? `char text-section inline-block uppercase `
-                  : `char text-section uppercase `
+                value != ' '
+                  ? `line ${
+                      (key >= 12 && key <= 26) || (key >= 55 && key <= 72)
+                        ? 'text-accent'
+                        : 'text-white'
+                    } text-section inline-block uppercase `
+                  : `line text-section uppercase `
               }
-              key={index}
+              key={key}
             >
-              {char}
+              {`${value}  `}
             </span>
           ))}
-          {sentences[1].split('').map((char, index) => (
-            <span
-              className={
-                char == ' '
-                  ? `char text-section uppercase`
-                  : index >= 20 && index <= 35
-                  ? `char text-section inline-block font-bold  uppercase text-accent`
-                  : `char text-section inline-block uppercase `
-              }
-              key={index}
-            >
-              {char}
-            </span>
-          ))}
-          {sentences[2].split('').map((char, index) => (
-            <span
-              className={
-                char == ' '
-                  ? `char text-section uppercase`
-                  : index >= 39 && index <= 50
-                  ? `char text-section inline-block font-bold uppercase text-accent`
-                  : `char text-section inline-block uppercase `
-              }
-              key={index}
-            >
-              {char}
-            </span>
-          ))}
-          {sentences[3].split('').map((char, index) => (
-            <span
-              className={
-                char != ' '
-                  ? `char text-section inline-block uppercase `
-                  : `char text-section uppercase `
-              }
-              key={index}
-            >
-              {char}
-            </span>
-          ))}
-          {sentences[4].split('').map((char, index) => (
-            <span
-              className={
-                char != ' '
-                  ? `char text-section inline-block uppercase `
-                  : `char text-section uppercase `
-              }
-              key={index}
-            >
-              {char}
-            </span>
-          ))}
-          {sentences[5].split('').map((char, index) => (
-            <span
-              className={
-                char != ' '
-                  ? `char text-section inline-block uppercase `
-                  : `char text-section uppercase `
-              }
-              key={index}
-            >
-              {char}
-            </span>
-          ))}
-          {sentences[6].split('').map((char, index) => (
-            <span
-              className={
-                char != ' '
-                  ? `char text-section inline-block uppercase `
-                  : `char text-section uppercase `
-              }
-              key={index}
-            >
-              {char}
-            </span>
-          ))} */}
         </div>
 
         <div className='globe absolute bottom-0 right-0 -z-[1] h-[clamp(110px,21vw,21vw)] w-[clamp(100px,20vw,20vw)]'>

@@ -5,15 +5,15 @@ import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
-const webSentences = [
-  'Ugh, I have all these ad ideas. I need',
-  'someone to take over and make it',
-  'happen ASAP!',
-  'Lemme cook',
-  'We approved',
-]
+// const webSentences = [
+//   'Ugh, I have all these ad ideas. I need',
+//   'someone to take over and make it',
+//   'happen ASAP!',
+//   'Lemme cook',
+//   'We approved',
+// ]
 const mobileSentences = [
-  'Ugh, I have all these ad ideas.',
+  'Ugh, I have a lot of ad ideas.',
   'I need someone to take over and',
   'make it happen ASAP!',
   'Lemme cook',
