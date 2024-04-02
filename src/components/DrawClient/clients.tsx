@@ -12,6 +12,9 @@ import {
   Pepsi,
   Meta,
   SCJ,
+  Aldi,
+  ELLE,
+  TDBank,
 } from '../brandIcon'
 import webCard from '../../../public/assets/images/webcard01.jpg'
 import webCard2 from '../../../public/assets/images/webcard02.jpg'
@@ -404,20 +407,20 @@ export const Clients = () => {
                 <Volkswagen />
               </div>
               <div className='flex items-center justify-center'>
-                <span className='client text-[4vw] leading-[1] opacity-0'>
-                  GAZILLION.
+                <Aldi />
+                <span className='client mx-1 text-[4vw] uppercase leading-[1] opacity-0 sm:mx-2'>
+                  BetterSaver
                 </span>
-                <span className='client text-[4vw] leading-[1] opacity-0'>
-                  SPARK.
+                <TDBank />
+                <span className='client text-[4vw] uppercase leading-[1] opacity-0'>
+                  Babbel
                 </span>
-                <span className='client text-[4vw] leading-[1] opacity-0'>
-                  NINJA THEORY.
+                <ELLE width='clamp(24px,6.5vw,6.5vw)' />
+                <span className='client text-[4vw] uppercase leading-[1] opacity-0'>
+                  biosense
                 </span>
-                <span className='client text-[4vw] leading-[1] opacity-0'>
-                  PROSTHETIC RENAISSANCE.
-                </span>
-                <span className='client text-[4vw] leading-[1] opacity-0'>
-                  AERIA GAMES.
+                <span className='client text-[4vw] uppercase leading-[1] opacity-0'>
+                  comdirect
                 </span>
               </div>
               <div className='flex items-center justify-center'>
