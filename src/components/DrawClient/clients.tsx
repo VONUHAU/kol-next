@@ -13,27 +13,24 @@ import {
   Meta,
   SCJ,
   Aldi,
-  ELLE,
   TDBank,
+  Asics,
+  FistLeaf,
+  Leadswood,
+  Liberty,
+  Square,
+  ViettelMoney,
+  VisitWales,
 } from '../brandIcon'
 import webCard from '../../../public/assets/images/webcard01.jpg'
 import webCard2 from '../../../public/assets/images/webcard02.jpg'
 import webCard3 from '../../../public/assets/images/webcard03.jpg'
 import webCard4 from '../../../public/assets/images/webcard04.jpg'
 import webCard5 from '../../../public/assets/images/webcard05.jpg'
-import webCard6 from '../../../public/assets/images/webcard06.jpg'
 import webCard7 from '../../../public/assets/images/webcard07.jpg'
 
 import Image from 'next/image'
-const webCards = [
-  webCard6,
-  webCard,
-  webCard5,
-  webCard2,
-  webCard3,
-  webCard4,
-  webCard7,
-]
+const webCards = [webCard5, webCard2, webCard3, webCard4, webCard, webCard7]
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -351,12 +348,12 @@ export const Clients = () => {
             transformOrigin: '50% 50%',
             rotation: (index) =>
               (index + 1) % 2 == 0
-                ? 320 + Math.random() * 5
-                : -320 + Math.random() * 5,
-            xPercent: (index) => Math.sin(1.57 + 0.5 * index) * 350,
+                ? -320 + Math.random() * 5
+                : 320 + Math.random() * 5,
+            xPercent: (index) => Math.sin(1.57 + 0.5 * index) * 400,
             yPercent: (index) =>
-              (index + 1) % 2 == 0
-                ? Math.cos(Math.PI * index) * 30 - Math.random() * 60
+              (index + 1) % 2 != 0
+                ? Math.cos(Math.PI * index) * 40 - Math.random() * 60 - 60
                 : Math.cos(Math.PI / index) * 30 + Math.random() * 60,
           },
           '<0'
@@ -378,69 +375,76 @@ export const Clients = () => {
             <div className='clients absolute left-1/2 top-1/2  w-full -translate-x-1/2 -translate-y-1/2 whitespace-nowrap'>
               <div className='flex items-center justify-center gap-1'>
                 <Dell />
-                <span className='client text-[4vw] leading-[1] opacity-0'>
+                <span className='client mr-1 text-[4vw] leading-[1] opacity-0 sm:mr-2'>
                   FATFACE
                 </span>
                 <Gillete />
-                <span className='client text-[4vw] leading-[1] opacity-0'>
+                <span className='client mx-1 text-[4vw] leading-[1] opacity-0 sm:mx-2'>
                   ALIENWARE
                 </span>
                 <Mazda />
-                <span className='client text-[4vw] leading-[1] opacity-0'>
+                <span className='client mx-1 text-[4vw] leading-[1] opacity-0 sm:mx-2'>
                   GOOGLE
                 </span>
+                <Liberty width='clamp(26px,10vw,10vw)' />
               </div>
               <div className='flex items-center justify-center gap-1'>
-                <span className='client text-[4vw] leading-[1] opacity-0'>
+                <span className='client mr-1 hidden text-[4vw] leading-[1] opacity-0 sm:inline-block '>
+                  ELLE
+                </span>
+                <TDBank width='clamp(26px,3.3vw,3.3vw)' />
+                <span className='client mx-1 text-[4vw] leading-[1] opacity-0 sm:mx-2'>
                   WWF
                 </span>
                 <Pepsi />
-                <span className='client text-[4vw] leading-[1] opacity-0'>
+                <span className='client mx-1 text-[4vw] leading-[1] opacity-0 sm:mx-2'>
                   PIZAHUT
                 </span>
 
                 <SCJ width='clamp(30px,13vw,13vw)' />
                 <Meta width='clamp(30px,12vw,12vw)' />
-                <span className='client text-[4vw] leading-[1] opacity-0'>
+                <span className='client mx-1 text-[4vw] leading-[1] opacity-0 sm:mx-2'>
                   MOBILO
                 </span>
                 <Volkswagen />
+                <span className='client ml-1 hidden text-[4vw] uppercase leading-[1] opacity-0 sm:inline-block '>
+                  Vetnique
+                </span>
               </div>
               <div className='flex items-center justify-center'>
-                <Aldi />
-                <span className='client mx-1 text-[4vw] uppercase leading-[1] opacity-0 sm:mx-2'>
-                  BetterSaver
+                <span className='client mr-1 text-[4vw] uppercase leading-[1] opacity-0 sm:mr-3'>
+                  episode
                 </span>
-                <TDBank />
-                <span className='client text-[4vw] uppercase leading-[1] opacity-0'>
+                <Aldi />
+                <span className='client mx-1 text-[4vw]  uppercase leading-[1] opacity-0 sm:mx-3'>
                   Babbel
                 </span>
-                <ELLE width='clamp(24px,6.5vw,6.5vw)' />
-                <span className='client text-[4vw] uppercase leading-[1] opacity-0'>
+                <Asics />
+                <span className='client mx-1 text-[4vw] uppercase leading-[1] opacity-0 sm:mx-2'>
                   biosense
                 </span>
-                <span className='client text-[4vw] uppercase leading-[1] opacity-0'>
+                <FistLeaf width='clamp(30px,13vw,13vw)' />
+                <span className='client ml-1 text-[4vw] uppercase leading-[1] opacity-0 sm:ml-2'>
                   comdirect
                 </span>
               </div>
               <div className='flex items-center justify-center'>
-                <span className='client text-[4vw] leading-[1] opacity-0'>
-                  LIONSGATE.
+                <Square />
+                <span className='client mx-1 text-[4vw] uppercase leading-[1] opacity-0 sm:mx-3'>
+                  BetterSaver
                 </span>
-                <span className='client text-[4vw] leading-[1] opacity-0'>
-                  KOCH MEDIA.
+                <VisitWales width='clamp(22px,6vw,6vw)' />
+                <span className='client mx-1 text-[4vw] uppercase leading-[1] opacity-0 sm:mx-2'>
+                  hearthsong
                 </span>
-                <span className='client text-[4vw] leading-[1] opacity-0'>
-                  KEEN.
+                <ViettelMoney />
+                <span className='client mx-1 text-[4vw] uppercase leading-[1] opacity-0 sm:mx-2'>
+                  Hoselink
                 </span>
-                <span className='client text-[4vw] leading-[1] opacity-0'>
-                  SIDESHOW COLLECTIBLES.
-                </span>
-                <span className='client text-[4vw] leading-[1] opacity-0'>
-                  METAL HAMMER.
-                </span>
-                <span className='client text-[4vw] leading-[1] opacity-0'>
-                  WIRED.
+
+                <Leadswood width='clamp(22px,6vw,6vw)' />
+                <span className='client ml-1 text-[4vw] uppercase leading-[1] opacity-0 sm:ml-2'>
+                  WHO
                 </span>
               </div>
             </div>
@@ -586,7 +590,7 @@ export const Clients = () => {
               />
             ))}
           </div>
-          <div className='disclaimer absolute left-[50%] top-[83%] -translate-x-1/2 whitespace-nowrap text-[clamp(18px,2.7vw,36px)] opacity-0'>
+          <div className='disclaimer absolute left-[50%] top-[88%] -translate-x-1/2 whitespace-nowrap text-[clamp(18px,2.7vw,36px)] opacity-0'>
             <p>*Created with: hand drawing, AI, and digital tools</p>
           </div>
         </div>
