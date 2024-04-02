@@ -266,7 +266,7 @@ export const Hero = () => {
           </div>
           <div className='image-hero hero8 rotate-5 absolute -top-[14%] left-1/2 hidden  w-[clamp(50px,8vw,8vw)] -translate-x-1/2 sm:-top-[5%]  sm:left-[15%] sm:translate-x-0 '>
             <img
-              src='/assets/images/hh8.png'
+              src='/assets/images/T1.jpg'
               alt='KOdigital'
               className='w-full'
             />

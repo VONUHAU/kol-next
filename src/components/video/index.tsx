@@ -39,9 +39,10 @@ export const Video = ({ windowWidth }: { windowWidth: number | undefined }) => {
     () => {
       gsap.fromTo(
         '.video-container',
-        { scale: 0.4 },
+        { scale: 0.4, borderRadius: 30 },
         {
           scale: 1,
+          borderRadius: 0,
           scrollTrigger: {
             trigger: container.current,
             scrub: true,
@@ -58,7 +59,7 @@ export const Video = ({ windowWidth }: { windowWidth: number | undefined }) => {
   return (
     <section className='relative mt-4 sm:mb-56' ref={wrapper}>
       <div ref={container} className='video-section h-screen sm:h-auto'>
-        <div className='video-container '>
+        <div className='video-container overflow-hidden'>
           {windowWidth && windowWidth < 450 ? <MobileVideo /> : <DestopVideo />}
         </div>
       </div>

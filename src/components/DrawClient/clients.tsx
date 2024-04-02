@@ -19,17 +19,17 @@ import webCard3 from '../../../public/assets/images/webcard03.jpg'
 import webCard4 from '../../../public/assets/images/webcard04.jpg'
 import webCard5 from '../../../public/assets/images/webcard05.jpg'
 import webCard6 from '../../../public/assets/images/webcard06.jpg'
+import webCard7 from '../../../public/assets/images/webcard07.jpg'
 
-import webCard8 from '../../../public/assets/images/webcard08.jpg'
 import Image from 'next/image'
 const webCards = [
-  webCard,
-  webCard8,
-  webCard2,
-  webCard4,
-  webCard3,
-  webCard5,
   webCard6,
+  webCard,
+  webCard5,
+  webCard2,
+  webCard3,
+  webCard4,
+  webCard7,
 ]
 
 gsap.registerPlugin(ScrollTrigger)
@@ -53,6 +53,9 @@ export const Clients = () => {
           yPercent: -50,
           rotation: 0,
         })
+        .set('.disclaimer', {
+          opacity: 0,
+        })
         .from('.we-draw-image', {
           opacity: 0,
         })
@@ -61,6 +64,7 @@ export const Clients = () => {
           stagger: 0.04,
           ease: 'power3.inOut',
         })
+
         .to('.we-draw-image', {
           x: 'none',
           stagger: 0.02,
@@ -70,6 +74,16 @@ export const Clients = () => {
             document.body.style.overflowY = 'auto'
           },
         })
+        .fromTo(
+          '.disclaimer',
+          {
+            opacity: 0,
+          },
+          {
+            opacity: 0.8,
+          },
+          '<0'
+        )
 
       const topMaskGlitch = gsap
         .timeline()
@@ -568,6 +582,9 @@ export const Clients = () => {
                 className={`we-draw-image absolute left-1/2 top-1/2 m-auto w-[clamp(30px,20vw,20vw)] -translate-x-1/2 -translate-y-1/2 opacity-0 `}
               />
             ))}
+          </div>
+          <div className='disclaimer absolute left-[50%] top-[83%] -translate-x-1/2 whitespace-nowrap text-[clamp(18px,2.7vw,36px)] opacity-0'>
+            <p>*Created with: hand drawing, AI, and digital tools</p>
           </div>
         </div>
       </div>

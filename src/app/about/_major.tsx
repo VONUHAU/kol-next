@@ -39,7 +39,7 @@ export const Major = () => {
         </div>
         <div className='relative block h-[9.5vw] w-[70%] overflow-hidden rounded-lg'>
           <Image
-            src='/assets/images/service_2.jpg'
+            src='/assets/images/about/A2.jpg'
             objectFit='cover'
             sizes=''
             alt='kol-next-service'
@@ -48,9 +48,9 @@ export const Major = () => {
         </div>
       </div>
       <div className='my-2.5 flex items-center justify-around border-y border-secondary py-4'>
-        <div className='relative block h-[9.5vw] w-[65%] overflow-hidden rounded-lg'>
+        <div className='relative block h-[9.5vw] w-[69%] overflow-hidden rounded-lg'>
           <Image
-            src='/assets/images/Small-03.png'
+            src='/assets/images/about/A3.jpg'
             objectFit='cover'
             sizes=''
             alt='kol-next-service'
@@ -69,10 +69,11 @@ export const Major = () => {
             HTML5 BANNER
           </p>
         </div>
-        <div className='relative block h-[9.5vw] w-[35%] overflow-hidden rounded-lg'>
+        <div className='relative block h-[9.5vw] w-[46%] overflow-hidden rounded-lg'>
           <Image
-            src='/assets/images/service_5.jpg'
+            src='/assets/images/about/A4.jpg'
             objectFit='cover'
+            objectPosition='center'
             sizes=''
             alt='kol-next-service'
             layout='fill'

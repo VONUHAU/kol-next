@@ -59,7 +59,7 @@ export default function AboutMe() {
         </div>
 
         <div className='text-[clamp(30px,5.5vw,5.5vw)] font-medium leading-none'>
-          {sentences.split(/(\b|\s|,)/).map((value, key) => (
+          {sentences.split(/(\b|\s|,|\()/).map((value, key) => (
             <span
               className={
                 value != ' '
@@ -79,7 +79,7 @@ export default function AboutMe() {
 
         <div className='globe absolute bottom-0 right-0 -z-[1] h-[clamp(110px,21vw,21vw)] w-[clamp(100px,20vw,20vw)]'>
           <Image
-            src='/assets/images/about/globe.png'
+            src='/assets/images/about/A1_V2.jpg'
             alt='global'
             layout='fill'
           />

@@ -73,11 +73,11 @@ export default function Projects() {
             </div>
           ))}
         </div>
-        <div className='load-more flex justify-end font-tungstenNarrow text-[clamp(24px,2vw,2vw)]  '>
+        <div className='load-more flex justify-end font-tungstenNarrow text-[clamp(20px,3vw,3vw)]  '>
           <p
             className={`${
               visibleProjects >= projects.length ? 'hidden' : 'inline-block'
-            } cursor-pointer text-secondary underline underline-offset-1 hover:text-accent`}
+            } cursor-pointer text-accent underline underline-offset-1 hover:text-secondary`}
             onClick={loadMoreProjects}
           >
             More

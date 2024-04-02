@@ -97,7 +97,7 @@ export const Branding = () => {
       <div className='flex items-center justify-around gap-4'>
         <div className='relative block h-[11vw] w-1/3 overflow-hidden rounded-lg'>
           <Image
-            src='/assets/images/service_1.jpg'
+            src='/assets/images/1H.jpg'
             objectFit='cover'
             sizes=''
             alt='kol-next-service'
@@ -117,7 +117,7 @@ export const Branding = () => {
         </div>
         <div className='relative block h-[11vw] w-1/3 overflow-hidden rounded-lg'>
           <Image
-            src='/assets/images/service_2.jpg'
+            src='/assets/images/2H.jpg'
             objectFit='cover'
             sizes=''
             alt='kol-next-service'
@@ -136,10 +136,11 @@ export const Branding = () => {
             offsetTop={20}
           />
         </div>
-        <div className='relative block h-[11vw] w-[24%] overflow-hidden rounded-lg'>
+        <div className='relative block h-[11vw] w-[32%] overflow-hidden rounded-lg'>
           <Image
-            src='/assets/images/Small-03.png'
+            src='/assets/images/3H.jpg'
             objectFit='cover'
+            objectPosition='top'
             sizes=''
             alt='kol-next-service'
             layout='fill'
@@ -159,7 +160,7 @@ export const Branding = () => {
       <div className='flex items-center justify-around'>
         <div className='relative block h-[11vw] w-[20%] overflow-hidden rounded-lg'>
           <Image
-            src='/assets/images/service_3.jpg'
+            src='/assets/images/4H.jpg'
             objectFit='cover'
             sizes=''
             alt='kol-next-service'
@@ -180,7 +181,7 @@ export const Branding = () => {
         </div>
         <div className='relative block h-[11vw] w-[20%] overflow-hidden rounded-lg'>
           <Image
-            src='/assets/images/service_5.jpg'
+            src='/assets/images/5H.jpg'
             objectFit='cover'
             sizes=''
             alt='kol-next-service'

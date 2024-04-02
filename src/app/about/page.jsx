@@ -172,7 +172,7 @@ export default function Home() {
           </p>
         </div>
         <a
-          href='https://www.linkedin.com/in/tr%E1%BA%A7n-oai-418b591a6/'
+          href='https://www.linkedin.com/in/tran-oai-418b591a6'
           target='_blank'
           className='cursor-pointer'
         >
