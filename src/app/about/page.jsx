@@ -13,20 +13,33 @@ gsap.registerPlugin(ScrollTrigger)
 
 const experiences = [
   {
+    year: 'Apr 2024 - Present',
+    jobTitle: 'Freelance Motion Graphic Designer',
+    companyName: 'Upwork',
+    desc: 'Creates impactful and high-performing video advertisements for clients from platforms like Upwork, combining creativity and technical expertise to enhance brand presence and audience engagement.Key Services: Video advertising, motion graphics design, visual/audio effects, and video optimization across platforms',
+  },
+  {
+    year: 'Jun 2024 - Apr 2025',
+    jobTitle: 'Video Editor | Motion Graphic Designer | Cameramen',
+    companyName: 'PHUONG DONG ESSENTIAL HERBAL JOINT STOCK COMPANY',
+    desc: 'Versatile Motion Graphics Designer, Cameraman, and Editor overseeing all aspects of video production for advertising and product launches. Responsibilities include concept development, scriptwriting, motion graphics creation, camera operation, editing, and music integration. Also provides equipment consultation, manages resources, supports multimedia initiatives, and develops training. A collaborative professional with strong communication and problem-solving skills, committed to motion graphics, cinematography, and editing advancements.',
+  },
+  {
     year: 'Dec 2020 - Apr 2024',
     jobTitle: 'Motion Graphic Designer',
     companyName: 'Shuttlerock',
     desc: 'Created thousands of dynamic motion videos and images for diverse advertising campaigns across platforms like Facebook, Instagram, Google, YouTube, TikTok, Hulu, Amazon, X (Twitter), and Pinterest.',
   },
   {
-    year: 'Mar 2020 - Present',
+    year: 'Mar 2020 - Feb 2023',
     jobTitle: 'Freelance Graphic Designer',
     companyName: 'Lead Like Jesus',
     desc: 'Design and oversee production of various printing products.',
   },
+
   {
     year: 'Oct 2019 - Mar 2020',
-    jobTitle: 'Motion Designer',
+    jobTitle: 'Graphic designer',
     companyName: 'Plasma Khang Viet',
     desc: `Designed a wide range of print materials (banners, posters, flyers, brochures, catalogs, coupons).
           Managed social media presence, including hashtag campaigns and fan page engagement.

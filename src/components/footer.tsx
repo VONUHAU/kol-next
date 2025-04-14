@@ -108,12 +108,12 @@ export const Footer = () => {
           </div>
           <div className='block md:hidden'>
             <span>Website by</span> <br />
-            <span className='text-accent'>KGECK</span>
+            <span className='text-accent'>KGECK54@GMAIL.COM</span>
           </div>
         </div>
         <div className='hidden px-4 md:block'>
           <span>Website by</span> <br />
-          <span className='text-accent'>KGECK</span>
+          <span className='text-accent'>KGECK54@GMAIL.COM</span>
         </div>
       </div>
       <div
